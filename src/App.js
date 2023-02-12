@@ -1,5 +1,6 @@
 import AuditReport from "./components/AuditReportForm/AuditReport";
 import AuditReportForm from "./components/AuditReportForm/AuditReportForm";
+import CustomizedAccordions from "./components/AuditReportForm/AuditReportFormAccordian";
 import GenericPdfDownloader from "./components/AuditReportForm/PrintPdf";
 // import { Example } from "./components/AuditReportForm/PrintPdf";
 import TestReport from "./components/AuditReportForm/TestReport";
@@ -12,7 +13,8 @@ function App() {
       {/* <LeftContainer />
       <DragAndDrop /> */}
 
-      <AuditReportForm/>
+      {/* <AuditReportForm/> */}
+      <CustomizedAccordions/>
 {/* <TestReport/> */}
 {/* <TestReport/> */}
       <br/>
