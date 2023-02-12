@@ -320,6 +320,7 @@ import auditMethodology from "../assets/1.png"
 import second from "../assets/2.png"
 import third from "../assets/3.png"
 import fourth from "../assets/4.png"
+import manualAudit from "../assets/13.png"
 import expeWeb from "../assets/expeWeb.jpg"
 import overview from "../assets/two.png"
 function AuditReport() {
@@ -1847,7 +1848,7 @@ socialMediaPic &&
         >
           <p
             style={{
-              paddingTop: "90px",
+              paddingTop: "100px",
               fontWeight: "bold",
               fontSize: "40px",
               color: "blue",
@@ -1856,7 +1857,7 @@ socialMediaPic &&
             VULNERABILITY CHECKLIST
           </p>
         </div>
-        <div style={{width:"90%",margin:"auto",marginTop:"-30px"}}>
+        <div style={{width:"90%",margin:"auto",}}>
           <Grid
             container
             sx={{
@@ -1874,7 +1875,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 borderRadius: "30px 0px 0px 0px",
@@ -1886,18 +1887,18 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 borderRadius: "0px 30px 0px 0px",
               }}
             >
-                {ReduxStoredData?.canTakeBackOwnership?ReduxStoredData?.canTakeBackOwnership:"Not Detected"}
+                {ReduxStoredData?.designLogic?ReduxStoredData?.designLogic:"Passed"}
             </Grid>
             <Grid
               item
@@ -1908,7 +1909,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1920,18 +1921,18 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
               }}
             >
-        {ReduxStoredData?.ownerChangeBalance?ReduxStoredData?.ownerChangeBalance:"Not Detected"}
+        {ReduxStoredData?.CompilerWarnings?ReduxStoredData?.CompilerWarnings:"Passed"}
 
             </Grid>
             <Grid
@@ -1943,7 +1944,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1955,18 +1956,18 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
               }}
             >
-         {ReduxStoredData?.blacklist?ReduxStoredData?.blacklist:"Not Detected"}
+         {ReduxStoredData?.PrivateUserDataLeak?ReduxStoredData?.PrivateUserDataLeak:"Passed"}
 
             </Grid>
             <Grid
@@ -1978,7 +1979,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1990,18 +1991,18 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
               }}
             >
-          {ReduxStoredData?.ModifyFees?ReduxStoredData?.ModifyFees:"Not Detected"}
+          {ReduxStoredData?.TimestampDependence?ReduxStoredData?.TimestampDependence:"Passed"}
 
             </Grid>
             <Grid
@@ -2013,7 +2014,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -2025,18 +2026,18 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
               }}
             >
-          {ReduxStoredData?.Proxy?ReduxStoredData?.Proxy:"Not Detected"}
+          {ReduxStoredData?.IntegerOverFlowAndUnderFlow?ReduxStoredData?.IntegerOverFlowAndUnderFlow:"Passed"}
 
             </Grid>
             <Grid
@@ -2048,7 +2049,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -2060,18 +2061,18 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
               }}
             >
-          {ReduxStoredData?.Whitelisted?ReduxStoredData?.Whitelisted:"Not Detected"}
+          {ReduxStoredData?.RaceConditions?ReduxStoredData?.RaceConditions:"Passed"}
 
             </Grid>
             <Grid
@@ -2083,31 +2084,31 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
               }}
             >
-            Delay In Data Delivery
+            Possible Delays In Data Delivery
             </Grid>
             <Grid
               item
            
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
               }}
             >
-          {ReduxStoredData?.AntiWhale?ReduxStoredData?.AntiWhale:"Not Detected"}
+          {ReduxStoredData?.DelayInDataDelivery?ReduxStoredData?.DelayInDataDelivery:"Passed"}
 
             </Grid>
             <Grid
@@ -2119,7 +2120,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -2131,18 +2132,18 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
               }}
             >
-          {ReduxStoredData?.TradingCooldown?ReduxStoredData?.TradingCooldown:"Not Detected"}
+          {ReduxStoredData?.OracleCalls?ReduxStoredData?.OracleCalls:"Passed"}
 
             </Grid>
             <Grid
@@ -2154,7 +2155,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -2166,18 +2167,18 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
               }}
             >
-          {ReduxStoredData?.TransferPausable?ReduxStoredData?.TransferPausable:"Not Detected"}
+          {ReduxStoredData?.FrontRunning?ReduxStoredData?.FrontRunning:"Passed"}
 
             </Grid>
             <Grid
@@ -2189,7 +2190,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -2201,18 +2202,18 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
               }}
             >
-          {ReduxStoredData?.CannotSellAll?ReduxStoredData?.CannotSellAll:"Not Detected"}
+          {ReduxStoredData?.revert?ReduxStoredData?.revert:"Passed"}
 
             </Grid>
             <Grid
@@ -2224,7 +2225,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -2236,18 +2237,18 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
               }}
             >
-          {ReduxStoredData?.HiddenOwner?ReduxStoredData?.HiddenOwner:"Not Detected"}
+          {ReduxStoredData?.blockGasLimit?ReduxStoredData?.blockGasLimit:"Passed"}
 
             </Grid>
             <Grid
@@ -2259,10 +2260,10 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
-                borderRadius: "0px 0px 0px 30px",
+                borderRadius: "0px 0px 0px 0px",
               }}
             >
               Methods Execution Permissions
@@ -2271,18 +2272,18 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
-                borderRadius: "0px 0px 30px 0px",
+                // borderRadius: "0px 0px 30px 0px",
               }}
             >
-          {ReduxStoredData?.Mint?ReduxStoredData?.Mint:"Not Detected"}
+          {ReduxStoredData?.methodExePermission?ReduxStoredData?.methodExePermission:"Passed"}
 
             </Grid>
             <Grid
@@ -2294,10 +2295,10 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
-                borderRadius: "0px 0px 0px 30px",
+                // borderRadius: "0px 0px 0px 30px",
               }}
             >
               Economy Model
@@ -2306,18 +2307,301 @@ socialMediaPic &&
               item
               xs={6}
               sx={{
-                backgroundColor: "black",
+                backgroundColor: "rgb(37, 150, 190)",
                 fontSize:"10px",
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 30px 0px",
+              }}
+            >
+          {ReduxStoredData?.ecoModel?ReduxStoredData?.ecoModel:"Passed"}
+
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "#262727",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 0px 30px",
+              }}
+            >
+              Impact of the exchange rate on the logic
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "rgb(37, 150, 190)",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 30px 0px",
+              }}
+            >
+          {ReduxStoredData?.exchangeRateImpact?ReduxStoredData?.exchangeRateImpact:"Passed"}
+
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "#262727",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 0px 30px",
+              }}
+            >
+             Malicious Event log
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "rgb(37, 150, 190)",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 30px 0px",
+              }}
+            >
+          {ReduxStoredData?.maliciousLog?ReduxStoredData?.maliciousLog:"Passed"}
+
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "#262727",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 0px 30px",
+              }}
+            >
+              Scoping and declarrations
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "rgb(37, 150, 190)",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 30px 0px",
+              }}
+            >
+          {ReduxStoredData?.scoping?ReduxStoredData?.scoping:"Passed"}
+
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "#262727",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 0px 30px",
+              }}
+            >
+             Uninitialized storage pointers
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "rgb(37, 150, 190)",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 30px 0px",
+              }}
+            >
+          {ReduxStoredData?.storagePointer?ReduxStoredData?.storagePointer:"Passed"}
+
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "#262727",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 0px 30px",
+              }}
+            >
+               Arithmetic accuracy
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "rgb(37, 150, 190)",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 30px 0px",
+              }}
+            >
+          {ReduxStoredData?.arithmatic?ReduxStoredData?.arithmatic:"Passed"}
+
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "#262727",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 0px 30px",
+              }}
+            >
+         Cross-function race conditions
+
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "rgb(37, 150, 190)",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 30px 0px",
+              }}
+            >
+          {ReduxStoredData?.racecond?ReduxStoredData?.racecond:"Passed"}
+
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "#262727",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 0px 30px",
+              }}
+            >
+         Safe Zeppelin module
+
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "rgb(37, 150, 190)",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                // borderRadius: "0px 0px 30px 0px",
+              }}
+            >
+          {ReduxStoredData?.zeppelinModule?ReduxStoredData?.zeppelinModule:"Passed"}
+
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "#262727",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
+                height: "70%",
+                borderBottom: "5px solid white",
+                borderRadius: "0px 0px 0px 30px",
+              }}
+            >
+         Fallback function security
+
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                backgroundColor: "rgb(37, 150, 190)",
+                fontSize:"10px",
+                fontWeight: "bold",
+              textAlign:"center",
+                color: "white",
+           padding:"8px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 borderRadius: "0px 0px 30px 0px",
               }}
             >
-          {ReduxStoredData?.Mint?ReduxStoredData?.Mint:"Not Detected"}
+          {ReduxStoredData?.fallbackFn?ReduxStoredData?.fallbackFn:"Passed"}
 
             </Grid>
           </Grid>
@@ -2326,6 +2610,96 @@ socialMediaPic &&
 </div>
 
 
+<div style={{width:"650px",height:"100%"}}>
+
+
+<div className={styles.backgroundTwo}>
+        <div
+          style={{
+            // fontSize: "50px",
+            color: "#454545",
+            textAlign: "center",
+
+            // marginTop:"150px",
+          }}
+        >
+          <div
+            // style={{
+            //   paddingLeft: "50px",
+            //   paddingRight: "50px",
+            // }}
+          >
+            <p
+              style={{
+                paddingTop: "100px",
+                fontWeight: "bold",
+                fontSize: "80px",
+
+                color: "blue",
+              }}
+            >
+              Features
+            </p>
+          </div>
+        </div>
+        <div style={{ width:"90%",margin:"auto",marginTop:"-50px" }}>
+          <p
+            style={{
+              fontWeight: "bold",
+              fontSize: "30px",
+            }}
+          >
+           {ReduxStoredData?.featureHead1}
+            
+          </p>
+          <p style={{ fontSize: "20px",fontWeight:"bold" }}>
+          {ReduxStoredData?.featureDesc1}
+
+          </p>
+          <p
+            style={{
+              fontWeight: "bold",
+              fontSize: "30px",
+            }}
+          >
+         {ReduxStoredData?.featureHead2}
+
+          </p>
+          <p style={{ fontSize: "20px",fontWeight:"bold" }}>
+          {ReduxStoredData?.featureDesc2}
+         
+          </p>
+          <p
+            style={{
+              fontWeight: "bold",
+              fontSize: "30px",
+            }}
+          >
+           {ReduxStoredData?.featureHead3}
+            
+          </p>
+          <p style={{ fontSize: "20px",fontWeight:"bold" }}>
+           {ReduxStoredData?.featureDesc3}
+          </p>
+          <p
+            style={{
+              fontWeight: "bold",
+              fontSize: "30px",
+            }}
+          >
+           {ReduxStoredData?.featureHead4}
+          </p>
+          <p style={{ fontSize: "20px", fontWeight:"bold" }}>
+           {ReduxStoredData?.featureDesc4}
+          </p>
+        </div>
+      </div>
+</div>
+
+
+      <div id="page">
+<img width="43%" height="100%" src={manualAudit} />
+      </div>
       <div id="page">
 <img width="43%" height="100%" src={auditMethodology} />
       </div>

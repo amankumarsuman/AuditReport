@@ -70,6 +70,14 @@ function AuditReportForm() {
         mediumriskfinding: 0,
         suggestion: 0,
         gas: 0,
+        featureHead1:"",
+        featureHead2:"",
+        featureHead3:"",
+        featureHead4:"",
+        featureDesc1:"",
+        featureDesc2:"",
+        featureDesc3:"",
+        featureDesc4:"",
     }
 
     const [input, setInput] = useState(init);
@@ -1046,6 +1054,8 @@ function AuditReportForm() {
 
 
 
+
+
                     {/* findings */}
                     <Grid item xs={12} md={3}>
 
@@ -1098,7 +1108,90 @@ function AuditReportForm() {
                         />
                     </Grid>
 
+{/* feature */}
 
+
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="featureHead1"
+    label="Feature's Heading One"
+    onChange={handleChange}
+    value={input?.featureHead1}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="featureDesc1"
+    label="Feature's Description One"
+    onChange={handleChange}
+    value={input?.featureDesc1}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="featureHead2"
+    label="Feature's Heading Two"
+    onChange={handleChange}
+    value={input?.featureHead2}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="featureDesc2"
+    label="Feature's Description Two"
+    onChange={handleChange}
+    value={input?.featureDesc2}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="featureHead3"
+    label="Feature's Heading Three"
+    onChange={handleChange}
+    value={input?.featureHead3}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="featureDesc3"
+    label="Feature's Description Three"
+    onChange={handleChange}
+    value={input?.featureDesc3}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="featureHead4"
+    label="Feature's Heading Four"
+    onChange={handleChange}
+    value={input?.featureHead4}
+   
+/>
+</Grid>
+
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="featureDesc4"
+    label="Feature's Description Four"
+    onChange={handleChange}
+    value={input?.featureDesc4}
+   
+/>
+</Grid>
 
                     <Grid item xs={3} md={3}>
 
