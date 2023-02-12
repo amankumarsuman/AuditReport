@@ -978,7 +978,7 @@ socialMediaPic &&
         >
           <p
             style={{
-              paddingTop: "90px",
+              paddingTop: "100px",
               fontWeight: "bold",
               fontSize: "50px",
               color: "blue",
@@ -987,7 +987,7 @@ socialMediaPic &&
             FUNCTION OVERVIEW
           </p>
         </div>
-        <div style={{width:"90%",margin:"auto",marginTop:"-30px"}}>
+        <div style={{width:"90%",margin:"auto",}}>
           <Grid
             container
             sx={{
@@ -1005,7 +1005,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 borderRadius: "30px 0px 0px 0px",
@@ -1022,7 +1022,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 borderRadius: "0px 30px 0px 0px",
@@ -1039,7 +1039,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1056,7 +1056,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
@@ -1074,7 +1074,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1091,7 +1091,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
@@ -1109,7 +1109,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1126,7 +1126,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
@@ -1144,7 +1144,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1161,7 +1161,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
@@ -1179,7 +1179,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1196,7 +1196,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
@@ -1214,7 +1214,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1232,7 +1232,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
@@ -1250,7 +1250,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1267,7 +1267,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
@@ -1285,7 +1285,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1302,7 +1302,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
@@ -1320,7 +1320,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1337,7 +1337,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
@@ -1355,7 +1355,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "20px 20px 0px 0px",
@@ -1372,7 +1372,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 // borderRadius: "0px 20px 0px 0px",
@@ -1390,7 +1390,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 borderRadius: "0px 0px 0px 30px",
@@ -1407,7 +1407,7 @@ socialMediaPic &&
                 fontWeight: "bold",
               textAlign:"center",
                 color: "white",
-           padding:"15px",
+           padding:"10px",
                 height: "70%",
                 borderBottom: "5px solid white",
                 borderRadius: "0px 0px 30px 0px",
@@ -2327,17 +2327,17 @@ socialMediaPic &&
 
 
       <div id="page">
-<img width="50%" src={auditMethodology} />
+<img width="43%" height="100%" src={auditMethodology} />
       </div>
     
       <div id="page">
-<img width="50%" src={third} />
+<img width="43%" height="100%" src={third} />
       </div>
       <div id="page">
-<img width="50%" src={fourth} />
+<img width="43%" height="100%" src={fourth} />
       </div>
       <div id="page">
-<img width="50%" src={second} />
+<img width="43%" height="100%" src={second} />
       </div>
     </div>
     <Button
