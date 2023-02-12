@@ -327,12 +327,13 @@ function AuditReport() {
   const ReduxStoredData = useSelector((state) => state.publisher?.auditData);
   const logo = useSelector((state) => state.publisher?.logo);
   const socialMediaPic = useSelector((state) => state.publisher?.socialMediaPic);
+  const inheritancePic = useSelector((state) => state.publisher?.inheritancePic);
   const [companyName, setCompanyName] = useState(ReduxStoredData);
     
 
 
 
-  console.log(socialMediaPic,"check")
+//   console.log(socialMediaPic,"check")
   const exportPdf = () => {
         const elements = document.querySelectorAll('#page');
         const pdf = new jsPDF('p', 'mm', 'a4');
@@ -2610,6 +2611,131 @@ socialMediaPic &&
 </div>
 
 
+<div style={{width:"650px",height:"100%"}}>
+
+
+<div className={styles.backgroundTwo}>
+        <div
+          style={{
+            // fontSize: "50px",
+            color: "#454545",
+            textAlign: "center",
+            // marginTop:"150px",
+          }}
+        >
+          <p
+            style={{
+              paddingTop: "100px",
+              fontWeight: "bold",
+              fontSize: "50px",
+              color: "blue",
+            }}
+          >
+            AUDIT SUMMARY
+          </p>
+        </div>
+        <div style={{ width:"90%",margin:"auto",marginTop:"-40px"}}>
+          <p
+            style={{
+              fontWeight: "bold",
+              fontSize: "30px",
+            }}
+          >
+            Used Tools:
+          </p>
+          <p
+            style={{
+              fontSize: "20px",
+            }}
+          >
+            Manual Review - {ReduxStoredData?.manualReview}
+          </p>
+          <p
+            style={{
+              fontSize: "20px",
+            }}
+          >
+            - {ReduxStoredData?.tool1}
+          </p>
+          <p
+            style={{
+              fontSize: "20px",
+            }}
+          >
+            - {ReduxStoredData?.tool2}
+          </p>
+          <p
+            style={{
+              fontSize: "20px",
+            }}
+          >
+            - {ReduxStoredData?.tool3}
+          </p>
+          <p
+            style={{
+              fontSize: "20px",
+            }}
+          >
+            - {ReduxStoredData?.tool4}
+          </p>
+          <p
+            style={{
+              fontSize: "20px",
+            }}
+          >
+            - {ReduxStoredData?.tool4}
+          </p>
+          <p
+            style={{
+              fontSize: "20px",
+            }}
+          >
+            - {ReduxStoredData?.tool5}
+          </p>
+          <p
+            style={{
+              fontSize: "20px",
+            }}
+          >
+            - {ReduxStoredData?.tool6}
+          </p>
+        </div>
+        <div
+          style={{
+            borderBottom: "3px solid black",
+            marginLeft: "50px",
+            marginRight: "50px",
+          }}
+        ></div>
+        <p
+          style={{
+            // paddingLeft: "50px",
+            // paddingRight: "50px",
+            marginLeft:"50px",
+            fontWeight: "bold",
+
+            fontSize: "30px",
+          }}
+        >
+          Inheritance Trees:
+        </p>
+        <div>
+          {/* <img
+            style={{ marginLeft: "80px" }}
+            src="https://www.onepointesolutions.com/wp-content/uploads/2022/05/5-Types-of-Chemistry.jpg"
+            alt="img"
+          /> */}
+           {inheritancePic && (
+            <img
+              style={{ height: "300px", width: "300px", borderRadius: "50%" }}
+              src={URL.createObjectURL(inheritancePic)}
+              alt="inheritance Image"
+            />
+          )}
+        </div>
+      </div>
+
+</div>
 <div style={{width:"650px",height:"100%"}}>
 
 

@@ -78,6 +78,13 @@ function AuditReportForm() {
         featureDesc2:"",
         featureDesc3:"",
         featureDesc4:"",
+        manualReview:"",
+        tool1:"",
+        tool2:"",
+        tool3:"",
+        tool4:"",
+        tool5:"",
+        tool6:"",
     }
 
     const [input, setInput] = useState(init);
@@ -97,9 +104,9 @@ function AuditReportForm() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         console.log(e.target.name)
-        if (name === "logo") {
-            setInput({ ...input, [name]: e.target.files[0] })
-        }
+        // if (name === "logo") {
+        //     setInput({ ...input, [name]: e.target.files[0] })
+        // }
         // if (name === "inheritancePic") {
         //     setInheritancePic({ ...input, ["inheritancePic"]: e.target.files[0] })
         // }
@@ -1189,6 +1196,76 @@ function AuditReportForm() {
     label="Feature's Description Four"
     onChange={handleChange}
     value={input?.featureDesc4}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="manualReview"
+    label="Manual Review "
+    onChange={handleChange}
+    value={input?.manualReview}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="tool1"
+    label="Tools Used one"
+    onChange={handleChange}
+    value={input?.tool1}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="tool2"
+    label="Tools Used Two"
+    onChange={handleChange}
+    value={input?.tool2}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="tool3"
+    label="Tools Used Three"
+    onChange={handleChange}
+    value={input?.tool3}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="tool4"
+    label="Tools Used Four"
+    onChange={handleChange}
+    value={input?.tool4}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="tool5"
+    label="Tools Used Five"
+    onChange={handleChange}
+    value={input?.tool5}
+   
+/>
+</Grid>
+<Grid item xs={12} md={3}>
+
+<TextField
+    name="tool6"
+    label="Tools Used Six"
+    onChange={handleChange}
+    value={input?.tool6}
    
 />
 </Grid>
