@@ -133,6 +133,11 @@ export default function CustomizedAccordions() {
         tool4: "",
         tool5: "",
         tool6: "",
+        highriskDetails:"",
+        lowriskDetails:"",
+        mediumriskDetails:"",
+        suggestionDetails:"",
+        gasDetails:""
     }
 
     const [input, setInput] = useState(init);
@@ -189,7 +194,7 @@ export default function CustomizedAccordions() {
           </Typography> */}
                     <Paper sx={{ padding: "10px" }} elevation={6}>
                         <Grid container spacing={2} sx={{ marginTop: "20px", width: "60%", margin: "auto" }}>
-                            <Grid item xs={3} md={3}>
+                            <Grid item xs={12} md={6}>
                                 <TextField
                                     name="companyName"
                                     label="Name of the Company"
@@ -201,7 +206,7 @@ export default function CustomizedAccordions() {
 
 
                             </Grid>
-                            <Grid item xs={3} md={3}>
+                            <Grid item xs={12} md={6}>
                                 {/* <input type="file" onChange={handleChange} /> */}
                                 <Button sx={{ textTransform: "none" }} variant="contained" component="label">
                                     Upload logo +
@@ -213,7 +218,7 @@ export default function CustomizedAccordions() {
 
                             </Grid>
 
-                            <Grid item xs={12} md={3}>
+                            <Grid item xs={12} md={6}>
                                 <Button sx={{ textTransform: "none" }} variant="contained" component="label">
                                     Upload Inheritance Image +
                                     <input hidden name="inheritancePic" onChange={handleInheritanceaPic} accept="image/*" multiple type="file" />
@@ -223,7 +228,7 @@ export default function CustomizedAccordions() {
 
 
                             </Grid>
-                            <Grid item xs={12} md={3}>
+                            <Grid item xs={12} md={6}>
                                 <TextField
                                     name="description"
                                     label="Project Description"
@@ -231,6 +236,7 @@ export default function CustomizedAccordions() {
                                     onChange={handleChange}
                                 />
                             </Grid>
+                         
                         </Grid>
                     </Paper>
                 </AccordionDetails>
@@ -1175,6 +1181,47 @@ export default function CustomizedAccordions() {
                                     label="Gas Optimizations"
                                     onChange={handleChange}
                                     value={input?.gas}
+                                />
+                            </Grid>
+
+                            <Grid item xs={12} md={3}>
+                                <TextField
+                                    name="highriskDetails"
+                                    label="Finding highrisk Details"
+                                    value={input?.highriskDetails}
+                                    onChange={handleChange}
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={3}>
+                                <TextField
+                                    name="lowriskDetails"
+                                    label="Finding Low Risk Details"
+                                    value={input?.lowriskDetails}
+                                    onChange={handleChange}
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={3}>
+                                <TextField
+                                    name="mediumriskDetails"
+                                    label="Finding Medium Risk Details"
+                                    value={input?.mediumriskDetails}
+                                    onChange={handleChange}
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={3}>
+                                <TextField
+                                    name="suggestionDetails"
+                                    label="Finding Suggestion Details"
+                                    value={input?.suggestionDetails}
+                                    onChange={handleChange}
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={3}>
+                                <TextField
+                                    name="gasDetails"
+                                    label="Finding Gas Details"
+                                    value={input?.gasDetails}
+                                    onChange={handleChange}
                                 />
                             </Grid>
 

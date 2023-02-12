@@ -313,7 +313,7 @@ import styles from "./auditReport.module.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { padding } from "@mui/system";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import { Button, Grid, TextField } from "@mui/material";
+import { Button, Divider, Grid, TextField } from "@mui/material";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import auditMethodology from "../assets/1.png"
@@ -2612,6 +2612,8 @@ socialMediaPic &&
 </div>
 
 
+{/* audit summary */}
+
 <div style={{width:"650px",height:"100%"}}>
 
 
@@ -2728,7 +2730,7 @@ socialMediaPic &&
           /> */}
            {inheritancePic && (
             <img
-              style={{ height: "300px", width: "300px", borderRadius: "50%" }}
+              style={{ height: "200px", width:"600px" }}
               src={URL.createObjectURL(inheritancePic)}
               alt="inheritance Image"
             />
@@ -2827,6 +2829,104 @@ socialMediaPic &&
       <div id="page">
 <img width="43%" height="100%" src={manualAudit} />
       </div>
+
+{/* finding */}
+
+      <div style={{width:"650px",height:"100%"}}>
+
+
+<div className={styles.backgroundTwo}>
+        <div
+          style={{
+            // fontSize: "50px",
+            color: "#454545",
+            textAlign: "center",
+            // marginTop:"150px",
+          }}
+        >
+          <p
+            style={{
+              paddingTop: "100px",
+              fontWeight: "bold",
+              fontSize: "60px",
+              color: "blue",
+            }}
+          >
+            FINDINGS
+          </p>
+        </div>
+        <div style={{ width:"90%",margin:"auto",marginTop:"-40px"}}>
+          <p
+            style={{
+              fontWeight: "bold",
+              fontSize: "20px",
+            }}
+          >
+            <ul>
+                {ReduxStoredData?.highriskfinding ?
+                
+                <li style={{color:"red"}}>
+                High Risk Findings:{ReduxStoredData?.highriskfinding}
+                </li>:null
+            }
+            {
+                ReduxStoredData?.mediumriskfinding ?
+
+                <li style={{color:"rgba(244,145,110,255)"}}>
+                Medium Risk Findings:{ReduxStoredData?.mediumriskfinding}
+                </li>:null
+            }
+
+            {
+ReduxStoredData?.lowriskfinding?
+
+
+                <li style={{color:"green"}}>
+                Low Risk Findings:{ReduxStoredData?.lowriskfinding}
+                </li>:null
+            }
+
+            {
+ReduxStoredData?.suggestion?
+
+
+                <li style={{color:"blue"}}>
+                High Risk Findings:{ReduxStoredData?.suggestion}
+                </li>:null
+            }
+            {
+ReduxStoredData?.gas?
+
+
+                <li style={{color:"blue"}}>
+                Gas Optimizations:{ReduxStoredData?.gas}
+                </li>:null
+            }
+            </ul>
+          </p>
+        <Divider
+        sx={{backgroundColor:"grey",height:"2px"}}
+        />
+         {
+            ReduxStoredData?.highriskfinding ?ReduxStoredData?.highriskDetails:null}
+            {
+            ReduxStoredData?.lowriskfinding ?ReduxStoredData?.lowriskDetails:null}
+            {
+            ReduxStoredData?.mediumriskfinding ?ReduxStoredData?.mediumriskDetails:null}
+            {
+            ReduxStoredData?.suggestion ?ReduxStoredData?.suggestionDetails :null
+         }
+            {
+            ReduxStoredData?.gas ?ReduxStoredData?.gasDetails :null
+         }
+        </div>
+       
+    
+        
+      </div>
+
+</div>
+
       <div id="page">
 <img width="43%" height="100%" src={auditMethodology} />
       </div>

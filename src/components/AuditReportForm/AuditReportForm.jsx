@@ -85,6 +85,11 @@ function AuditReportForm() {
         tool4:"",
         tool5:"",
         tool6:"",
+        highriskDetails:"",
+        lowriskDetails:"",
+        mediumriskDetails:"",
+        suggestionDetails:"",
+        gasDetails:""
     }
 
     const [input, setInput] = useState(init);
