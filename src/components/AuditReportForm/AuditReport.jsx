@@ -457,7 +457,7 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
               }}
             >
               {/* <h1 style={{paddingTop:"110px"}}>OVERVIEW</h1> */}
-              <h1 style={{paddingTop:"110px"}}>OVERVIEW</h1>
+              <h1 style={{paddingTop:"100px"}}>OVERVIEW</h1>
             </div>
             <div
               style={{
@@ -465,7 +465,7 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
                 textAlign: "center",
                 // color: "#343434",
                 color:"#41484E",
-                width:"80%",
+                width:"90%",
                 margin:"auto"
               }}
             >
@@ -476,9 +476,9 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
               According to the smart contract audit:
 
             </div>
-            <div style={{ marginTop: "100px", paddingBottomBottom: "100px" }}>
-              <div style={{ width: "70%", margin: "auto", display: "flex", justifyContent: "space-between" }}>
-                <div style={{ border: "1px solid white", background:"#4A74ED", textAlign:"center", marginBottom:"15px", marginRight:"10px", width:"50%", borderRadius: "20px 0px 0px 0px", padding: "30px" }}>
+            <div style={{ marginTop: "40px",  }}>
+              <div style={{ width: "90%", margin: "auto", display: "flex", justifyContent: "space-between" }}>
+                <div style={{ border: "1px solid white", background:"#4A74ED", textAlign:"center", marginBottom:"15px", marginRight:"10px", width:"50%", borderRadius: "20px 0px 0px 0px",padding:"5px" }}>
                   <span>
                     <LibraryAddIcon sx={{ color: "white" }} />
                   </span>
@@ -487,7 +487,7 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
                     Audit Result 
                   </span>
                 </div>
-                <div style={{ border: "1px solid white", width: "50%", background:"#4A74ED", textAlign:"center", marginBottom:"15px", width: "50%", borderRadius: "0px 20px 0px 0px", padding: "30px" }}>
+                <div style={{ border: "1px solid white", width: "50%", background:"#4A74ED", textAlign:"center", marginBottom:"15px", width: "50%", borderRadius: "0px 20px 0px 0px" }}>
 
                   <span style={{ color: "white", fontSize: "30px", marginLeft: "10px" }}>
 
@@ -496,8 +496,8 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
                   </span>
                 </div>
               </div>
-              <div style={{ width: "70%", margin: "auto", display: "flex", justifyContent: "space-between" }}>
-                <div style={{ border: "1px solid white", width: "50%", background:"#4A74ED", textAlign:"center", marginBottom:"15px", marginRight:"10px",  borderRadius: "0px 0px 0px 0px", padding: "30px" }}>
+              <div style={{ width: "90%", margin: "auto", display: "flex", justifyContent: "space-between" }}>
+                <div style={{ border: "1px solid white", background:"#4A74ED", textAlign:"center", marginBottom:"15px", marginRight:"10px", width:"50%", borderRadius: "0px 0px 0px 0px",padding:"5px" }}>
                   <span>
                     <AddModeratorIcon sx={{ color: "white" }} />
                   </span>
@@ -507,7 +507,7 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
 
                   </span>
                 </div>
-                <div style={{ border: "1px solid white", width: "50%", background:"#4A74ED", textAlign:"center", marginBottom:"15px", width: "50%", borderRadius: "0px 0px 0px 0px", padding: "10px" }}>
+                <div style={{ border: "1px solid white", width: "50%", background:"#4A74ED", textAlign:"center", marginBottom:"15px", width: "50%", borderRadius: "0px 0px 0px 0px", }}>
 
                   <span style={{ color: "white", fontSize: "30px", marginLeft: "10px" }}>
 
@@ -515,8 +515,8 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
                   </span>
                 </div>
               </div>
-              <div style={{ width: "70%", margin: "auto", display: "flex", justifyContent: "space-between" }}>
-                <div style={{ border: "1px solid white", width: "50%", background:"#4A74ED", textAlign:"center", marginBottom:"15px", width: "50%", marginRight:"10px", borderRadius: "0px 0px 0px 20px", padding: "30px" }}>
+              <div style={{ width: "90%", margin: "auto", display: "flex", justifyContent: "space-between" }}>
+                <div style={{ border: "1px solid white", background:"#4A74ED", textAlign:"center", marginBottom:"15px", marginRight:"10px", width:"50%", borderRadius: "0px 0px 0px 20px",padding:"5px"}}>
                   <span>
                     <DateRangeIcon sx={{ color: "white" }} />
                   </span>
@@ -525,20 +525,20 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
                     Date
                   </span>
                 </div>
-                <div style={{ border: "1px solid white", width: "50%", background:"#4A74ED", textAlign:"center", marginBottom:"15px", width: "50%", borderRadius: "0px 0px 20px 0px", padding: "10px" }}>
+                <div style={{ border: "1px solid white", width: "50%", background:"#4A74ED", textAlign:"center", marginBottom:"15px", width: "50%", borderRadius: "0px 0px 20px 0px", }}>
                   {/* <span>
                     <LibraryAddIcon sx={{ color: "white" }} />
                   </span> */}
                   <span style={{ color: "white", fontSize: "30px", marginLeft: "10px" }}>
 
-                    {ReduxStoredData?.date ? ReduxStoredData?.date : new Date().toLocaleString() + ""}
+                    {ReduxStoredData?.date ? ReduxStoredData?.date : new Date().toISOString().substring(0, 10)}
 
                   </span>
                 </div>
               </div>
             </div>
             <div
-            style={{color:"black", fontSize:"40px",textAlign:"center",marginTop:"150px",fontWeight:"bold"}}
+            style={{color:"black", fontSize:"40px",textAlign:"center",marginTop:"80px",fontWeight:"bold"}}
             >
             Audit Passed With <span style={{color:`${ReduxStoredData?.risk==="No"?"green":ReduxStoredData?.risk==="Low"?"#98fb98":ReduxStoredData?.risk==="Moderate"?"yellow":ReduxStoredData?.risk==="High"?"red":null}`}}>
             {ReduxStoredData?.risk?ReduxStoredData?.risk:"No"}
