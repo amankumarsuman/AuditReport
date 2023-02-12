@@ -607,14 +607,15 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
 
         <div style={{ paddingTop: "50px" }}>
           <p style={{ fontSize: "20px",width:"80%",margin:"auto" }}>
-          {ReduxStoredData?.companyName} is a hyper-deflationary BEP-20 native token of the {ReduxStoredData?.companyName}
+          {/* {ReduxStoredData?.companyName} is a hyper-deflationary BEP-20 native token of the {ReduxStoredData?.companyName}
             Ecosystem, that opens numerous passive income streams & benefits to
             holders by offering BTC Reflection, Staking Rewards, Monthly Diamond
             Hand Rewards, Quarterly Revenue Distribution, BUSD Credit Facility,
             Investment Insurance at ProPAD, Farming & Cashback at ProDEX,
             several DeFi benefits to 8Bit NFT holders with flawless NFT trading
             at own NFT Marketplace, transparency & integrity through DAO
-            Governance and many more.
+            Governance and many more. */}
+            {ReduxStoredData?.description}
           </p>
         </div>
 
