@@ -1,0 +1,34 @@
+.divOne{
+    background-image: url(../assets/background1.png);
+    /* border: 1px solid red; */
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    /* width: 680px; */
+    width: 690px;
+    /* margin: auto; */
+    background-size: cover;
+    padding-bottom: 100px;
+    min-height:800px;
+    /* height: 100vh; */
+
+}
+.backgroundTwo{
+    background-image: url(../assets/15.png);
+    /* border: 1px solid red; */
+    background-repeat: no-repeat;
+    width: 100%;
+    /* width: 690px; */
+    background-size: contain;
+    padding-bottom: 100px;
+    /* page-break-before: always; */
+    height:1700px;
+
+}
+/* .overview{
+    background-image: url(../assets/two.png);
+    width: 690px;
+    min-height:800px;
+    background-size: cover;
+
+    
+} */

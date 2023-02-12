@@ -1,0 +1,44 @@
+.commercial {
+    border-radius: 10px;
+    background: #FCE081;
+width: 25%;
+text-align: center;
+color: #A75800;
+}
+.commercial:hover{
+    background-color: #ffca6e;
+    cursor: pointer;
+}
+.informational{
+    border-radius: 10px;
+        background: #C4E5FE;
+        width: 25%;
+        text-align: center;
+        color: #006DCA;
+}
+.informational:hover{
+    background-color: #61c6ff;
+        cursor: pointer;
+}
+.navigational{
+    border-radius: 10px;
+        background: #EDD9FF;
+        width: 25%;
+        text-align: center;
+        color: #8649E1;
+}
+.navigational:hover{
+    background-color: #c59dfa;
+        cursor: pointer;
+}
+.transac{
+    border-radius: 10px;
+        background: #9EF2C9;
+        width: 25%;
+        text-align: center;
+        color: #007C65;
+}
+.transac:hover{
+    background-color: #11d6a6;
+        cursor: pointer;
+}

@@ -1,0 +1,19 @@
+.paperDiv {
+    background-color: #F8F8F8;
+    margin: 20px 5%;
+    padding: 0.3em;
+    display: flex;
+    font-size: 30px;
+    justify-content: space-between;
+
+
+}
+
+.mainContainer {
+
+    border: 1px solid black;
+    width: 30%;
+    margin: auto;
+
+
+}
