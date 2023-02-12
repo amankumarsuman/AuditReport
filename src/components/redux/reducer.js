@@ -25,7 +25,7 @@ export const auditReportReducer = (state = init, action) => {
           ...state,
           auditData:data,
           logo:logo,
-          socialMediLogo:socialMediaPic,
+          socialMediaPic:socialMediaPic,
           inheritancePic:inheritancePic
           
         }

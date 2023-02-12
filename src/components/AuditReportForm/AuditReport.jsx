@@ -353,7 +353,7 @@ function AuditReport() {
               pdf.addPage();
             } else {
                 console.log("downloading")
-              pdf.save("download.pdf");
+              pdf.save(`${ReduxStoredData?.companyName} Audit Report`);
             }
           });
         });
@@ -661,7 +661,7 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
             Social Media Profiles
           </p>
 
-          <p style={{ fontWeight: "bold", paddingTop: "0" }}>{ReduxStoredData?.companyName}</p>
+          <p style={{ fontWeight: "bold", paddingTop: "0",color:"black",fontSize:"50px",marginTop:"-10px" }}>{ReduxStoredData?.companyName}</p>
 
           <div>
 
@@ -731,6 +731,8 @@ socialMediaPic &&
             color: "#454545",
             textAlign: "center",
             // marginTop:"150px",
+            width:"90%",
+            margin:"auto"
           }}
         >
           <p
@@ -740,8 +742,8 @@ socialMediaPic &&
               textAlign: "center",
               fontWeight: "bold",
               // lineHeight: "1px",
-              paddingLeft: "100px",
-              paddingRight: "60px",
+             
+              marginTop:"100px"
             }}
           >
             It’s always good to check the social profiles of the project, before
@@ -962,12 +964,12 @@ socialMediaPic &&
         </div>
       </div>
 </div>
-<div style={{width:"650px",height:"100%"}}>
+{/* <div style={{width:"650px",height:"100%"}}>
 
       <div id="page" className={styles.backgroundTwoimg1}>
         <img style={{ marginTop: "100px" }} src="/1.png" alt="imh1" />
       </div>
-      </div>
+      </div> */}
 <div style={{width:"650px",height:"100%"}}>
 
       <div id="page" className={styles.backgroundTwo}>

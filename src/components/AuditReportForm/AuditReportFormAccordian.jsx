@@ -144,12 +144,13 @@ export default function CustomizedAccordions() {
     const [image, setImage] = useState(null);
     const [socialMediaPic, setSocialMediaPic] = useState(null);
     const [inheritancePic, setInheritancePic] = useState(null);
-
+console.log(socialMediaPic,"check soccial")
 
     const handleImage = (e) => {
         setImage(e.target.files[0]);
     };
     const handleSocialMediaPic = (e) => {
+        console.log(e.target.files[0])
         setSocialMediaPic(e.target.files[0]);
     };
     const handleInheritanceaPic = (e) => {
@@ -477,7 +478,7 @@ export default function CustomizedAccordions() {
           </Typography> */}
 
                     <Paper sx={{ padding: "15px" }}>
-                        <Grid sx={{ width: "60%", margin: "auto" }}>
+                        <Grid container spacing={2}>
 
                             <Grid item xs={12} md={3}>
                                 <Box sx={{ width: 80 }}>
@@ -736,7 +737,7 @@ export default function CustomizedAccordions() {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Paper sx={{ padding: "15px" }}>
-                        <Grid container spacing={2} sx={{ width: "60%", margin: "auto" }}>
+                        <Grid container spacing={2} >
 
                             <Grid item xs={12} md={3}>
                                 <Box sx={{ width: 80 }}>
