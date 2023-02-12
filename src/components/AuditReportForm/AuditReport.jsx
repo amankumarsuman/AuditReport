@@ -563,6 +563,10 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
 
 </div>
       </div>
+
+
+      {ReduxStoredData?.description?
+    
 <div style={{width:"650px",height:"100%"}}>
 
       <div id="page" className={styles.backgroundTwo}>
@@ -637,7 +641,9 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
         }
         </div>
       </div>
-</div>
+</div>:null
+    }
+{ReduxStoredData?.weblink?
 
 <div style={{width:"650px",height:"100%"}}>
 
@@ -761,7 +767,11 @@ socialMediaPic &&
           </p>
         </div>
       </div>
-</div>
+</div>:null
+}
+
+{ReduxStoredData?.tokenName?
+
 <div style={{width:"650px",height:"100%"}}>
 
       <div id="page" className={styles.backgroundTwo}>
@@ -963,7 +973,8 @@ socialMediaPic &&
           </Grid>
         </div>
       </div>
-</div>
+</div>:null
+}
 {/* <div style={{width:"650px",height:"100%"}}>
 
       <div id="page" className={styles.backgroundTwoimg1}>
@@ -2615,6 +2626,7 @@ socialMediaPic &&
 
 
 {/* audit summary */}
+{ReduxStoredData?.tool1?
 
 <div style={{width:"650px",height:"100%"}}>
 
@@ -2740,7 +2752,11 @@ socialMediaPic &&
         </div>
       </div>
 
-</div>
+</div>:null
+}
+
+{ReduxStoredData?.featureHead1?
+
 <div style={{width:"650px",height:"100%"}}>
 
 
@@ -2825,7 +2841,8 @@ socialMediaPic &&
           </p>
         </div>
       </div>
-</div>
+</div>:null
+}
 
 
       <div id="page">
@@ -2833,6 +2850,9 @@ socialMediaPic &&
       </div>
 
 {/* finding */}
+{(ReduxStoredData?.highriskfinding || ReduxStoredData?.mediumriskfinding ||
+ReduxStoredData?.lowriskfinding || ReduxStoredData?.suggestion || ReduxStoredData?.gas)?
+
 
       <div style={{width:"650px",height:"100%"}}>
 
@@ -2927,7 +2947,9 @@ ReduxStoredData?.gas?
         
       </div>
 
-</div>
+</div>:null
+
+}
 
       <div id="page">
 <img width="43%" height="100%" src={auditMethodology} />
