@@ -325,8 +325,14 @@ import overview from "../assets/two.png"
 function AuditReport() {
   const ReduxStoredData = useSelector((state) => state.publisher?.auditData);
   const logo = useSelector((state) => state.publisher?.logo);
+  const socialMediaPic = useSelector((state) => state.publisher?.socialMediaPic);
   const [companyName, setCompanyName] = useState(ReduxStoredData);
-    const exportPdf = () => {
+    
+
+
+
+  console.log(socialMediaPic,"check")
+  const exportPdf = () => {
         const elements = document.querySelectorAll('#page');
         const pdf = new jsPDF('p', 'mm', 'a4');
     
@@ -611,7 +617,7 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
         </div>
 
         <div>
-            {ReduxStoredData?.logo?
+            {logo &&
             
             <img
               style={{
@@ -624,7 +630,7 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
               }}
                src={URL.createObjectURL(logo)}
               alt="img"
-            />:null
+            />
         }
         </div>
       </div>
@@ -655,11 +661,24 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
           <p style={{ fontWeight: "bold", paddingTop: "0" }}>{ReduxStoredData?.companyName}</p>
 
           <div>
+
+            {/* {
+socialMediaPic &&
             <img
               style={{ width: "70%", height: "70%" }}
-              src="https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              src={URL.createObjectURL(socialMediaPic)}
+
               alt="img"
             />
+            } */}
+
+{socialMediaPic && (
+            <img
+              style={{ height: "300px", width: "300px", borderRadius: "50%" }}
+              src={URL.createObjectURL(socialMediaPic)}
+              alt="Uploaded Image"
+            />
+          )}
           </div>
         </div>
         <div style={{ marginLeft: "70px" }}>
@@ -766,16 +785,36 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
             // sx={{ paddingLeft: "100px", paddingRight: "100px" }}
           >
             <Grid item xs={6}>
-              <TextField
+              {/* <TextField
                 fullWidth
                 label="Token Name"
                 value={ReduxStoredData?.tokenName}
                 variant="standard"
-              />
+              /> */}
+                <TextField
+              
+          id="outlined-number"
+          label="Token Name"
+        //   type="number"
+          value={ReduxStoredData?.tokenName?.toUpperCase()}
+          InputLabelProps={{
+            shrink: true,
+            style: {fontSize:"20px",fontWeight:"bold"}
+          }}
+          inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
+          variant="standard"
+
+        />
             </Grid>
             <Grid item xs={6}>
               <TextField
-                fullWidth
+          id="outlined-number"
+          InputLabelProps={{
+            shrink: true,
+            style: {fontSize:"20px",fontWeight:"bold"}
+          }}
+          inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
+                // fullWidth
                 label="Symbol"
                 value={ReduxStoredData?.tokenSymbol}
                 variant="standard"
@@ -783,15 +822,25 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
             </Grid>
             <Grid item xs={6}>
               <TextField
-                fullWidth
+                id="outlined-number"
+                InputLabelProps={{
+                    shrink: true,
+                    style: {fontSize:"20px",fontWeight:"bold"}
+                  }}
+                  inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
                 label="Network"
-                value={ReduxStoredData?.network}
+                value={ReduxStoredData?.network?.toUpperCase()}
                 variant="standard"
               />
             </Grid>
             <Grid item xs={6}>
               <TextField
-                fullWidth
+                 id="outlined-number"
+                 InputLabelProps={{
+                     shrink: true,
+                     style: {fontSize:"20px",fontWeight:"bold"}
+                   }}
+                   inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
                 label="Language"
                 value={ReduxStoredData?.language}
                 variant="standard"
@@ -799,7 +848,13 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
             </Grid>
             <Grid item xs={12}>
               <TextField
-                fullWidth
+                 id="outlined-number"
+                 fullWidth
+                 InputLabelProps={{
+                     shrink: true,
+                     style: {fontSize:"20px",fontWeight:"bold"}
+                   }}
+                   inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
                 label="Contract Address (Verified)"
                 value={ReduxStoredData?.address}
                 variant="standard"
@@ -807,15 +862,25 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
             </Grid>
             <Grid item xs={6}>
               <TextField
-                fullWidth
+                 id="outlined-number"
+                 InputLabelProps={{
+                     shrink: true,
+                     style: {fontSize:"20px",fontWeight:"bold"}
+                   }}
+                   inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
                 label="Token Type"
-                value={ReduxStoredData?.tokenType}
+                value={ReduxStoredData?.tokenType?.toUpperCase()}
                 variant="standard"
               />
             </Grid>
             <Grid item xs={6}>
               <TextField
-                fullWidth
+                id="outlined-number"
+                InputLabelProps={{
+                    shrink: true,
+                    style: {fontSize:"20px",fontWeight:"bold"}
+                  }}
+                  inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
                 label="Total Supply"
                 value={ReduxStoredData?.totalSupply}
                 variant="standard"
@@ -823,7 +888,12 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
             </Grid>
             <Grid item xs={6}>
               <TextField
-                fullWidth
+                 id="outlined-number"
+                 InputLabelProps={{
+                     shrink: true,
+                     style: {fontSize:"20px",fontWeight:"bold"}
+                   }}
+                   inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
                 label="Compiler"
                 value={ReduxStoredData?.compiler}
                 variant="standard"
@@ -831,6 +901,12 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
             </Grid>
             <Grid item xs={6}>
               <TextField
+               id="outlined-number"
+               InputLabelProps={{
+                   shrink: true,
+                   style: {fontSize:"20px",fontWeight:"bold"}
+                 }}
+                 inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
                 fullWidth
                 label="Optimization Enabled"
                 value={ReduxStoredData?.optimizationEnabled}
@@ -839,6 +915,12 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
             </Grid>
             <Grid item xs={12}>
               <TextField
+               id="outlined-number"
+               InputLabelProps={{
+                   shrink: true,
+                   style: {fontSize:"20px",fontWeight:"bold"}
+                 }}
+                 inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
                 fullWidth
                 label="Contract SHA-256 Checksum:"
                 value={ReduxStoredData?.sha256Checksum}
@@ -847,7 +929,13 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
             </Grid>
             <Grid item xs={12}>
               <TextField
+                id="outlined-number"
                 fullWidth
+                InputLabelProps={{
+                    shrink: true,
+                    style: {fontSize:"20px",fontWeight:"bold"}
+                  }}
+                  inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
                 label="Owner's Wallet"
                 value={ReduxStoredData?.ownerWallet}
                 variant="standard"
@@ -856,6 +944,12 @@ style={{marginLeft:"300px",paddingTop:"500px"}}
             <Grid item xs={12}>
               <TextField
                 fullWidth
+                id="outlined-number"
+                InputLabelProps={{
+                    shrink: true,
+                    style: {fontSize:"20px",fontWeight:"bold"}
+                  }}
+                  inputProps={{style: {fontSize: "20px",fontWeight:"bold"}}}
                 label="Deployer's Wallet"
                 value={ReduxStoredData?.deployerWallet}
                 variant="standard"

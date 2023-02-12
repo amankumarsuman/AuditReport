@@ -222,7 +222,7 @@ function AuditReportForm() {
                             label="Web Link"
                             value={input?.weblink}
                             onChange={handleChange}
-                            
+
                         />
                     </Grid>
                     <Grid item xs={3} md={3}>
@@ -1052,7 +1052,7 @@ function AuditReportForm() {
                         <TextField
                             name="highriskfinding"
                             label="High Risk Findings"
-                            onchange={handleChange}
+                            onChange={handleChange}
                             value={input?.highriskfinding}
                             type="number"
                         />
@@ -1063,7 +1063,7 @@ function AuditReportForm() {
                             type="number"
                             name="lowriskfinding"
                             label="Medium Risk Findings"
-                            onchange={handleChange}
+                            onChange={handleChange}
                             value={input?.lowriskfinding}
                         />
                     </Grid>
@@ -1073,7 +1073,7 @@ function AuditReportForm() {
                             type="number"
                             name="mediumriskfinding"
                             label="Low Risk Findings"
-                            onchange={handleChange}
+                            onChange={handleChange}
                             value={input?.mediumriskfinding}
                         />
                     </Grid>
@@ -1083,7 +1083,7 @@ function AuditReportForm() {
                             type="number"
                             name="suggestion"
                             label="Suggestions & discussion"
-                            onchange={handleChange}
+                            onChange={handleChange}
                             value={input?.suggestion}
                         />
                     </Grid>
@@ -1093,7 +1093,7 @@ function AuditReportForm() {
                             type="number"
                             name="gas"
                             label="Gas Optimizations"
-                            onchange={handleChange}
+                            onChange={handleChange}
                             value={input?.gas}
                         />
                     </Grid>
