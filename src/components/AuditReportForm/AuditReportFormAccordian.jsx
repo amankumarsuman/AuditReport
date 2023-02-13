@@ -415,6 +415,222 @@ export default function CustomizedAccordions() {
       })
     );
   };
+  const handleAdd = () => {
+    const {
+      companyName,
+      logo,
+      auditResult,
+      kyc,
+      risk,
+      description,
+      socialMediaPic,
+      weblink,
+      twitterLink,
+      telegramLink,
+      tokenName,
+      tokenType,
+      tokenSymbol,
+      network,
+      language,
+      address,
+      totalSupply,
+      compiler,
+      optimizationEnabled,
+      sha256Checksum,
+      ownerWallet,
+      deployerWallet,
+      canTakeBackOwnership,
+      ownerChangeBalance,
+      blacklist,
+      ModifyFees,
+      Proxy,
+      Whitelisted,
+      AntiWhale,
+      TradingCooldown,
+      TransferPausable,
+      CannotSellAll,
+      HiddenOwner,
+      Mint,
+      //not
+      designLogic,
+      CompilerWarnings,
+      PrivateUserDataLeak,
+      TimestampDependence,
+      IntegerOverFlowAndUnderFlow,
+      //not till here
+      RaceConditions,
+      DelayInDataDelivery,
+      OracleCalls,
+      FrontRunning,
+      revert,
+      ecoModel,
+      blockGasLimit,
+      methodExePermission,
+      exchangeRateImpact,
+      maliciousLog,
+      scoping,
+      storagePointer,
+      arithmatic,
+      racecond,
+      zeppelinModule,
+      fallbackFn,
+      inheritancePic,
+      highriskfinding,
+      lowriskfinding,
+      mediumriskfinding,
+      suggestion,
+      gas,
+      featureHead1,
+      featureHead2,
+      featureHead3,
+      featureHead4,
+      featureDesc1,
+      featureDesc2,
+      featureDesc3,
+      featureDesc4,
+      manualReview,
+      tool1,
+      tool2,
+      tool3,
+      tool4,
+      tool5,
+      tool6,
+      highriskDetails,
+      lowriskDetails,
+      mediumriskDetails,
+      suggestionDetails,
+      gasDetails,
+    } = input;
+
+    axios
+      .patch(`https://expeauditreport.onrender.com/api/auditReport/add`, {
+        companyName,
+        logo,
+        auditResult,
+        kyc,
+        risk,
+        description,
+        socialMediaPic,
+        weblink,
+        twitterLink,
+        telegramLink,
+        tokenName,
+        tokenType,
+        tokenSymbol,
+        network,
+        language,
+        address,
+        totalSupply,
+        compiler,
+        optimizationEnabled,
+        sha256Checksum,
+        ownerWallet,
+        deployerWallet,
+        canTakeBackOwnership,
+        ownerChangeBalance,
+        blacklist,
+        ModifyFees,
+        Proxy,
+        Whitelisted,
+        AntiWhale,
+        TradingCooldown,
+        TransferPausable,
+        CannotSellAll,
+        HiddenOwner,
+        Mint,
+        //not
+        designLogic,
+        CompilerWarnings,
+        PrivateUserDataLeak,
+        TimestampDependence,
+        IntegerOverFlowAndUnderFlow,
+        //not till here
+        RaceConditions,
+        DelayInDataDelivery,
+        OracleCalls,
+        FrontRunning,
+        revert,
+        ecoModel,
+        blockGasLimit,
+        methodExePermission,
+        exchangeRateImpact,
+        maliciousLog,
+        scoping,
+        storagePointer,
+        arithmatic,
+        racecond,
+        zeppelinModule,
+        fallbackFn,
+        inheritancePic,
+        highriskfinding,
+        lowriskfinding,
+        mediumriskfinding,
+        suggestion,
+        gas,
+        featureHead1,
+        featureHead2,
+        featureHead3,
+        featureHead4,
+        featureDesc1,
+        featureDesc2,
+        featureDesc3,
+        featureDesc4,
+        manualReview,
+        tool1,
+        tool2,
+        tool3,
+        tool4,
+        tool5,
+        tool6,
+        highriskDetails,
+        lowriskDetails,
+        mediumriskDetails,
+        suggestionDetails,
+        gasDetails,
+      })
+      .then((res) => {
+        if (res?.data?.success) {
+          navigate("/");
+          dispatch(
+            individualPublisherDataEditedSuccessfully({ isEditData: false })
+          );
+          alert("Record Added successfully");
+        }
+        console.log(res);
+        if (!res?.data.success) {
+          // <CustomizedDialogs
+          //   open={showDialog}
+          //   setShowDialog={setShowDialog}
+          //   err={res?.data?.message}
+          // />;
+          console.log("error", res);
+          alert("res?.data?.message");
+          // setShowDialog(true);
+        }
+      })
+      .catch((err) => {
+        if (!err?.response?.data?.success) {
+          // setShowDialog(true);
+          // <CustomizedDialogs
+          //   showDialog={true}
+          //   setShowDialog={setShowDialog}
+          //   err={err?.response?.data?.message}
+          // />;
+          alert(err?.response?.data?.message);
+        }
+        // console.log("err", err);
+        // console.log("err", err?.response?.data?.message);
+      });
+
+    dispatch(
+      setAuditForm({
+        data: input,
+        logo: image,
+        inheritancePic: inheritancePic,
+        socialMediaPic: socialMediaPic,
+      })
+    );
+  };
 
   return (
     <div>
@@ -1661,13 +1877,23 @@ export default function CustomizedAccordions() {
 
       <Grid container spacing={2}>
         <Grid item xs={3} md={3}>
-          <Button
-            sx={{ padding: "5px" }}
-            variant="contained"
-            onClick={handleSubmit}
-          >
-            SUBMIT
-          </Button>
+          {isEdit ? (
+            <Button
+              sx={{ padding: "5px" }}
+              variant="contained"
+              onClick={handleSubmit}
+            >
+              Update
+            </Button>
+          ) : (
+            <Button
+              sx={{ padding: "5px" }}
+              variant="contained"
+              onClick={handleAdd}
+            >
+              Submit
+            </Button>
+          )}
         </Grid>
       </Grid>
 
