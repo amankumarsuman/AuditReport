@@ -90,6 +90,10 @@ export default function CustomizedTables() {
         }
       });
   };
+
+  const handleAdd = () => {
+    navigate("/auditform");
+  };
   return (
     <>
       <div
@@ -99,6 +103,7 @@ export default function CustomizedTables() {
           margin: "auto",
           marginTop: "2em",
         }}
+        onClick={handleAdd}
       >
         <AddBoxIcon sx={{ fontSize: "50px", marginRight: "1%" }} />
       </div>
