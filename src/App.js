@@ -1,11 +1,14 @@
+import { Route, Routes } from "react-router-dom";
 import AuditReport from "./components/AuditReportForm/AuditReport";
 import AuditReportForm from "./components/AuditReportForm/AuditReportForm";
 import CustomizedAccordions from "./components/AuditReportForm/AuditReportFormAccordian";
 import GenericPdfDownloader from "./components/AuditReportForm/PrintPdf";
 // import { Example } from "./components/AuditReportForm/PrintPdf";
 import TestReport from "./components/AuditReportForm/TestReport";
+import CustomizedTables from "./components/auditTable/AuditTable";
 import DragAndDrop from "./components/dragAndDrop/DragAndDrop";
 import LeftContainer from "./components/leftContainer/LeftContainer";
+import ResponsiveAppBar from "./components/navbar/Navbar";
 
 function App() {
   return (
@@ -14,12 +17,18 @@ function App() {
       <DragAndDrop /> */}
 
       {/* <AuditReportForm/> */}
-      <CustomizedAccordions/>
-{/* <TestReport/> */}
-{/* <TestReport/> */}
-      <br/>
+      <ResponsiveAppBar />
 
-      <AuditReport/>
+      <Routes>
+        <Route exact path="/" element={<CustomizedTables />} />
+        <Route exact path="/auditform" element={<CustomizedAccordions />} />
+      </Routes>
+      {/* <CustomizedAccordions/> */}
+      {/* <TestReport/> */}
+      {/* <TestReport/> */}
+      <br />
+
+      {/* <AuditReport/> */}
     </>
   );
 }
