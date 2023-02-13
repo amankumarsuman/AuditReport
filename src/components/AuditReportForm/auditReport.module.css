@@ -24,6 +24,16 @@
     height:1700px;
 
 }
+.laptop{
+    background-image: url(../assets/Laptop.png);
+    /* border: 1px solid red; */
+    background-size: contain;
+    background-repeat: no-repeat;
+text-align: center;
+    width: 90%;
+    margin-left: 50px;
+height: 400px;
+}
 /* .overview{
     background-image: url(../assets/two.png);
     width: 690px;
@@ -32,3 +42,8 @@
 
     
 } */
+
+.overviewDesc{
+    font-family: 'Century Gothic', sans-serif !important;
+    /* font-weight: bold; */
+}

@@ -320,13 +320,17 @@ function AuditReport() {
   const ReduxStoredData = useSelector((state) => state.publisher?.auditData);
   const logo = useSelector((state) => state.publisher?.logo);
   const socialMediaPic = useSelector(
-    (state) => state.publisher?.socialMediaPic
+    (state) => state.publisher?.socialMediaLogo
   );
   const inheritancePic = useSelector(
     (state) => state.publisher?.inheritancePic
   );
   const [companyName, setCompanyName] = useState(ReduxStoredData);
 
+
+  const handleNavigate = (link) => {
+    window.open(link, "_blank", "noopener,noreferrer");
+  };
   //   console.log(socialMediaPic,"check")
   // const exportPdf = () => {
   //       const elements = document.querySelectorAll('#page');
@@ -376,7 +380,11 @@ function AuditReport() {
 
   return (
     <>
-      <div style={{ width: "100%" }} id="capture">
+      <div style={{ width: "100%",
+    
+    fontFamily: "'Century Gothic', sans-serif",
+    
+    }} id="capture">
         {/* <div style={{width:"83%",height:"100%"}} id="capture"> */}
 
         <div id="page" className={styles.divOne}>
@@ -464,17 +472,22 @@ function AuditReport() {
               }}
             >
               {/* <h1 style={{paddingTop:"110px"}}>OVERVIEW</h1> */}
-              <h1 style={{ paddingTop: "100px" }}>OVERVIEW</h1>
+              <h1
+              className={styles.overviewDesc}
+              
+              style={{ paddingTop: "100px" }}>OVERVIEW</h1>
             </div>
             <div
               style={{
-                fontSize: "25px",
+                fontSize: "20px",
                 textAlign: "center",
                 // color: "#343434",
                 color: "#41484E",
                 width: "90%",
                 margin: "auto",
+                // fontfamily: 'Century Gothic'
               }}
+              className={styles.overviewDesc}
             >
               The Expelee team has performed a line-by-line manual analysis and
               automated review of the smart contract. The smart contract was
@@ -496,22 +509,25 @@ function AuditReport() {
                     border: "1px solid white",
                     background: "#4A74ED",
                     textAlign: "center",
-                    marginBottom: "15px",
+                    marginBottom: "5px",
                     marginRight: "10px",
                     width: "50%",
                     borderRadius: "20px 0px 0px 0px",
-                    padding: "5px",
+                    padding: "10px",
                   }}
                 >
                   <span>
-                    <LibraryAddIcon sx={{ color: "white" }} />
+                    <LibraryAddIcon sx={{ color: "white",fontSize:"20px" }} />
                   </span>
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       marginLeft: "10px",
+                      fontWeight:"bold"
                     }}
+              className={styles.overviewDesc}
+
                   >
                     Audit Result
                   </span>
@@ -522,16 +538,19 @@ function AuditReport() {
                     width: "50%",
                     background: "#4A74ED",
                     textAlign: "center",
-                    marginBottom: "15px",
+                    marginBottom: "5px",
                     width: "50%",
                     borderRadius: "0px 20px 0px 0px",
+                    padding: "10px",
+
                   }}
                 >
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "25px",
                       marginLeft: "10px",
+                      fontFamily: "'Century Gothic', sans-serif" 
                     }}
                   >
                     {ReduxStoredData?.auditResult ? (
@@ -560,21 +579,24 @@ function AuditReport() {
                     border: "1px solid white",
                     background: "#4A74ED",
                     textAlign: "center",
-                    marginBottom: "15px",
+                    marginBottom: "5px",
                     marginRight: "10px",
                     width: "50%",
                     borderRadius: "0px 0px 0px 0px",
-                    padding: "5px",
+                    padding: "10px",
                   }}
                 >
                   <span>
-                    <AddModeratorIcon sx={{ color: "white" }} />
+                    <AddModeratorIcon sx={{ color: "white",fontSize:"20px" }} />
                   </span>
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       marginLeft: "10px",
+                      fontFamily: "'Century Gothic', sans-serif",
+                      fontWeight:"bold" 
+
                     }}
                   >
                     KYC Verification
@@ -586,16 +608,20 @@ function AuditReport() {
                     width: "50%",
                     background: "#4A74ED",
                     textAlign: "center",
-                    marginBottom: "15px",
+                    marginBottom: "5px",
                     width: "50%",
                     borderRadius: "0px 0px 0px 0px",
+                    padding: "10px",
+
                   }}
                 >
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       marginLeft: "10px",
+                      fontFamily: "'Century Gothic', sans-serif" 
+
                     }}
                   >
                     {ReduxStoredData?.kyc ? (
@@ -629,17 +655,23 @@ function AuditReport() {
                     marginRight: "10px",
                     width: "50%",
                     borderRadius: "0px 0px 0px 20px",
-                    padding: "5px",
+                    padding: "10px",
+                    
                   }}
                 >
                   <span>
-                    <DateRangeIcon sx={{ color: "white" }} />
+                    <DateRangeIcon sx={{ color: "white",fontSize:"20px" }} />
                   </span>
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       marginLeft: "10px",
+                      fontFamily: "'Century Gothic', sans-serif",
+                      fontWeight:"bold",
+
+
+
                     }}
                   >
                     Date
@@ -654,6 +686,7 @@ function AuditReport() {
                     marginBottom: "15px",
                     width: "50%",
                     borderRadius: "0px 0px 20px 0px",
+                    padding:"10px"
                   }}
                 >
                   {/* <span>
@@ -662,8 +695,11 @@ function AuditReport() {
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       marginLeft: "10px",
+                      fontFamily: "'Century Gothic', sans-serif",
+fontWeight:"bold",
+
                     }}
                   >
                     {ReduxStoredData?.date
@@ -676,10 +712,12 @@ function AuditReport() {
             <div
               style={{
                 color: "black",
-                fontSize: "40px",
+                fontSize: "30px",
                 textAlign: "center",
                 marginTop: "80px",
                 fontWeight: "bold",
+                fontFamily: "'Century Gothic', sans-serif",
+
               }}
             >
               Audit Passed With{" "}
@@ -709,6 +747,8 @@ function AuditReport() {
                 textAlign: "center",
                 marginTop: "20px",
                 fontWeight: "bold",
+                fontFamily: "'Century Gothic', sans-serif",
+
               }}
             >
               - Team Expelee
@@ -740,7 +780,7 @@ function AuditReport() {
                   style={{
                     paddingTop: "160px",
                     fontWeight: "bold",
-                    fontSize: "100px",
+                    fontSize: "90px",
                   }}
                 >
                   PROJECT
@@ -761,7 +801,7 @@ function AuditReport() {
               </div>
 
               <div style={{ paddingTop: "50px" }}>
-                <p style={{ fontSize: "20px", width: "80%", margin: "auto" }}>
+                <p style={{ fontSize: "20px", width: "85%", margin: "auto" }}>
                   {/* {ReduxStoredData?.companyName} is a hyper-deflationary BEP-20 native token of the {ReduxStoredData?.companyName}
             Ecosystem, that opens numerous passive income streams & benefits to
             holders by offering BTC Reflection, Staking Rewards, Monthly Diamond
@@ -827,7 +867,9 @@ function AuditReport() {
                   {ReduxStoredData?.companyName}
                 </p>
 
-                <div>
+                <div 
+                className={styles.laptop}
+                >
                   {/* {
 socialMediaPic &&
             <img
@@ -841,9 +883,12 @@ socialMediaPic &&
                   {socialMediaPic && (
                     <img
                       style={{
-                        height: "300px",
-                        width: "300px",
-                        borderRadius: "50%",
+                        height: "190px",
+                        width: "310px",
+                        // borderRadius: "50%",
+                        // border:"1px solid red",
+                        marginTop:"97px",
+                        marginLeft:"-78px"
                       }}
                       src={URL.createObjectURL(socialMediaPic)}
                       alt="Uploaded Image"
@@ -851,40 +896,47 @@ socialMediaPic &&
                   )}
                 </div>
               </div>
-              <div style={{ marginLeft: "70px" }}>
+              <div style={{ marginLeft: "70px",marginTop:"-50px" }}>
                 {ReduxStoredData?.weblink ? (
-                  <a
-                    style={{ fontSize: "30px", fontWeight: "bold" }}
-                    href={ReduxStoredData?.weblink}
+                  <span
+                  onClick={()=>handleNavigate(ReduxStoredData?.weblink)}
+                    style={{ fontSize: "22px", fontWeight: "bold",cursor:"pointer" }}
+                    
+                    // href={ReduxStoredData?.weblink}
                   >
                     {" "}
-                    <LanguageIcon sx={{ color: "blue" }} />{" "}
+                    <LanguageIcon sx={{ color: "blue", }} />{" "}
+                    <span >
+
                     {ReduxStoredData?.weblink}{" "}
-                  </a>
+                    </span>
+                  </span>
                 ) : null}
                 <br />
 
                 {ReduxStoredData?.telegramLink ? (
-                  <a
-                    style={{ fontSize: "30px", fontWeight: "bold" }}
-                    href={ReduxStoredData?.telegramLink}
+                  <span
+                  onClick={()=>handleNavigate(ReduxStoredData?.telegramLink)}
+                  style={{ fontSize: "22px", fontWeight: "bold",cursor:"pointer" }}
+                    // href={ReduxStoredData?.telegramLink}
                   >
                     {" "}
                     <TelegramIcon sx={{ color: "blue" }} />{" "}
                     {ReduxStoredData?.telegramLink}
-                  </a>
+                  </span>
                 ) : null}
                 <br />
 
                 {ReduxStoredData?.twitterLink ? (
-                  <a
-                    style={{ fontSize: "30px", fontWeight: "bold" }}
-                    href={ReduxStoredData?.twitterLink}
+                  <span
+                  onClick={()=>handleNavigate(ReduxStoredData?.twitterLink)}
+                  style={{ fontSize: "22px", fontWeight: "bold",cursor:"pointer" }}
+                    // href={ReduxStoredData?.twitterLink}
                   >
                     {" "}
                     <TwitterIcon sx={{ color: "blue" }} />{" "}
                     {ReduxStoredData?.twitterLink}
-                  </a>
+                  </span>
                 ) : null}
               </div>
 
@@ -905,7 +957,7 @@ socialMediaPic &&
                     fontWeight: "bold",
                     // lineHeight: "1px",
 
-                    marginTop: "80px",
+                    marginTop: "40px",
                   }}
                 >
                   It’s always good to check the social profiles of the project,
@@ -913,11 +965,12 @@ socialMediaPic &&
                 </p>
                 <p
                   style={{
-                    fontSize: "60px",
+                    fontSize: "40px",
                     color: "#454545",
                     textAlign: "center",
                     fontWeight: "bold",
-                    marginTop: "-20px",
+                    fontFamily:"Medium",
+                    marginTop: "-5px",
                   }}
                 >
                   -Team Expelee
@@ -951,7 +1004,7 @@ socialMediaPic &&
                 <Grid
                   container
                   spacing={2}
-                  sx={{ width: "80%", margin: "auto" }}
+                  sx={{ width: "95%", margin: "auto" }}
                   // sx={{ paddingLeft: "100px", paddingRight: "100px" }}
                 >
                   <Grid item xs={6}>
@@ -964,6 +1017,7 @@ socialMediaPic &&
                     <TextField
                       id="outlined-number"
                       label="Token Name"
+                      fullWidth
                       //   type="number"
                       value={ReduxStoredData?.tokenName?.toUpperCase()}
                       InputLabelProps={{
@@ -978,6 +1032,8 @@ socialMediaPic &&
                   </Grid>
                   <Grid item xs={6}>
                     <TextField
+                      fullWidth
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
@@ -994,6 +1050,8 @@ socialMediaPic &&
                   </Grid>
                   <Grid item xs={6}>
                     <TextField
+                      fullWidth
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
@@ -1009,6 +1067,8 @@ socialMediaPic &&
                   </Grid>
                   <Grid item xs={6}>
                     <TextField
+                      fullWidth
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
@@ -1024,6 +1084,8 @@ socialMediaPic &&
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
+                      
+
                       id="outlined-number"
                       fullWidth
                       InputLabelProps={{
@@ -1040,6 +1102,8 @@ socialMediaPic &&
                   </Grid>
                   <Grid item xs={6}>
                     <TextField
+                      fullWidth
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
@@ -1055,6 +1119,8 @@ socialMediaPic &&
                   </Grid>
                   <Grid item xs={6}>
                     <TextField
+                      fullWidth
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
@@ -1070,6 +1136,8 @@ socialMediaPic &&
                   </Grid>
                   <Grid item xs={6}>
                     <TextField
+                      fullWidth
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
@@ -1085,6 +1153,8 @@ socialMediaPic &&
                   </Grid>
                   <Grid item xs={6}>
                     <TextField
+                      fullWidth
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
@@ -1093,7 +1163,7 @@ socialMediaPic &&
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
                       }}
-                      fullWidth
+                     
                       label="Optimization Enabled"
                       value={ReduxStoredData?.optimizationEnabled}
                       variant="standard"
@@ -1107,7 +1177,7 @@ socialMediaPic &&
                         style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "16px", fontWeight: "bold" },
                       }}
                       fullWidth
                       label="Contract SHA-256 Checksum:"
@@ -1173,7 +1243,7 @@ socialMediaPic &&
                   paddingTop: "100px",
                   fontWeight: "bold",
                   fontSize: "50px",
-                  color: "blue",
+                  color: "black",
                 }}
               >
                 FUNCTION OVERVIEW
@@ -1192,7 +1262,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1209,11 +1279,11 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.canTakeBackOwnership==="Detected"?"red":"#00ff72"}`,
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -1228,7 +1298,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1245,11 +1315,12 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.ownerChangeBalance==="Detected"?"red":"#00ff72"}`,
+
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -1264,7 +1335,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1281,11 +1352,12 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.blacklist==="Detected"?"red":"#00ff72"}`,
+
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -1300,7 +1372,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1317,11 +1389,12 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.ModifyFees==="Detected"?"red":"#00ff72"}`,
+
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -1336,7 +1409,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1353,11 +1426,12 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.Proxy==="Detected"?"red":"#00ff72"}`,
+
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -1372,7 +1446,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1389,11 +1463,12 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.Whitelisted==="Detected"?"red":"#00ff72"}`,
+
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -1408,7 +1483,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1425,11 +1500,12 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.AntiWhale==="Detected"?"red":"#00ff72"}`,
+
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -1444,7 +1520,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1461,11 +1537,12 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.TradingCooldown==="Detected"?"red":"#00ff72"}`,
+
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -1480,7 +1557,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1497,11 +1574,12 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.TransferPausable==="Detected"?"red":"#00ff72"}`,
+
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -1516,7 +1594,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1533,11 +1611,12 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.CannotSellAll==="Detected"?"red":"#00ff72"}`,
+
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -1552,7 +1631,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1569,11 +1648,12 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.HiddenOwner==="Detected"?"red":"#00ff72"}`,
+
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -1588,7 +1668,7 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#0096FF",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
@@ -1605,11 +1685,12 @@ socialMediaPic &&
                   item
                   xs={6}
                   sx={{
-                    backgroundColor: "black",
+                    backgroundColor: "#343434",
                     fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.Mint==="Detected"?"red":"#00ff72"}`,
+
                     padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -3025,7 +3106,7 @@ socialMediaPic &&
         ) : null}
 
         <div id="page">
-          <img width="43%" height="100%" src={manualAudit} />
+          <img width="42%" height="100%" src={manualAudit} />
         </div>
 
         {/* finding */}
@@ -3113,17 +3194,17 @@ socialMediaPic &&
         ) : null}
 
         <div id="page">
-          <img width="43%" height="100%" src={auditMethodology} />
+          <img width="42%" height="100%" src={auditMethodology} />
         </div>
 
         <div id="page">
-          <img width="43%" height="100%" src={third} />
+          <img width="42%" height="100%" src={third} />
         </div>
         <div id="page">
-          <img width="43%" height="100%" src={fourth} />
+          <img width="42%" height="100%" src={fourth} />
         </div>
         <div id="page">
-          <img width="43%" height="100%" src={second} />
+          <img width="42%" height="100%" src={second} />
         </div>
       </div>
       <Button variant="contained" onClick={exportPdf}>

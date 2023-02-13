@@ -3,7 +3,7 @@ import { AUDIT_REPORT_TYPES } from "./type";
 const init = {
   auditData: {},
   logo: null,
-  socialMediLogo: null,
+  socialMediaLogo: null,
   inheritancePic: null,
   isNew: false,
   isLoading: false,
@@ -18,12 +18,12 @@ export const auditReportReducer = (state = init, action) => {
   switch (type) {
     case AUDIT_REPORT_TYPES.SET_AUDIT_REPORT:
       const { data, logo, socialMediaPic, inheritancePic } = payload;
-
+console.log(socialMediaPic)
       return {
         ...state,
         auditData: data,
         logo: logo,
-        socialMediaPic: socialMediaPic,
+        socialMediaLogo: socialMediaPic,
         inheritancePic: inheritancePic,
       };
     case AUDIT_REPORT_TYPES.SET_AUDIT_REPORT_INDIVIDUAL_DATA:
