@@ -161,6 +161,15 @@ export default function CustomizedAccordions() {
     mediumriskDetails: "",
     suggestionDetails: "",
     gasDetails: "",
+    summary1:"",
+    summary2:"",
+    summary3:"",
+    summary4:"",
+    summary5:"",
+    summary6:"",
+    summary7:"",
+    summary8:"",
+    
   };
 
   // const [input, setInput] = useState(init);
@@ -281,6 +290,14 @@ export default function CustomizedAccordions() {
       mediumriskDetails,
       suggestionDetails,
       gasDetails,
+      summary1,
+      summary2,
+      summary3,
+      summary4,
+      summary5,
+      summary6,
+      summary7,
+      summary8,
     } = input;
 
     axios
@@ -370,6 +387,14 @@ export default function CustomizedAccordions() {
           mediumriskDetails,
           suggestionDetails,
           gasDetails,
+          summary1,
+          summary2,
+          summary3,
+          summary4,
+          summary5,
+          summary6,
+          summary7,
+          summary8,
         }
       )
       .then((res) => {
@@ -1868,6 +1893,93 @@ export default function CustomizedAccordions() {
                   label="Tools Used Six"
                   onChange={handleChange}
                   value={input?.tool6}
+                />
+              </Grid>
+            </Grid>
+          </Paper>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion
+        expanded={expanded === "panel9"}
+        onChange={handleChangePanel("panel9")}
+      >
+        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+          <Typography sx={{ color: "green", fontWeight: "bold" }}>
+           SUMMARY
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          {/* <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+            sit amet blandit leo lobortis eget.
+          </Typography> */}
+          <Paper sx={{ padding: "15px" }}>
+            <Grid container spacing={2} sx={{ width: "60%", margin: "auto" }}>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary1"
+                  label="Summary 1"
+                  onChange={handleChange}
+                  value={input?.summary1}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary2"
+                  label="Summary 2"
+                  onChange={handleChange}
+                  value={input?.summary2}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary3"
+                  label="Summary 3"
+                  onChange={handleChange}
+                  value={input?.summary3}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary4"
+                  label="Summary 4"
+                  onChange={handleChange}
+                  value={input?.summary3}
+                />
+              </Grid>
+            
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary5"
+                  label="Summary 5"
+                  onChange={handleChange}
+                  value={input?.summary5}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary6"
+                  label="Summary 6"
+                  onChange={handleChange}
+                  value={input?.summary6}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary7"
+                  label="Summary 7"
+                  onChange={handleChange}
+                  value={input?.summary7}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary8"
+                  label="Summary 8"
+                  onChange={handleChange}
+                  value={input?.summary8}
                 />
               </Grid>
             </Grid>

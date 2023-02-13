@@ -3024,6 +3024,93 @@ socialMediaPic &&
           </div>
         ) : null}
 
+
+{/* summary */}
+
+{ReduxStoredData?.summary1 ? (
+          <div style={{ width: "650px", height: "100%" }}>
+            <div id="page" className={styles.backgroundTwo}>
+            
+              <div style={{ width: "90%", margin: "auto", marginTop: "-40px" }}>
+                <p
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "35px",
+                    paddingTop:"100px"
+                  }}
+                >
+                 Summary:
+                </p>
+        
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.summary1}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.summary2}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.summary3}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.summary4}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.summary5}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.summary6}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.summary7}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.summary8}
+                </p>
+              </div>
+           
+             
+              <div>
+             
+              </div>
+            </div>
+          </div>
+        ) : null}
+
+
+
+
         {ReduxStoredData?.featureHead1 ? (
           <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
