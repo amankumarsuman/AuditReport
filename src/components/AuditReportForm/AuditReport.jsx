@@ -807,7 +807,7 @@ fontWeight:"bold",
                 >
                   DESCRIPTION
                 </p>
-                <p style={{ fontWeight: "bold", paddingTop: "0" }}>
+                <p style={{ fontWeight: "bold",fontSize:"40px", paddingTop: "-10px" }}>
                   {ReduxStoredData?.companyName}
                 </p>
               </div>
@@ -870,10 +870,10 @@ fontWeight:"bold",
                 <p
                   style={{
                     fontWeight: "bold",
-                    paddingTop: "0",
+                    // paddingTop: "0",
                     color: "black",
                     fontSize: "50px",
-                    marginTop: "-10px",
+                    paddingTop: "-20px",
                   }}
                 >
                   {ReduxStoredData?.companyName}
@@ -908,13 +908,13 @@ socialMediaPic &&
                   )}
                 </div>
               </div>
-              <div style={{ marginLeft: "70px",marginTop:"-50px" }}>
+              <div style={{ marginLeft: "70px",marginTop:"-40px" }}>
                 {ReduxStoredData?.weblink ? (
                   <>
                   <div >
                   <span
                   onClick={()=>handleNavigate(ReduxStoredData?.weblink)}
-                    style={{ fontSize: "30px", fontWeight: "bold",cursor:"pointer",marginTop:"10px", }}
+                    style={{ fontSize: "30px", fontWeight: "bold",cursor:"pointer",marginTop:"-13px", }}
                     
                     // href={ReduxStoredData?.weblink}
                   >
@@ -951,7 +951,7 @@ socialMediaPic &&
                 <br />
 
                 {ReduxStoredData?.twitterLink ? (
-                  <div style={{marginTop:"5px"}}>
+                  <div style={{marginTop:"-13px"}}>
                   
                   
                   <span
@@ -998,7 +998,7 @@ socialMediaPic &&
                     color: "#454545",
                     textAlign: "center",
                     fontWeight: "bold",
-                    fontFamily:"Medium",
+                  
                     // marginTop: "-5px",
                   }}
                 >
