@@ -965,7 +965,7 @@ socialMediaPic &&
                 </p>
                 <p
                   style={{
-                    fontSize: "40px",
+                    fontSize: "30px",
                     color: "#454545",
                     textAlign: "center",
                     fontWeight: "bold",
