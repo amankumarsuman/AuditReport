@@ -3193,7 +3193,7 @@ socialMediaPic &&
         ) : null}
 
         <div id="page">
-          <img width="42%" height="100%" src={manualAudit} />
+          <img width="43.5%" height="100%" src={manualAudit} />
         </div>
 
         {/* finding */}
@@ -3281,17 +3281,17 @@ socialMediaPic &&
         ) : null}
 
         <div id="page">
-          <img width="42%" height="100%" src={auditMethodology} />
+          <img width="42.5%" height="100%" src={auditMethodology} />
         </div>
 
         <div id="page">
-          <img width="42%" height="100%" src={third} />
+          <img width="42.5%" height="100%" src={third} />
         </div>
         <div id="page">
-          <img width="42%" height="100%" src={fourth} />
+          <img width="42.5%" height="100%" src={fourth} />
         </div>
         <div id="page">
-          <img width="42%" height="100%" src={second} />
+          <img width="42.5%" height="100%" src={second} />
         </div>
       </div>
       <Button variant="contained" onClick={exportPdf}>
