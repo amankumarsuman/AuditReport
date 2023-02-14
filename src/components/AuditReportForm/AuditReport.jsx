@@ -553,7 +553,7 @@ function AuditReport() {
                   <span
                     style={{
                       color: "white",
-                      fontSize: "25px",
+                      fontSize: "20px",
                       marginLeft: "10px",
                       fontFamily: "'Century Gothic', sans-serif" 
                     }}
@@ -798,10 +798,11 @@ fontWeight:"bold",
                 </p>
                 <p
                   style={{
-                    paddingTop: "0",
+                    // paddingTop: 0,
                     fontWeight: "bold",
                     paddingBottom: "15px",
                     fontSize: "60px",
+                    marginTop:"-15px"
                   }}
                 >
                   DESCRIPTION
@@ -811,7 +812,7 @@ fontWeight:"bold",
                 </p>
               </div>
 
-              <div style={{ paddingTop: "50px" }}>
+              <div style={{paddingTop:"20px"}}>
                 <p style={{ fontSize: "20px", width: "85%", margin: "auto" }}>
                   {/* {ReduxStoredData?.companyName} is a hyper-deflationary BEP-20 native token of the {ReduxStoredData?.companyName}
             Ecosystem, that opens numerous passive income streams & benefits to
@@ -909,45 +910,62 @@ socialMediaPic &&
               </div>
               <div style={{ marginLeft: "70px",marginTop:"-50px" }}>
                 {ReduxStoredData?.weblink ? (
+                  <>
+                  <div >
                   <span
                   onClick={()=>handleNavigate(ReduxStoredData?.weblink)}
-                    style={{ fontSize: "22px", fontWeight: "bold",cursor:"pointer" }}
+                    style={{ fontSize: "30px", fontWeight: "bold",cursor:"pointer",marginTop:"10px", }}
                     
                     // href={ReduxStoredData?.weblink}
                   >
-                    {" "}
-                    <LanguageIcon sx={{ color: "blue", }} />{" "}
-                    <span >
+                  
+                    <LanguageIcon sx={{ color: "#4974ED", }} />{" "}
+                    </span>
+                    <span style={{fontSize:"27px",fontWeight: "bold",cursor:"pointer"}}>
 
                     {ReduxStoredData?.weblink}{" "}
                     </span>
-                  </span>
+
+                  </div>
+                 
+                  </>
+                  
                 ) : null}
                 <br />
 
                 {ReduxStoredData?.telegramLink ? (
+                  <div style={{marginTop:"5px"}}>
+
+
                   <span
                   onClick={()=>handleNavigate(ReduxStoredData?.telegramLink)}
-                  style={{ fontSize: "22px", fontWeight: "bold",cursor:"pointer" }}
+                  style={{ fontSize: "27px", fontWeight: "bold",cursor:"pointer" }}
                     // href={ReduxStoredData?.telegramLink}
                   >
                     {" "}
-                    <TelegramIcon sx={{ color: "blue" }} />{" "}
+                    <TelegramIcon sx={{ color: "#4974ED" }} />{" "}
                     {ReduxStoredData?.telegramLink}
                   </span>
+                  </div>
                 ) : null}
                 <br />
 
                 {ReduxStoredData?.twitterLink ? (
+                  <div style={{marginTop:"5px"}}>
+                  
+                  
                   <span
                   onClick={()=>handleNavigate(ReduxStoredData?.twitterLink)}
                   style={{ fontSize: "22px", fontWeight: "bold",cursor:"pointer" }}
                     // href={ReduxStoredData?.twitterLink}
                   >
                     {" "}
-                    <TwitterIcon sx={{ color: "blue" }} />{" "}
+                    <TwitterIcon sx={{ color: "#4974ED" }} />{" "}
+                    </span>
+                    <span style={{fontWeight: "bold",cursor:"pointer",fontSize:"27px",}} >
                     {ReduxStoredData?.twitterLink}
                   </span>
+                  </div>
                 ) : null}
               </div>
 
@@ -981,7 +999,7 @@ socialMediaPic &&
                     textAlign: "center",
                     fontWeight: "bold",
                     fontFamily:"Medium",
-                    marginTop: "-5px",
+                    // marginTop: "-5px",
                   }}
                 >
                   -Team Expelee
@@ -2175,7 +2193,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.designLogic==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2211,7 +2231,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.CompilerWarnings==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2247,7 +2269,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.PrivateUserDataLeak==="Not Passed"?"red":"white"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2283,7 +2307,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.TimestampDependence==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2319,7 +2345,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.IntegerOverFlowAndUnderFlow==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2355,7 +2383,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.RaceConditions==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2391,7 +2421,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.DelayInDataDelivery==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2427,7 +2459,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.OracleCalls==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2463,7 +2497,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.FrontRunning==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2499,7 +2535,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.revert==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2533,7 +2571,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.blockGasLimit==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2569,7 +2609,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.methodExePermission==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2605,7 +2647,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.ecoModel==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2641,7 +2685,9 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    // color: "white",
+                    color: `${ReduxStoredData?.exchangeRateImpact==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2661,6 +2707,7 @@ socialMediaPic &&
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2677,7 +2724,8 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.maliciousLog==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2713,7 +2761,8 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.scoping==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2749,7 +2798,8 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.storagePointer==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2785,7 +2835,8 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.arithmatic==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2821,7 +2872,8 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.racecond==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2857,7 +2909,8 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.zeppelinModule==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
@@ -2893,7 +2946,8 @@ socialMediaPic &&
                     fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: "white",
+                    color: `${ReduxStoredData?.fallbackFn==="Passed"?"white":"red"}`,
+
                     padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
