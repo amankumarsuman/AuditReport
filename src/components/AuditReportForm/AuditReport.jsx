@@ -450,9 +450,10 @@ function AuditReport() {
           <div
             style={{
               color: "white",
-              fontSize: "50px",
+              fontSize: "30px",
               fontWeight: "bold",
               textAlign: "center",
+              marginTop:"25px"
               // marginTop:"50px"
             }}
           >
@@ -498,7 +499,7 @@ function AuditReport() {
             <div style={{ marginTop: "40px" }}>
               <div
                 style={{
-                  width: "90%",
+                  width: "88%",
                   margin: "auto",
                   display: "flex",
                   justifyContent: "space-between",
@@ -508,7 +509,8 @@ function AuditReport() {
                   style={{
                     border: "1px solid white",
                     background: "#4A74ED",
-                    textAlign: "center",
+                    // textAlign: "center",
+                   
                     marginBottom: "5px",
                     marginRight: "10px",
                     width: "50%",
@@ -516,7 +518,7 @@ function AuditReport() {
                     padding: "10px",
                   }}
                 >
-                  <span>
+                  <span style={{marginTop:"5px", marginLeft:"20px",}}>
                     <LibraryAddIcon sx={{ color: "white",fontSize:"20px" }} />
                   </span>
                   <span
@@ -524,7 +526,8 @@ function AuditReport() {
                       color: "white",
                       fontSize: "20px",
                       marginLeft: "10px",
-                      fontWeight:"bold"
+                      fontWeight:"bold",
+                      marginLeft:"20px",
                     }}
               className={styles.overviewDesc}
 
@@ -537,7 +540,9 @@ function AuditReport() {
                     border: "1px solid white",
                     width: "50%",
                     background: "#4A74ED",
-                    textAlign: "center",
+                    // textAlign: "center",
+                    // marginRight: "10px",
+
                     marginBottom: "5px",
                     width: "50%",
                     borderRadius: "0px 20px 0px 0px",
@@ -568,7 +573,7 @@ function AuditReport() {
               </div>
               <div
                 style={{
-                  width: "90%",
+                  width: "88%",
                   margin: "auto",
                   display: "flex",
                   justifyContent: "space-between",
@@ -578,7 +583,9 @@ function AuditReport() {
                   style={{
                     border: "1px solid white",
                     background: "#4A74ED",
-                    textAlign: "center",
+                    // textAlign: "center",
+                    // marginRight: "30px",
+
                     marginBottom: "5px",
                     marginRight: "10px",
                     width: "50%",
@@ -586,7 +593,11 @@ function AuditReport() {
                     padding: "10px",
                   }}
                 >
-                  <span>
+                  <span style={{
+                    marginLeft: "15px",
+                    marginRight: "15px",
+
+                  }}>
                     <AddModeratorIcon sx={{ color: "white",fontSize:"20px" }} />
                   </span>
                   <span
@@ -607,7 +618,7 @@ function AuditReport() {
                     border: "1px solid white",
                     width: "50%",
                     background: "#4A74ED",
-                    textAlign: "center",
+                    // textAlign: "center",
                     marginBottom: "5px",
                     width: "50%",
                     borderRadius: "0px 0px 0px 0px",
@@ -640,7 +651,7 @@ function AuditReport() {
               </div>
               <div
                 style={{
-                  width: "90%",
+                  width: "88%",
                   margin: "auto",
                   display: "flex",
                   justifyContent: "space-between",
@@ -650,7 +661,7 @@ function AuditReport() {
                   style={{
                     border: "1px solid white",
                     background: "#4A74ED",
-                    textAlign: "center",
+                    // textAlign: "center",
                     marginBottom: "15px",
                     marginRight: "10px",
                     width: "50%",
@@ -659,7 +670,7 @@ function AuditReport() {
                     
                   }}
                 >
-                  <span>
+                  <span style={{marginLeft:"15px",marginRight:"15px"}}>
                     <DateRangeIcon sx={{ color: "white",fontSize:"20px" }} />
                   </span>
                   <span
@@ -682,7 +693,7 @@ function AuditReport() {
                     border: "1px solid white",
                     width: "50%",
                     background: "#4A74ED",
-                    textAlign: "center",
+                    // textAlign: "center",
                     marginBottom: "15px",
                     width: "50%",
                     borderRadius: "0px 0px 20px 0px",
