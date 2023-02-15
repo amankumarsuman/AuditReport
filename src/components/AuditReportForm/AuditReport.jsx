@@ -705,7 +705,7 @@ socialMediaPic &&
                     paddingTop: "100px",
                     fontWeight: "bold",
                     fontSize: "50px",
-                    color: "blue",
+                    color: "#4974ED",
                   }}
                 >
                   CONTRACT DETAILS
@@ -943,7 +943,7 @@ socialMediaPic &&
                   paddingTop: "100px",
                   fontWeight: "bold",
                   fontSize: "50px",
-                  color: "black",
+                  color: "#4974ED",
                 }}
               >
                 FUNCTION OVERVIEW
@@ -1464,7 +1464,7 @@ socialMediaPic &&
                   paddingTop: "100px",
                   fontWeight: "bold",
                   fontSize: "40px",
-                  color: "blue",
+                  color: "#4974ED",
                 }}
               >
                 VULNERABILITY CHECKLIST
@@ -2368,7 +2368,7 @@ socialMediaPic &&
                     paddingTop: "100px",
                     fontWeight: "bold",
                     fontSize: "50px",
-                    color: "blue",
+                    color: "#4974ED",
                   }}
                 >
                   AUDIT SUMMARY
@@ -2562,26 +2562,18 @@ socialMediaPic &&
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
-                  // fontSize: "50px",
                   color: "#454545",
                   textAlign: "center",
-
-                  // marginTop:"150px",
                 }}
               >
-                <div
-                // style={{
-                //   paddingLeft: "50px",
-                //   paddingRight: "50px",
-                // }}
-                >
+                <div>
                   <p
                     style={{
                       paddingTop: "100px",
                       fontWeight: "bold",
                       fontSize: "80px",
 
-                      color: "blue",
+                      color: "#4974ED",
                     }}
                   >
                     Features
