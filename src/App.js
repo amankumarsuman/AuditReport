@@ -11,7 +11,11 @@ import DragAndDrop from "./components/dragAndDrop/DragAndDrop";
 import LeftContainer from "./components/leftContainer/LeftContainer";
 import Login from "./components/login/Login";
 import ResponsiveAppBar from "./components/navbar/Navbar";
+//font
 
+// import "../public/font/GOTHIC.TTF"
+import "./font/GOTHIC.TTF"
+// import "./components/font/GOTHICB.TTF"
 function App() {
   return (
     <>

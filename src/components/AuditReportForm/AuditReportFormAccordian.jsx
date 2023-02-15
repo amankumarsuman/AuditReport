@@ -161,6 +161,15 @@ export default function CustomizedAccordions() {
     mediumriskDetails: "",
     suggestionDetails: "",
     gasDetails: "",
+    summary1:"",
+    summary2:"",
+    summary3:"",
+    summary4:"",
+    summary5:"",
+    summary6:"",
+    summary7:"",
+    summary8:"",
+    
   };
 
   // const [input, setInput] = useState(init);
@@ -281,6 +290,14 @@ export default function CustomizedAccordions() {
       mediumriskDetails,
       suggestionDetails,
       gasDetails,
+      summary1,
+      summary2,
+      summary3,
+      summary4,
+      summary5,
+      summary6,
+      summary7,
+      summary8,
     } = input;
 
     axios
@@ -370,6 +387,14 @@ export default function CustomizedAccordions() {
           mediumriskDetails,
           suggestionDetails,
           gasDetails,
+          summary1,
+          summary2,
+          summary3,
+          summary4,
+          summary5,
+          summary6,
+          summary7,
+          summary8,
         }
       )
       .then((res) => {
@@ -416,211 +441,211 @@ export default function CustomizedAccordions() {
     );
   };
   const handleAdd = () => {
-    const {
-      companyName,
-      logo,
-      auditResult,
-      kyc,
-      risk,
-      description,
-      socialMediaPic,
-      weblink,
-      twitterLink,
-      telegramLink,
-      tokenName,
-      tokenType,
-      tokenSymbol,
-      network,
-      language,
-      address,
-      totalSupply,
-      compiler,
-      optimizationEnabled,
-      sha256Checksum,
-      ownerWallet,
-      deployerWallet,
-      canTakeBackOwnership,
-      ownerChangeBalance,
-      blacklist,
-      ModifyFees,
-      Proxy,
-      Whitelisted,
-      AntiWhale,
-      TradingCooldown,
-      TransferPausable,
-      CannotSellAll,
-      HiddenOwner,
-      Mint,
-      //not
-      designLogic,
-      CompilerWarnings,
-      PrivateUserDataLeak,
-      TimestampDependence,
-      IntegerOverFlowAndUnderFlow,
-      //not till here
-      RaceConditions,
-      DelayInDataDelivery,
-      OracleCalls,
-      FrontRunning,
-      revert,
-      ecoModel,
-      blockGasLimit,
-      methodExePermission,
-      exchangeRateImpact,
-      maliciousLog,
-      scoping,
-      storagePointer,
-      arithmatic,
-      racecond,
-      zeppelinModule,
-      fallbackFn,
-      inheritancePic,
-      highriskfinding,
-      lowriskfinding,
-      mediumriskfinding,
-      suggestion,
-      gas,
-      featureHead1,
-      featureHead2,
-      featureHead3,
-      featureHead4,
-      featureDesc1,
-      featureDesc2,
-      featureDesc3,
-      featureDesc4,
-      manualReview,
-      tool1,
-      tool2,
-      tool3,
-      tool4,
-      tool5,
-      tool6,
-      highriskDetails,
-      lowriskDetails,
-      mediumriskDetails,
-      suggestionDetails,
-      gasDetails,
-    } = input;
+    // const {
+    //   companyName,
+    //   logo,
+    //   auditResult,
+    //   kyc,
+    //   risk,
+    //   description,
+    //   socialMediaPic,
+    //   weblink,
+    //   twitterLink,
+    //   telegramLink,
+    //   tokenName,
+    //   tokenType,
+    //   tokenSymbol,
+    //   network,
+    //   language,
+    //   address,
+    //   totalSupply,
+    //   compiler,
+    //   optimizationEnabled,
+    //   sha256Checksum,
+    //   ownerWallet,
+    //   deployerWallet,
+    //   canTakeBackOwnership,
+    //   ownerChangeBalance,
+    //   blacklist,
+    //   ModifyFees,
+    //   Proxy,
+    //   Whitelisted,
+    //   AntiWhale,
+    //   TradingCooldown,
+    //   TransferPausable,
+    //   CannotSellAll,
+    //   HiddenOwner,
+    //   Mint,
+    //   //not
+    //   designLogic,
+    //   CompilerWarnings,
+    //   PrivateUserDataLeak,
+    //   TimestampDependence,
+    //   IntegerOverFlowAndUnderFlow,
+    //   //not till here
+    //   RaceConditions,
+    //   DelayInDataDelivery,
+    //   OracleCalls,
+    //   FrontRunning,
+    //   revert,
+    //   ecoModel,
+    //   blockGasLimit,
+    //   methodExePermission,
+    //   exchangeRateImpact,
+    //   maliciousLog,
+    //   scoping,
+    //   storagePointer,
+    //   arithmatic,
+    //   racecond,
+    //   zeppelinModule,
+    //   fallbackFn,
+    //   inheritancePic,
+    //   highriskfinding,
+    //   lowriskfinding,
+    //   mediumriskfinding,
+    //   suggestion,
+    //   gas,
+    //   featureHead1,
+    //   featureHead2,
+    //   featureHead3,
+    //   featureHead4,
+    //   featureDesc1,
+    //   featureDesc2,
+    //   featureDesc3,
+    //   featureDesc4,
+    //   manualReview,
+    //   tool1,
+    //   tool2,
+    //   tool3,
+    //   tool4,
+    //   tool5,
+    //   tool6,
+    //   highriskDetails,
+    //   lowriskDetails,
+    //   mediumriskDetails,
+    //   suggestionDetails,
+    //   gasDetails,
+    // } = input;
 
-    axios
-      .patch(`https://expeauditreport.onrender.com/api/auditReport/add`, {
-        companyName,
-        logo,
-        auditResult,
-        kyc,
-        risk,
-        description,
-        socialMediaPic,
-        weblink,
-        twitterLink,
-        telegramLink,
-        tokenName,
-        tokenType,
-        tokenSymbol,
-        network,
-        language,
-        address,
-        totalSupply,
-        compiler,
-        optimizationEnabled,
-        sha256Checksum,
-        ownerWallet,
-        deployerWallet,
-        canTakeBackOwnership,
-        ownerChangeBalance,
-        blacklist,
-        ModifyFees,
-        Proxy,
-        Whitelisted,
-        AntiWhale,
-        TradingCooldown,
-        TransferPausable,
-        CannotSellAll,
-        HiddenOwner,
-        Mint,
-        //not
-        designLogic,
-        CompilerWarnings,
-        PrivateUserDataLeak,
-        TimestampDependence,
-        IntegerOverFlowAndUnderFlow,
-        //not till here
-        RaceConditions,
-        DelayInDataDelivery,
-        OracleCalls,
-        FrontRunning,
-        revert,
-        ecoModel,
-        blockGasLimit,
-        methodExePermission,
-        exchangeRateImpact,
-        maliciousLog,
-        scoping,
-        storagePointer,
-        arithmatic,
-        racecond,
-        zeppelinModule,
-        fallbackFn,
-        inheritancePic,
-        highriskfinding,
-        lowriskfinding,
-        mediumriskfinding,
-        suggestion,
-        gas,
-        featureHead1,
-        featureHead2,
-        featureHead3,
-        featureHead4,
-        featureDesc1,
-        featureDesc2,
-        featureDesc3,
-        featureDesc4,
-        manualReview,
-        tool1,
-        tool2,
-        tool3,
-        tool4,
-        tool5,
-        tool6,
-        highriskDetails,
-        lowriskDetails,
-        mediumriskDetails,
-        suggestionDetails,
-        gasDetails,
-      })
-      .then((res) => {
-        if (res?.data?.success) {
-          navigate("/");
-          dispatch(
-            individualPublisherDataEditedSuccessfully({ isEditData: false })
-          );
-          alert("Record Added successfully");
-        }
-        console.log(res);
-        if (!res?.data.success) {
-          // <CustomizedDialogs
-          //   open={showDialog}
-          //   setShowDialog={setShowDialog}
-          //   err={res?.data?.message}
-          // />;
-          console.log("error", res);
-          alert("res?.data?.message");
-          // setShowDialog(true);
-        }
-      })
-      .catch((err) => {
-        if (!err?.response?.data?.success) {
-          // setShowDialog(true);
-          // <CustomizedDialogs
-          //   showDialog={true}
-          //   setShowDialog={setShowDialog}
-          //   err={err?.response?.data?.message}
-          // />;
-          alert(err?.response?.data?.message);
-        }
-        // console.log("err", err);
-        // console.log("err", err?.response?.data?.message);
-      });
+    // axios
+    //   .patch(`https://expeauditreport.onrender.com/api/auditReport/add`, {
+    //     companyName,
+    //     logo,
+    //     auditResult,
+    //     kyc,
+    //     risk,
+    //     description,
+    //     socialMediaPic,
+    //     weblink,
+    //     twitterLink,
+    //     telegramLink,
+    //     tokenName,
+    //     tokenType,
+    //     tokenSymbol,
+    //     network,
+    //     language,
+    //     address,
+    //     totalSupply,
+    //     compiler,
+    //     optimizationEnabled,
+    //     sha256Checksum,
+    //     ownerWallet,
+    //     deployerWallet,
+    //     canTakeBackOwnership,
+    //     ownerChangeBalance,
+    //     blacklist,
+    //     ModifyFees,
+    //     Proxy,
+    //     Whitelisted,
+    //     AntiWhale,
+    //     TradingCooldown,
+    //     TransferPausable,
+    //     CannotSellAll,
+    //     HiddenOwner,
+    //     Mint,
+    //     //not
+    //     designLogic,
+    //     CompilerWarnings,
+    //     PrivateUserDataLeak,
+    //     TimestampDependence,
+    //     IntegerOverFlowAndUnderFlow,
+    //     //not till here
+    //     RaceConditions,
+    //     DelayInDataDelivery,
+    //     OracleCalls,
+    //     FrontRunning,
+    //     revert,
+    //     ecoModel,
+    //     blockGasLimit,
+    //     methodExePermission,
+    //     exchangeRateImpact,
+    //     maliciousLog,
+    //     scoping,
+    //     storagePointer,
+    //     arithmatic,
+    //     racecond,
+    //     zeppelinModule,
+    //     fallbackFn,
+    //     inheritancePic,
+    //     highriskfinding,
+    //     lowriskfinding,
+    //     mediumriskfinding,
+    //     suggestion,
+    //     gas,
+    //     featureHead1,
+    //     featureHead2,
+    //     featureHead3,
+    //     featureHead4,
+    //     featureDesc1,
+    //     featureDesc2,
+    //     featureDesc3,
+    //     featureDesc4,
+    //     manualReview,
+    //     tool1,
+    //     tool2,
+    //     tool3,
+    //     tool4,
+    //     tool5,
+    //     tool6,
+    //     highriskDetails,
+    //     lowriskDetails,
+    //     mediumriskDetails,
+    //     suggestionDetails,
+    //     gasDetails,
+    //   })
+    //   .then((res) => {
+    //     if (res?.data?.success) {
+    //       navigate("/");
+    //       dispatch(
+    //         individualPublisherDataEditedSuccessfully({ isEditData: false })
+    //       );
+    //       alert("Record Added successfully");
+    //     }
+    //     console.log(res);
+    //     if (!res?.data.success) {
+    //       // <CustomizedDialogs
+    //       //   open={showDialog}
+    //       //   setShowDialog={setShowDialog}
+    //       //   err={res?.data?.message}
+    //       // />;
+    //       console.log("error", res);
+    //       alert("res?.data?.message");
+    //       // setShowDialog(true);
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     if (!err?.response?.data?.success) {
+    //       // setShowDialog(true);
+    //       // <CustomizedDialogs
+    //       //   showDialog={true}
+    //       //   setShowDialog={setShowDialog}
+    //       //   err={err?.response?.data?.message}
+    //       // />;
+    //       alert(err?.response?.data?.message);
+    //     }
+    //     // console.log("err", err);
+    //     // console.log("err", err?.response?.data?.message);
+    //   });
 
     dispatch(
       setAuditForm({
@@ -1868,6 +1893,93 @@ export default function CustomizedAccordions() {
                   label="Tools Used Six"
                   onChange={handleChange}
                   value={input?.tool6}
+                />
+              </Grid>
+            </Grid>
+          </Paper>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion
+        expanded={expanded === "panel9"}
+        onChange={handleChangePanel("panel9")}
+      >
+        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+          <Typography sx={{ color: "green", fontWeight: "bold" }}>
+           SUMMARY
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          {/* <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+            sit amet blandit leo lobortis eget.
+          </Typography> */}
+          <Paper sx={{ padding: "15px" }}>
+            <Grid container spacing={2} sx={{ width: "60%", margin: "auto" }}>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary1"
+                  label="Summary 1"
+                  onChange={handleChange}
+                  value={input?.summary1}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary2"
+                  label="Summary 2"
+                  onChange={handleChange}
+                  value={input?.summary2}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary3"
+                  label="Summary 3"
+                  onChange={handleChange}
+                  value={input?.summary3}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary4"
+                  label="Summary 4"
+                  onChange={handleChange}
+                  value={input?.summary3}
+                />
+              </Grid>
+            
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary5"
+                  label="Summary 5"
+                  onChange={handleChange}
+                  value={input?.summary5}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary6"
+                  label="Summary 6"
+                  onChange={handleChange}
+                  value={input?.summary6}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary7"
+                  label="Summary 7"
+                  onChange={handleChange}
+                  value={input?.summary7}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="summary8"
+                  label="Summary 8"
+                  onChange={handleChange}
+                  value={input?.summary8}
                 />
               </Grid>
             </Grid>
