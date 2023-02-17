@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import logo from "../assets/expe.png";
 import { Link } from "react-router-dom";
 
 const pages = ["Audit Report", "Report", "Blog"];
@@ -40,7 +41,8 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+        <img width="10%" style={{marginLeft:0}} src={logo}/>
+        
           <Typography
             variant="h6"
             noWrap
@@ -56,7 +58,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+           {/* <img width="20%" src={logo}/> */}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -114,7 +116,8 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+                       <img width="10%" src={logo}/>
+
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {/* {pages.map((page) => ( */}

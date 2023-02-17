@@ -873,7 +873,7 @@ fontWeight:"bold",
                     // paddingTop: "0",
                     color: "black",
                     fontSize: "50px",
-                    paddingTop: "-20px",
+                    marginTop: "-30px",
                   }}
                 >
                   {ReduxStoredData?.companyName}
@@ -951,7 +951,7 @@ socialMediaPic &&
                 <br />
 
                 {ReduxStoredData?.twitterLink ? (
-                  <div style={{marginTop:"-13px"}}>
+                  <div >
                   
                   
                   <span
