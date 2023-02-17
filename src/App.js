@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import FormWithImages from "./components/AuditReportForm/AuditFormWithImages";
 import AuditReport from "./components/AuditReportForm/AuditReport";
 import AuditReportForm from "./components/AuditReportForm/AuditReportForm";
 import CustomizedAccordions from "./components/AuditReportForm/AuditReportFormAccordian";
@@ -8,6 +9,7 @@ import TestReport from "./components/AuditReportForm/TestReport";
 import CustomizedTables from "./components/auditTable/AuditTable";
 import DragAndDrop from "./components/dragAndDrop/DragAndDrop";
 import LeftContainer from "./components/leftContainer/LeftContainer";
+import Login from "./components/login/Login";
 import ResponsiveAppBar from "./components/navbar/Navbar";
 //font
 
@@ -22,10 +24,13 @@ function App() {
 
       {/* <AuditReportForm/> */}
       <ResponsiveAppBar />
-
+      {/* <Login /> */}
+      {/* <FormWithImages /> */}
       <Routes>
-        <Route exact path="/" element={<CustomizedTables />} />
+        <Route exact path="/dashboard" element={<CustomizedTables />} />
+        <Route path="/" element={<Login />} />
         <Route exact path="/auditform" element={<CustomizedAccordions />} />
+        <Route exact path="testing" element={<FormWithImages />} />
       </Routes>
       {/* <CustomizedAccordions/> */}
       {/* <TestReport/> */}
