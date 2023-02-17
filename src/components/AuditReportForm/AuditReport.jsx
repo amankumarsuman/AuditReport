@@ -620,18 +620,6 @@ socialMediaPic &&
                 <br />
 
                 {ReduxStoredData?.twitterLink ? (
-<<<<<<< HEAD
-                  <div >
-                  
-                  
-                  <span
-                  onClick={()=>handleNavigate(ReduxStoredData?.twitterLink)}
-                  style={{ fontSize: "22px", fontWeight: "bold",cursor:"pointer" }}
-                    // href={ReduxStoredData?.twitterLink}
-                  >
-                    {" "}
-                    <TwitterIcon sx={{ color: "#4974ED" }} />{" "}
-=======
                   <div style={{ marginTop: "-13px" }}>
                     <span
                       onClick={() =>
@@ -655,7 +643,6 @@ socialMediaPic &&
                       }}
                     >
                       {ReduxStoredData?.twitterLink}
->>>>>>> 9b1bb1ee2e03dbdb559fb6f7b84feff954b2d4e4
                     </span>
                   </div>
                 ) : null}
