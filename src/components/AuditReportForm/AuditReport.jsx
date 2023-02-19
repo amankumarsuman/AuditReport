@@ -19,6 +19,7 @@ import second from "../assets/2.png";
 import third from "../assets/3.png";
 import fourth from "../assets/4.png";
 import manualAudit from "../assets/13.png";
+import { Document, Link, Page, Text, View } from "@react-pdf/renderer";
 
 function AuditReport() {
   const ReduxStoredData = useSelector((state) => state.publisher?.auditData);
@@ -54,6 +55,17 @@ function AuditReport() {
       }
     })();
   };
+
+  // import React from '@react-pdf/renderer';
+
+  const CustomLink = ({ text, url }) => (
+    <Text
+      style={{ color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}
+      onClick={() => window.open(url, '_blank')}
+    >
+      {text}
+    </Text>
+  );
 
   return (
     <>
@@ -139,6 +151,9 @@ function AuditReport() {
           </div>
           {/* <div>page 1</div> */}
         </div>
+
+
+{/* overview */}
 
         <div style={{ width: "650px" }}>
           <div id="page" className={styles.backgroundTwo}>
@@ -438,7 +453,7 @@ function AuditReport() {
 
         {/* description */}
         {ReduxStoredData?.description ? (
-          <div style={{ width: "650px", height: "100%" }}>
+          <div style={{ width: "650px", height: "100%",position:"relative" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -486,7 +501,7 @@ function AuditReport() {
                 </p>
               </div>
 
-              <div>
+              <div style={{position:"absolute",bottom:850,left:"-35px"}}>
                 {logo && (
                   <img
                     style={{
@@ -567,14 +582,19 @@ socialMediaPic &&
                   )}
                 </div>
               </div>
+
               <div style={{ marginLeft: "70px", marginTop: "-40px" }}>
                 {ReduxStoredData?.weblink ? (
                   <>
+       
+
+
                     <div>
+        
                       <span
                         onClick={() => handleNavigate(ReduxStoredData?.weblink)}
                         style={{
-                          fontSize: "30px",
+                          fontSize: "27px",
                           fontWeight: "bold",
                           cursor: "pointer",
                           marginTop: "-13px",
@@ -583,23 +603,17 @@ socialMediaPic &&
                         // href={ReduxStoredData?.weblink}
                       >
                         <LanguageIcon sx={{ color: "#4974ED" }} />{" "}
+                        {ReduxStoredData?.weblink}
                       </span>
-                      <span
-                        style={{
-                          fontSize: "27px",
-                          fontWeight: "bold",
-                          cursor: "pointer",
-                        }}
-                      >
-                        {ReduxStoredData?.weblink}{" "}
-                      </span>
+                     
+         
                     </div>
                   </>
                 ) : null}
-                <br />
+                {/* <br /> */}
 
                 {ReduxStoredData?.telegramLink ? (
-                  <div style={{ marginTop: "5px" }}>
+                  <div  style={{ marginTop: "10px" }}>
                     <span
                       onClick={() =>
                         handleNavigate(ReduxStoredData?.telegramLink)
@@ -608,6 +622,8 @@ socialMediaPic &&
                         fontSize: "27px",
                         fontWeight: "bold",
                         cursor: "pointer",
+                        // marginTop:"10px"
+                        
                       }}
                       // href={ReduxStoredData?.telegramLink}
                     >
@@ -617,10 +633,10 @@ socialMediaPic &&
                     </span>
                   </div>
                 ) : null}
-                <br />
+                {/* <br /> */}
 
                 {ReduxStoredData?.twitterLink ? (
-                  <div style={{ marginTop: "-13px" }}>
+                  <div style={{ marginTop: "10px" }}>
                     <span
                       onClick={() =>
                         handleNavigate(ReduxStoredData?.twitterLink)
@@ -2348,7 +2364,7 @@ socialMediaPic &&
 
         {/* risk classification */}
         <div id="page">
-          <img width="42.5%" height="100%" src={third} />
+          <img width="42.2%" height="100%" src={third} />
         </div>
 
         {/* audit summary */}
@@ -2383,62 +2399,110 @@ socialMediaPic &&
                 >
                   Used Tools:
                 </p>
+                {ReduxStoredData?.manualReview?
+
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold",
+                    marginTop:"-15px"
+
                   }}
                 >
                   Manual Review - {ReduxStoredData?.manualReview}
-                </p>
+                 
+                </p>:null
+                }
+
+                {
+                   ReduxStoredData?.tool1?
+
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
+
                   }}
                 >
-                  - {ReduxStoredData?.tool1}
-                </p>
+                   - { ReduxStoredData?.tool1}
+                </p>:null
+                }
+
+                {
+ReduxStoredData?.tool2?
+
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
+
                   }}
                 >
                   - {ReduxStoredData?.tool2}
-                </p>
+                </p>:null
+                }
+
+                {
+                  ReduxStoredData?.tool3?
+
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
+
                   }}
                 >
-                  - {ReduxStoredData?.tool3}
-                </p>
+                   - {ReduxStoredData?.tool3}
+                </p>:null
+                }
+
+                {ReduxStoredData?.tool4?
+                
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
+
                   }}
                 >
-                  - {ReduxStoredData?.tool4}
-                </p>
+                   - {ReduxStoredData?.tool4}
+                </p>:null
+              }
+              {ReduxStoredData?.tool5?
+              
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
+
                   }}
                 >
-                  - {ReduxStoredData?.tool4}
-                </p>
+                   - {ReduxStoredData?.tool4}
+                </p>:null
+            }
+            {ReduxStoredData?.tool5?
+            
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
+
                   }}
                 >
-                  - {ReduxStoredData?.tool5}
-                </p>
+                   - {ReduxStoredData?.tool5}
+                </p>:null
+          }
+          {ReduxStoredData?.tool6?
+          
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
                   }}
                 >
                   - {ReduxStoredData?.tool6}
-                </p>
+                </p>:null
+        }
               </div>
               <div
                 style={{
@@ -2459,7 +2523,7 @@ socialMediaPic &&
               >
                 Inheritance Trees:
               </p>
-              <div>
+              <div style={{marginLeft:"25px",marginTop:"-10px",}}>
                 {/* <img
             style={{ marginLeft: "80px" }}
             src="https://www.onepointesolutions.com/wp-content/uploads/2022/05/5-Types-of-Chemistry.jpg"
@@ -2467,7 +2531,7 @@ socialMediaPic &&
           /> */}
                 {inheritancePic && (
                   <img
-                    style={{ height: "200px", width: "600px" }}
+                    style={{ height: "200px", width: "600px",marginTop:"-10px", }}
                     src={URL.createObjectURL(inheritancePic)}
                     alt="inheritance Image"
                   />
@@ -2492,63 +2556,106 @@ socialMediaPic &&
                 >
                   Summary:
                 </p>
+{ReduxStoredData?.summary1?
 
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
                   }}
                 >
                   - {ReduxStoredData?.summary1}
-                </p>
+                </p>:null
+}
+{
+  ReduxStoredData?.summary2?
+
+
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
                   }}
                 >
                   - {ReduxStoredData?.summary2}
-                </p>
+                </p>:null
+}
+
+{
+  ReduxStoredData?.summary3?
+
+
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
                   }}
                 >
                   - {ReduxStoredData?.summary3}
-                </p>
+                </p>:null
+}
+
+{
+  ReduxStoredData?.summary4?
+
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
                   }}
                 >
                   - {ReduxStoredData?.summary4}
-                </p>
+                </p>:null
+}
+{
+  ReduxStoredData?.summary5?
+
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
                   }}
                 >
                   - {ReduxStoredData?.summary5}
-                </p>
+                </p>:null
+}
+{
+  ReduxStoredData?.summary6?
+
+
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
                   }}
                 >
                   - {ReduxStoredData?.summary6}
-                </p>
+                </p>:null
+}
+{
+  ReduxStoredData?.summary7?
+
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
                   }}
                 >
                   - {ReduxStoredData?.summary7}
-                </p>
+                </p>:null
+}
+{
+  ReduxStoredData?.summary8?
+
                 <p
                   style={{
                     fontSize: "20px",
+                    fontWeight:"bold"
                   }}
                 >
                   - {ReduxStoredData?.summary8}
-                </p>
+                </p>:null
+}
               </div>
 
               <div></div>
@@ -2632,7 +2739,7 @@ socialMediaPic &&
 
         {/* manualaudit */}
         <div id="page">
-          <img width="43.5%" height="100%" src={manualAudit} />
+          <img width="42.5%" height="100%" src={manualAudit} />
         </div>
 
         {/* finding */}
