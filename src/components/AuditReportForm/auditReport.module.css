@@ -4,12 +4,14 @@
     background-repeat: no-repeat;
     /* width: 100%; */
     /* width: 680px; */
-    width: 42.5%;
+    width: 42.9%;
     /* margin: auto; */
     background-size: cover;
     padding-bottom: 100px;
-    min-height:800px;
+    /* min-height:800px; */
     /* height: 100vh; */
+    height:1200px;
+
 
 }
 .backgroundTwo{
@@ -27,12 +29,13 @@
 .laptop{
     background-image: url(../assets/Laptop.png);
     /* border: 1px solid red; */
+    /* border: 1px solid red; */
     background-size: contain;
     background-repeat: no-repeat;
 text-align: center;
-    width: 90%;
-    margin-left: 50px;
-height: 400px;
+    /* width: 90%; */
+    margin-left: 80px;
+height: 600px;
 margin-top: -90px;
 
 }

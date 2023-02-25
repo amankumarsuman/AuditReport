@@ -79,14 +79,14 @@ function AuditReport() {
       >
         <div id="page" className={styles.divOne}>
           <div style={{ textAlign: "center" }}>
-            <img width="50%" style={{ marginTop: "100px" }} src={expelee} />
+            <img width="90%" style={{ marginTop: "100px" }} src={expelee} />
           </div>
 
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center",marginTop:"40px",marginBottom:"50px" }}>
             <span
               style={{
                 color: "white",
-                fontSize: "25px",
+                fontSize: "35px",
                 fontWeight: "bold",
               }}
             >
@@ -96,7 +96,7 @@ function AuditReport() {
             <span
               style={{
                 color: "#F56C0C",
-                fontSize: "25px",
+                fontSize: "35px",
                 fontWeight: "bold",
                 marginLeft: "10px",
               }}
@@ -108,7 +108,7 @@ function AuditReport() {
           <div
             style={{
               color: "white",
-              fontSize: "50px",
+              fontSize: "70px",
               fontWeight: "bold",
               textAlign: "center",
               marginTop: "30px",
@@ -120,7 +120,7 @@ function AuditReport() {
           <div
             style={{
               color: "white",
-              fontSize: "50px",
+              fontSize: "70px",
               fontWeight: "bold",
               textAlign: "center",
             }}
@@ -155,30 +155,31 @@ function AuditReport() {
 
 {/* overview */}
 
-        <div style={{ width: "650px" }}>
+        <div style={{ width: "850px" }}>
           <div id="page" className={styles.backgroundTwo}>
             <div
               style={{
-                fontSize: "40px",
+                fontSize: "70px",
                 color: "#454545",
                 textAlign: "center",
               }}
             >
               <h1
                 className={styles.overviewDesc}
-                style={{ paddingTop: "100px" }}
+                style={{ paddingTop: "120px" }}
               >
                 OVERVIEW
               </h1>
             </div>
             <div
               style={{
-                fontSize: "20px",
+                fontSize: "26px",
                 textAlign: "center",
                 // color: "#343434",
                 color: "#41484E",
                 width: "90%",
                 margin: "auto",
+                marginTop:"-60px"
                 // fontfamily: 'Century Gothic'
               }}
               className={styles.overviewDesc}
@@ -189,7 +190,7 @@ function AuditReport() {
               exploits, and manipulation hacks. According to the smart contract
               audit:
             </div>
-            <div style={{ marginTop: "40px" }}>
+            <div style={{ marginTop: "80px" }}>
               <div
                 style={{
                   width: "88%",
@@ -208,16 +209,16 @@ function AuditReport() {
                     marginRight: "10px",
                     width: "50%",
                     borderRadius: "20px 0px 0px 0px",
-                    padding: "10px",
+                    padding: "20px",
                   }}
                 >
                   <span style={{ marginTop: "5px", marginLeft: "20px" }}>
-                    <LibraryAddIcon sx={{ color: "white", fontSize: "20px" }} />
+                    <LibraryAddIcon sx={{ color: "white", fontSize: "30px" }} />
                   </span>
                   <span
                     style={{
                       color: "white",
-                      fontSize: "20px",
+                      fontSize: "30px",
                       marginLeft: "10px",
                       fontWeight: "bold",
                       marginLeft: "20px",
@@ -238,13 +239,14 @@ function AuditReport() {
                     marginBottom: "5px",
                     width: "50%",
                     borderRadius: "0px 20px 0px 0px",
-                    padding: "10px",
+                    padding: "20px",
+
                   }}
                 >
                   <span
                     style={{
                       color: "white",
-                      fontSize: "20px",
+                      fontSize: "30px",
                       marginLeft: "10px",
                       fontFamily: "'Century Gothic', sans-serif",
                     }}
@@ -281,7 +283,7 @@ function AuditReport() {
                     marginRight: "10px",
                     width: "50%",
                     borderRadius: "0px 0px 0px 0px",
-                    padding: "10px",
+                    padding: "20px",
                   }}
                 >
                   <span
@@ -291,13 +293,13 @@ function AuditReport() {
                     }}
                   >
                     <AddModeratorIcon
-                      sx={{ color: "white", fontSize: "20px" }}
+                      sx={{ color: "white", fontSize: "30px" }}
                     />
                   </span>
                   <span
                     style={{
                       color: "white",
-                      fontSize: "20px",
+                      fontSize: "30px",
                       marginLeft: "10px",
                       fontFamily: "'Century Gothic', sans-serif",
                       fontWeight: "bold",
@@ -315,13 +317,13 @@ function AuditReport() {
                     marginBottom: "5px",
                     width: "50%",
                     borderRadius: "0px 0px 0px 0px",
-                    padding: "10px",
+                    padding: "20px",
                   }}
                 >
                   <span
                     style={{
                       color: "white",
-                      fontSize: "20px",
+                      fontSize: "30px",
                       marginLeft: "10px",
                       fontFamily: "'Century Gothic', sans-serif",
                     }}
@@ -357,16 +359,16 @@ function AuditReport() {
                     marginRight: "10px",
                     width: "50%",
                     borderRadius: "0px 0px 0px 20px",
-                    padding: "10px",
+                    padding: "20px",
                   }}
                 >
                   <span style={{ marginLeft: "15px", marginRight: "15px" }}>
-                    <DateRangeIcon sx={{ color: "white", fontSize: "20px" }} />
+                    <DateRangeIcon sx={{ color: "white", fontSize: "30px" }} />
                   </span>
                   <span
                     style={{
                       color: "white",
-                      fontSize: "20px",
+                      fontSize: "30px",
                       marginLeft: "10px",
                       fontFamily: "'Century Gothic', sans-serif",
                       fontWeight: "bold",
@@ -384,7 +386,7 @@ function AuditReport() {
                     marginBottom: "15px",
                     width: "50%",
                     borderRadius: "0px 0px 20px 0px",
-                    padding: "10px",
+                    padding: "20px",
                   }}
                 >
                   {/* <span>
@@ -393,7 +395,7 @@ function AuditReport() {
                   <span
                     style={{
                       color: "white",
-                      fontSize: "20px",
+                      fontSize: "30px",
                       marginLeft: "10px",
                       fontFamily: "'Century Gothic', sans-serif",
                       fontWeight: "bold",
@@ -409,9 +411,9 @@ function AuditReport() {
             <div
               style={{
                 color: "black",
-                fontSize: "30px",
+                fontSize: "40px",
                 textAlign: "center",
-                marginTop: "80px",
+                marginTop: "150px",
                 fontWeight: "bold",
                 fontFamily: "'Century Gothic', sans-serif",
               }}
@@ -453,11 +455,11 @@ function AuditReport() {
 
         {/* description */}
         {ReduxStoredData?.description ? (
-          <div style={{ width: "650px", height: "100%",position:"relative" }}>
+          <div style={{ width: "850px", height: "100%",position:"relative" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
-                  fontSize: "30px",
+                  // fontSize: "30px",
                   color: "#454545",
                   textAlign: "center",
 
@@ -466,9 +468,9 @@ function AuditReport() {
               >
                 <p
                   style={{
-                    paddingTop: "160px",
+                    paddingTop: "180px",
                     fontWeight: "bold",
-                    fontSize: "90px",
+                    fontSize: "120px",
                   }}
                 >
                   PROJECT
@@ -478,8 +480,9 @@ function AuditReport() {
                     // paddingTop: 0,
                     fontWeight: "bold",
                     paddingBottom: "15px",
-                    fontSize: "60px",
-                    marginTop: "-15px",
+                    fontSize: "80px",
+                    marginTop: "-25px",
+                   
                   }}
                 >
                   DESCRIPTION
@@ -487,7 +490,7 @@ function AuditReport() {
                 <p
                   style={{
                     fontWeight: "bold",
-                    fontSize: "40px",
+                    fontSize: "60px",
                     paddingTop: "-10px",
                   }}
                 >
@@ -496,17 +499,17 @@ function AuditReport() {
               </div>
 
               <div style={{ paddingTop: "20px" }}>
-                <p style={{ fontSize: "20px", width: "85%", margin: "auto" }}>
+                <p style={{ fontSize: "25px", width: "85%", margin: "auto",color:"#454545" }}>
                   {ReduxStoredData?.description}
                 </p>
               </div>
 
-              <div style={{position:"absolute",bottom:850,left:"-35px"}}>
+              <div style={{position:"absolute",bottom:550,left:"-55px"}}>
                 {logo && (
                   <img
                     style={{
-                      width: "200px",
-                      height: "200px",
+                      width: "300px",
+                      height: "300px",
                       border: "5px solid black",
                       padding: "10px",
                       borderRadius: "50%",
@@ -521,8 +524,10 @@ function AuditReport() {
           </div>
         ) : null}
 
+
+{/* social media */}
         {ReduxStoredData?.weblink ? (
-          <div style={{ width: "650px", height: "100%" }}>
+          <div style={{ width: "850px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -569,12 +574,12 @@ socialMediaPic &&
                   {socialMediaPic && (
                     <img
                       style={{
-                        height: "190px",
-                        width: "310px",
+                        height: "290px",
+                        width: "468px",
                         // borderRadius: "50%",
                         // border:"1px solid red",
-                        marginTop: "97px",
-                        marginLeft: "-78px",
+                        marginTop: "143px",
+                        marginLeft: "-16px",
                       }}
                       src={URL.createObjectURL(socialMediaPic)}
                       alt="Uploaded Image"
@@ -594,15 +599,16 @@ socialMediaPic &&
                       <span
                         onClick={() => handleNavigate(ReduxStoredData?.weblink)}
                         style={{
-                          fontSize: "27px",
+                          fontSize: "37px",
                           fontWeight: "bold",
                           cursor: "pointer",
                           marginTop: "-13px",
+                          color:"#454545"
                         }}
 
                         // href={ReduxStoredData?.weblink}
                       >
-                        <LanguageIcon sx={{ color: "#4974ED" }} />{" "}
+                        <LanguageIcon sx={{ color: "#4974ED",fontSize:"30px" }} />{" "}
                         {ReduxStoredData?.weblink}
                       </span>
                      
@@ -619,16 +625,18 @@ socialMediaPic &&
                         handleNavigate(ReduxStoredData?.telegramLink)
                       }
                       style={{
-                        fontSize: "27px",
+                        fontSize: "37px",
                         fontWeight: "bold",
                         cursor: "pointer",
+                        color:"#454545"
+
                         // marginTop:"10px"
                         
                       }}
                       // href={ReduxStoredData?.telegramLink}
                     >
                       {" "}
-                      <TelegramIcon sx={{ color: "#4974ED" }} />{" "}
+                      <TelegramIcon sx={{ color: "#4974ED",fontSize:"30px" }} />{" "}
                       {ReduxStoredData?.telegramLink}
                     </span>
                   </div>
@@ -645,17 +653,21 @@ socialMediaPic &&
                         fontSize: "22px",
                         fontWeight: "bold",
                         cursor: "pointer",
+                        color:"#454545"
+
                       }}
                       // href={ReduxStoredData?.twitterLink}
                     >
                       {" "}
-                      <TwitterIcon sx={{ color: "#4974ED" }} />{" "}
+                      <TwitterIcon sx={{ color: "#4974ED",fontSize:"30px" }} />{" "}
                     </span>
                     <span
                       style={{
                         fontWeight: "bold",
                         cursor: "pointer",
-                        fontSize: "27px",
+                        fontSize: "37px",
+                        color:"#454545"
+
                       }}
                     >
                       {ReduxStoredData?.twitterLink}
@@ -669,19 +681,19 @@ socialMediaPic &&
                   color: "#454545",
                   textAlign: "center",
                   // marginTop:"150px",
-                  width: "90%",
+                  width: "85%",
                   margin: "auto",
                 }}
               >
                 <p
                   style={{
-                    fontSize: "20px",
-                    color: "#454545",
+                    fontSize: "25px",
+                    // color: "#454545",
                     textAlign: "center",
                     fontWeight: "bold",
                     // lineHeight: "1px",
-
-                    marginTop: "40px",
+color:"black",
+                    marginTop: "70px",
                   }}
                 >
                   It’s always good to check the social profiles of the project,
@@ -689,8 +701,8 @@ socialMediaPic &&
                 </p>
                 <p
                   style={{
-                    fontSize: "30px",
-                    color: "#454545",
+                    fontSize: "35px",
+                    color: "black",
                     textAlign: "center",
                     fontWeight: "bold",
 
@@ -706,7 +718,7 @@ socialMediaPic &&
 
         {/* contract details */}
         {ReduxStoredData?.tokenName ? (
-          <div style={{ width: "650px", height: "100%" }}>
+          <div style={{ width: "850px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -718,9 +730,9 @@ socialMediaPic &&
               >
                 <p
                   style={{
-                    paddingTop: "100px",
+                    paddingTop: "130px",
                     fontWeight: "bold",
-                    fontSize: "50px",
+                    fontSize: "60px",
                     color: "#4974ED",
                   }}
                 >
@@ -728,7 +740,7 @@ socialMediaPic &&
                 </p>
                 <Grid
                   container
-                  spacing={2}
+                  spacing={5}
                   sx={{ width: "95%", margin: "auto" }}
                   // sx={{ paddingLeft: "100px", paddingRight: "100px" }}
                 >
@@ -743,11 +755,12 @@ socialMediaPic &&
                       id="outlined-number"
                       label="Token Name"
                       fullWidth
+                      sx={{padding:"10px 0px 0px 0px"}}
                       //   type="number"
                       value={ReduxStoredData?.tokenName?.toUpperCase()}
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "23px", fontWeight:"bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -759,9 +772,11 @@ socialMediaPic &&
                     <TextField
                       fullWidth
                       id="outlined-number"
+                      sx={{padding:"10px 0px 0px 0px"}}
+
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "23px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -775,10 +790,12 @@ socialMediaPic &&
                   <Grid item xs={6}>
                     <TextField
                       fullWidth
+                      sx={{padding:"10px 0px 0px 0px"}}
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "23px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -792,9 +809,11 @@ socialMediaPic &&
                     <TextField
                       fullWidth
                       id="outlined-number"
+                      sx={{padding:"10px 0px 0px 0px"}}
+
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "23px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -808,9 +827,11 @@ socialMediaPic &&
                     <TextField
                       id="outlined-number"
                       fullWidth
+                      sx={{padding:"10px 0px 0px 0px"}}
+
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "23px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -823,10 +844,12 @@ socialMediaPic &&
                   <Grid item xs={6}>
                     <TextField
                       fullWidth
+                      sx={{padding:"10px 0px 0px 0px"}}
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "23px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -839,10 +862,12 @@ socialMediaPic &&
                   <Grid item xs={6}>
                     <TextField
                       fullWidth
+                      sx={{padding:"10px 0px 0px 0px"}}
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "23px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -855,10 +880,12 @@ socialMediaPic &&
                   <Grid item xs={6}>
                     <TextField
                       fullWidth
+                      sx={{padding:"10px 0px 0px 0px"}}
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "23px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -871,10 +898,12 @@ socialMediaPic &&
                   <Grid item xs={6}>
                     <TextField
                       fullWidth
+                      sx={{padding:"10px 0px 0px 0px"}}
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "23px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -887,9 +916,11 @@ socialMediaPic &&
                   <Grid item xs={12}>
                     <TextField
                       id="outlined-number"
+                      sx={{padding:"10px 0px 0px 0px"}}
+
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "25px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "16px", fontWeight: "bold" },
@@ -903,10 +934,12 @@ socialMediaPic &&
                   <Grid item xs={12}>
                     <TextField
                       id="outlined-number"
+                      sx={{padding:"10px 0px 0px 0px"}}
+
                       fullWidth
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "23px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -919,10 +952,12 @@ socialMediaPic &&
                   <Grid item xs={12}>
                     <TextField
                       fullWidth
+                      sx={{padding:"10px 0px 0px 0px"}}
+
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
+                        style: { fontSize: "23px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -944,7 +979,7 @@ socialMediaPic &&
         </div>
 
         {/* function overview */}
-        <div style={{ width: "650px", height: "100%" }}>
+        <div style={{ width: "850px", height: "100%" }}>
           <div id="page" className={styles.backgroundTwo}>
             <div
               style={{
@@ -956,9 +991,9 @@ socialMediaPic &&
             >
               <p
                 style={{
-                  paddingTop: "100px",
+                  paddingTop: "150px",
                   fontWeight: "bold",
-                  fontSize: "50px",
+                  fontSize: "65px",
                   color: "#4974ED",
                 }}
               >
@@ -979,11 +1014,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "30px 0px 0px 0px",
@@ -996,7 +1031,7 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -1004,7 +1039,7 @@ socialMediaPic &&
                         ? "red"
                         : "#00ff72"
                     }`,
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 30px 0px 0px",
@@ -1019,11 +1054,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1036,7 +1071,7 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -1045,7 +1080,7 @@ socialMediaPic &&
                         : "#00ff72"
                     }`,
 
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1060,11 +1095,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1077,7 +1112,7 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -1086,7 +1121,7 @@ socialMediaPic &&
                         : "#00ff72"
                     }`,
 
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1101,11 +1136,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1118,7 +1153,7 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -1127,7 +1162,7 @@ socialMediaPic &&
                         : "#00ff72"
                     }`,
 
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1142,11 +1177,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1159,14 +1194,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
                       ReduxStoredData?.Proxy === "Detected" ? "red" : "#00ff72"
                     }`,
 
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1181,11 +1216,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1198,7 +1233,7 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -1207,7 +1242,7 @@ socialMediaPic &&
                         : "#00ff72"
                     }`,
 
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1222,11 +1257,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1239,7 +1274,7 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -1248,7 +1283,7 @@ socialMediaPic &&
                         : "#00ff72"
                     }`,
 
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1263,11 +1298,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1280,7 +1315,7 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -1289,7 +1324,7 @@ socialMediaPic &&
                         : "#00ff72"
                     }`,
 
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1304,11 +1339,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1321,7 +1356,7 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -1330,7 +1365,7 @@ socialMediaPic &&
                         : "#00ff72"
                     }`,
 
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1345,11 +1380,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1362,7 +1397,7 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -1371,7 +1406,7 @@ socialMediaPic &&
                         : "#00ff72"
                     }`,
 
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1386,11 +1421,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1403,7 +1438,7 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -1412,7 +1447,7 @@ socialMediaPic &&
                         : "#00ff72"
                     }`,
 
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1427,11 +1462,11 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 0px 0px 30px",
@@ -1444,14 +1479,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
                       ReduxStoredData?.Mint === "Detected" ? "red" : "#00ff72"
                     }`,
 
-                    padding: "10px",
+                    padding: "20px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 0px 30px 0px",
@@ -1467,7 +1502,7 @@ socialMediaPic &&
         </div>
 
         {/* vulnerabilities */}
-        <div style={{ width: "650px", height: "100%" }}>
+        <div style={{ width: "850px", height: "100%" }}>
           <div id="page" className={styles.backgroundTwo}>
             <div
               style={{
@@ -1477,9 +1512,9 @@ socialMediaPic &&
             >
               <p
                 style={{
-                  paddingTop: "100px",
+                  paddingTop: "140px",
                   fontWeight: "bold",
-                  fontSize: "40px",
+                  fontSize: "55px",
                   color: "#4974ED",
                 }}
               >
@@ -1500,11 +1535,12 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "30px 0px 0px 0px",
@@ -1517,7 +1553,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1527,7 +1564,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 30px 0px 0px",
@@ -1542,11 +1581,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1559,7 +1601,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1569,7 +1612,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1584,11 +1629,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1601,7 +1649,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1611,7 +1660,9 @@ socialMediaPic &&
                         : "white"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1626,11 +1677,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1643,7 +1697,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1653,7 +1708,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1668,11 +1725,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1685,7 +1745,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1695,7 +1756,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1710,11 +1773,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1727,7 +1793,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1737,7 +1804,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1752,11 +1821,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1769,7 +1841,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1779,7 +1852,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1794,11 +1869,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1811,7 +1889,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1821,7 +1900,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1836,11 +1917,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1853,7 +1937,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1863,7 +1948,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1878,11 +1965,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1895,7 +1985,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1903,7 +1994,9 @@ socialMediaPic &&
                       ReduxStoredData?.revert === "Passed" ? "white" : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1916,11 +2009,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1933,7 +2029,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1943,7 +2040,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1958,11 +2057,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 0px 0px 0px",
@@ -1975,7 +2077,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -1985,7 +2088,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2000,11 +2105,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2017,7 +2125,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -2025,7 +2134,9 @@ socialMediaPic &&
                       ReduxStoredData?.ecoModel === "Passed" ? "white" : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2040,11 +2151,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2057,7 +2171,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
@@ -2067,7 +2182,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2082,12 +2199,15 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2100,7 +2220,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -2109,7 +2230,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2124,11 +2247,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2141,14 +2267,17 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
                       ReduxStoredData?.scoping === "Passed" ? "white" : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2163,11 +2292,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2180,7 +2312,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -2189,7 +2322,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2204,11 +2339,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2221,14 +2359,17 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
                       ReduxStoredData?.arithmatic === "Passed" ? "white" : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2243,11 +2384,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2260,14 +2404,17 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
                       ReduxStoredData?.racecond === "Passed" ? "white" : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2282,11 +2429,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2299,7 +2449,8 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
@@ -2308,7 +2459,9 @@ socialMediaPic &&
                         : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2323,11 +2476,14 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 0px 0px 30px",
@@ -2340,14 +2496,17 @@ socialMediaPic &&
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "10px",
+                    fontSize: "15px",
+
                     fontWeight: "bold",
                     textAlign: "center",
                     color: `${
                       ReduxStoredData?.fallbackFn === "Passed" ? "white" : "red"
                     }`,
 
-                    padding: "8px",
+                    padding: "10px",
+
+
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 0px 30px 0px",
@@ -2364,12 +2523,12 @@ socialMediaPic &&
 
         {/* risk classification */}
         <div id="page">
-          <img width="42.2%" height="100%" src={third} />
+          <img width="42.6%" height="100%" src={third} />
         </div>
 
         {/* audit summary */}
         {ReduxStoredData?.tool1 ? (
-          <div style={{ width: "650px", height: "100%" }}>
+          <div style={{ width: "850px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -2381,9 +2540,9 @@ socialMediaPic &&
               >
                 <p
                   style={{
-                    paddingTop: "100px",
+                    paddingTop: "130px",
                     fontWeight: "bold",
-                    fontSize: "50px",
+                    fontSize: "80px",
                     color: "#4974ED",
                   }}
                 >
@@ -2394,7 +2553,7 @@ socialMediaPic &&
                 <p
                   style={{
                     fontWeight: "bold",
-                    fontSize: "30px",
+                    fontSize: "40px",
                   }}
                 >
                   Used Tools:
@@ -2403,7 +2562,7 @@ socialMediaPic &&
 
                 <p
                   style={{
-                    fontSize: "20px",
+                    fontSize: "25px",
                     fontWeight:"bold",
                     marginTop:"-15px"
 
@@ -2419,8 +2578,9 @@ socialMediaPic &&
 
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "21px",
+                    fontWeight:"bold",
+                    color:"#454545"
 
                   }}
                 >
@@ -2433,7 +2593,9 @@ ReduxStoredData?.tool2?
 
                 <p
                   style={{
-                    fontSize: "20px",
+                    fontSize: "21px",
+                    color:"#454545",
+
                     fontWeight:"bold"
 
                   }}
@@ -2447,8 +2609,10 @@ ReduxStoredData?.tool2?
 
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "21px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
 
                   }}
                 >
@@ -2460,8 +2624,10 @@ ReduxStoredData?.tool2?
                 
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "21px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
 
                   }}
                 >
@@ -2472,8 +2638,10 @@ ReduxStoredData?.tool2?
               
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "21px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
 
                   }}
                 >
@@ -2484,8 +2652,10 @@ ReduxStoredData?.tool2?
             
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "21px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
 
                   }}
                 >
@@ -2496,8 +2666,10 @@ ReduxStoredData?.tool2?
           
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "21px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
                   }}
                 >
                   - {ReduxStoredData?.tool6}
@@ -2518,7 +2690,7 @@ ReduxStoredData?.tool2?
                   marginLeft: "50px",
                   fontWeight: "bold",
 
-                  fontSize: "30px",
+                  fontSize: "50px",
                 }}
               >
                 Inheritance Trees:
@@ -2531,7 +2703,7 @@ ReduxStoredData?.tool2?
           /> */}
                 {inheritancePic && (
                   <img
-                    style={{ height: "200px", width: "600px",marginTop:"-10px", }}
+                    style={{ height: "250px", width: "800px",marginTop:"-10px", }}
                     src={URL.createObjectURL(inheritancePic)}
                     alt="inheritance Image"
                   />
@@ -2544,7 +2716,7 @@ ReduxStoredData?.tool2?
         {/* summary */}
 
         {ReduxStoredData?.summary1 ? (
-          <div style={{ width: "650px", height: "100%" }}>
+          <div style={{ width: "850px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div style={{ width: "90%", margin: "auto", marginTop: "-40px" }}>
                 <p
@@ -2560,8 +2732,10 @@ ReduxStoredData?.tool2?
 
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "22px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
                   }}
                 >
                   - {ReduxStoredData?.summary1}
@@ -2573,8 +2747,10 @@ ReduxStoredData?.tool2?
 
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "22px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
                   }}
                 >
                   - {ReduxStoredData?.summary2}
@@ -2587,8 +2763,10 @@ ReduxStoredData?.tool2?
 
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "22px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
                   }}
                 >
                   - {ReduxStoredData?.summary3}
@@ -2600,8 +2778,10 @@ ReduxStoredData?.tool2?
 
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "22px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
                   }}
                 >
                   - {ReduxStoredData?.summary4}
@@ -2612,8 +2792,10 @@ ReduxStoredData?.tool2?
 
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "22px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
                   }}
                 >
                   - {ReduxStoredData?.summary5}
@@ -2625,8 +2807,10 @@ ReduxStoredData?.tool2?
 
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "22px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
                   }}
                 >
                   - {ReduxStoredData?.summary6}
@@ -2637,8 +2821,10 @@ ReduxStoredData?.tool2?
 
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "22px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
                   }}
                 >
                   - {ReduxStoredData?.summary7}
@@ -2649,8 +2835,10 @@ ReduxStoredData?.tool2?
 
                 <p
                   style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
+                    fontSize: "22px",
+                    fontWeight:"bold",
+                    color:"#454545"
+
                   }}
                 >
                   - {ReduxStoredData?.summary8}
@@ -2665,7 +2853,7 @@ ReduxStoredData?.tool2?
 
         {/* features */}
         {ReduxStoredData?.featureHead1 ? (
-          <div style={{ width: "650px", height: "100%" }}>
+          <div style={{ width: "850px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -2748,7 +2936,7 @@ ReduxStoredData?.tool2?
         ReduxStoredData?.lowriskfinding ||
         ReduxStoredData?.suggestion ||
         ReduxStoredData?.gas ? (
-          <div style={{ width: "650px", height: "100%" }}>
+          <div style={{ width: "850px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -2760,9 +2948,9 @@ ReduxStoredData?.tool2?
               >
                 <p
                   style={{
-                    paddingTop: "100px",
+                    paddingTop: "120px",
                     fontWeight: "bold",
-                    fontSize: "60px",
+                    fontSize: "80px",
                     color: "blue",
                   }}
                 >
@@ -2773,64 +2961,136 @@ ReduxStoredData?.tool2?
                 <p
                   style={{
                     fontWeight: "bold",
-                    fontSize: "20px",
+                    fontSize: "25px",
                   }}
                 >
                   <ul>
                     {ReduxStoredData?.highriskfinding ? (
-                      <li style={{ color: "red" }}>
-                        High Risk Findings:{ReduxStoredData?.highriskfinding}
+                      <li style={{ color: "red",marginBottom:"5px" }}>
+                        High Risk Findings:<span style={{color:"black",fontWeight:"bold"}}>
+                        {ReduxStoredData?.highriskfinding}
+                          </span>
                       </li>
-                    ) : null}
+                    ) : <li style={{ color: "red",marginBottom:"5px"  }}>
+                    High Risk Findings:<span style={{color:"black",fontWeight:"bold"}}>0</span>
+                  </li>}
                     {ReduxStoredData?.mediumriskfinding ? (
-                      <li style={{ color: "rgba(244,145,110,255)" }}>
+                      <li style={{ color: "rgba(244,145,110,255)" ,marginBottom:"5px" }}>
                         Medium Risk Findings:
-                        {ReduxStoredData?.mediumriskfinding}
+                    <span style={{color:"black",fontWeight:"bold"}}> {ReduxStoredData?.mediumriskfinding}</span>
+
+                       
                       </li>
-                    ) : null}
+                    ) :  <li style={{ color: "rgba(244,145,110,255)",marginBottom:"5px"  }}>
+                    Medium Risk Findings:
+                    <span style={{color:"black",fontWeight:"bold"}}>0</span>
+                  </li>}
 
                     {ReduxStoredData?.lowriskfinding ? (
-                      <li style={{ color: "green" }}>
-                        Low Risk Findings:{ReduxStoredData?.lowriskfinding}
+                      <li style={{ color: "green",marginBottom:"5px"  }}>
+                        Low Risk Findings:
+                        <span style={{color:"black",fontWeight:"bold"}}>{ReduxStoredData?.lowriskfinding}</span>
+
                       </li>
-                    ) : null}
+                    ) : <li style={{ color: "green",marginBottom:"5px"  }}>
+                    Low Risk Findings:
+                    <span style={{color:"black",fontWeight:"bold"}}>0</span>
+
+                  </li> }
 
                     {ReduxStoredData?.suggestion ? (
-                      <li style={{ color: "blue" }}>
-                        High Risk Findings:{ReduxStoredData?.suggestion}
+                      <li style={{ color: "blue",marginBottom:"5px"  }}>
+                        High Risk Findings:
+                        <span style={{color:"black",fontWeight:"bold"}}>{ReduxStoredData?.suggestion}</span>
+
                       </li>
-                    ) : null}
+                    ) :   <li style={{ color: "blue",marginBottom:"5px"  }}>
+                    High Risk Findings:
+                    <span style={{color:"black",fontWeight:"bold"}}>0</span>
+
+                  </li>}
                     {ReduxStoredData?.gas ? (
-                      <li style={{ color: "blue" }}>
-                        Gas Optimizations:{ReduxStoredData?.gas}
+                      <li style={{ color: "purple",marginBottom:"5px"  }}>
+                        Gas Optimizations:
+                        <span style={{color:"black",fontWeight:"bold"}}>{ReduxStoredData?.gas}</span>
+
                       </li>
-                    ) : null}
+                    ) : <li style={{ color: "purple",marginBottom:"5px"  }}>
+                    Gas Optimizations:
+                    <span style={{color:"black",fontWeight:"bold"}}>0</span>
+
+                  </li>}
                   </ul>
                 </p>
                 <Divider sx={{ backgroundColor: "grey", height: "2px" }} />
-                {ReduxStoredData?.highriskfinding
-                  ? ReduxStoredData?.highriskDetails
+                {ReduxStoredData?.lowriskfinding
+                  ? 
+                  <>
+                  <p style={{ color: "green",marginBottom:"20px",fontSize:"30px",fontWeight:"bold" }} >Low Risk Finding: </p>
+                  <span style={{fontSize:"25px",fontWeight:"bold",lineHeight:1.4,color:"#454545"}}>
+
+                  {ReduxStoredData?.highriskDetails}
+                  </span>
+                  
+                  </>
+                  
                   : null}
                 {ReduxStoredData?.lowriskfinding
-                  ? ReduxStoredData?.lowriskDetails
+                  ? 
+                  <>
+                  <p style={{ color: "red",marginBottom:"20px",fontSize:"30px",fontWeight:"bold" }} >High Risk Finding: </p>
+                  <span style={{fontSize:"25px",fontWeight:"bold",lineHeight:1.4,color:"#454545"}}>
+
+                  {ReduxStoredData?.lowriskDetails}
+                  </span>
+                  
+                  </>
+                
                   : null}
                 {ReduxStoredData?.mediumriskfinding
-                  ? ReduxStoredData?.mediumriskDetails
+                  ? 
+                  <>
+                  <p style={{ color: "rgba(244,145,110,255)",marginBottom:"20px",fontSize:"30px",fontWeight:"bold" }} >Medium Risk Finding: </p>
+                  <span style={{fontSize:"25px",fontWeight:"bold",lineHeight:1.4,color:"#454545"}}>
+
+                  {ReduxStoredData?.mediumriskDetails}
+                  </span>
+                  
+                  </>
+                  
                   : null}
                 {ReduxStoredData?.suggestion
-                  ? ReduxStoredData?.suggestionDetails
+                  ? 
+                  <>
+                  <p style={{ color: "blue",marginBottom:"20px",fontSize:"30px",fontWeight:"bold" }} >Suggestions: </p>
+                  <span style={{fontSize:"25px",fontWeight:"bold",lineHeight:1.4,color:"#454545"}}>
+
+                  {ReduxStoredData?.suggestionDetails}
+                  </span>
+                  
+                  </>
+                  
                   : null}
-                {ReduxStoredData?.gas ? ReduxStoredData?.gasDetails : null}
+                {ReduxStoredData?.gas ? 
+                  <>
+                  <p style={{ color: "purple",marginBottom:"20px",fontSize:"30px",fontWeight:"bold" }} >Gas: </p>
+                  <span style={{fontSize:"25px",fontWeight:"bold",lineHeight:1.4,color:"#454545"}}>
+
+                  {ReduxStoredData?.gasDetails}
+                  </span>
+                  
+                  </>
+               : null}
               </div>
             </div>
           </div>
         ) : null}
 
         <div id="page">
-          <img width="42.5%" height="100%" src={fourth} />
+          <img width="42.6%" height="100%" src={fourth} />
         </div>
         <div id="page">
-          <img width="42.5%" height="100%" src={second} />
+          <img width="42.6%" height="100%" src={second} />
         </div>
       </div>
       <Button variant="contained" onClick={exportPdf}>
