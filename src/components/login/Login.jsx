@@ -14,6 +14,8 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userLoggedIn } from "../redux/action";
 
 function Copyright(props) {
   return (
@@ -34,8 +36,9 @@ function Copyright(props) {
 }
 
 const theme = createTheme();
-
 export default function Login() {
+const dispatch=useDispatch()
+
   const init = {
     email: "",
     password: "",
@@ -84,9 +87,12 @@ export default function Login() {
         console.log(res);
         if (res?.status == 201) {
           setUserData(res?.data);
+          dispatch(userLoggedIn({status:true}))
           navigate("/dashboard");
         } else {
           alert(res?.data?.msg);
+          dispatch(userLoggedIn({status:false}))
+
         }
       });
     // .then((data) => {

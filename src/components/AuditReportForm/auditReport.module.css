@@ -4,14 +4,12 @@
     background-repeat: no-repeat;
     /* width: 100%; */
     /* width: 680px; */
-    width: 42.9%;
+    width: 42.5%;
     /* margin: auto; */
     background-size: cover;
     padding-bottom: 100px;
-    /* min-height:800px; */
+    min-height:800px;
     /* height: 100vh; */
-    height:1200px;
-
 
 }
 .backgroundTwo{
@@ -29,13 +27,12 @@
 .laptop{
     background-image: url(../assets/Laptop.png);
     /* border: 1px solid red; */
-    /* border: 1px solid red; */
     background-size: contain;
     background-repeat: no-repeat;
 text-align: center;
-    /* width: 90%; */
-    margin-left: 80px;
-height: 600px;
+    width: 90%;
+    margin-left: 50px;
+height: 400px;
 margin-top: -90px;
 
 }
@@ -52,3 +49,19 @@ margin-top: -90px;
     font-family: 'Century Gothic', sans-serif !important;
     /* font-weight: bold; */
 }
+.criticalElement:nth-child(even) {
+    font-weight: bold;
+    /* border: 1px solid red; */
+  }
+.criticalElement:nth-child(odd) {
+    /* font-weight: bold; */
+    color: black;
+    font-size: 14px;
+    font-weight: 520;
+    /* border: 1px solid red; */
+  }
+  .criticalElement{
+    width: 95%;
+    margin: auto;
+    margin-bottom: 20px;
+  }

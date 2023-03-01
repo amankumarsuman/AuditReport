@@ -139,6 +139,7 @@ export default function CustomizedAccordions() {
     highriskfinding: 0,
     lowriskfinding: 0,
     mediumriskfinding: 0,
+    criticalRiskFinding:0,
     suggestion: 0,
     gas: 0,
     featureHead1: "",
@@ -160,15 +161,25 @@ export default function CustomizedAccordions() {
     lowriskDetails: "",
     mediumriskDetails: "",
     suggestionDetails: "",
+    criticalRiskDetails:"",
     gasDetails: "",
-    summary1:"",
-    summary2:"",
-    summary3:"",
-    summary4:"",
-    summary5:"",
-    summary6:"",
-    summary7:"",
-    summary8:"",
+    summary:"",
+    fnTest1:"",
+    fnTest1Passed:true,
+    fnTest1Desc:"",
+    fnTest2:"",
+    fnTest2Passed:true,
+    fnTest2Desc:"",
+    fnTest3:"",
+    fnTest3Passed:true,
+    fnTest3Desc:"",
+    fnTest4:"",
+    fnTest4Passed:true,
+    fnTest4Desc:"",
+    fnTest5:"",
+    fnTest5Passed:true,
+    fnTest5Desc:"",
+    
     
   };
 
@@ -177,6 +188,15 @@ export default function CustomizedAccordions() {
   const [image, setImage] = useState(null);
   const [socialMediaPic, setSocialMediaPic] = useState(null);
   const [inheritancePic, setInheritancePic] = useState(null);
+  const [criticalImage1, setCriticalImage1] = useState(null);
+  const [criticalImage2, setCriticalImage2] = useState(null);
+  const [criticalImage3, setCriticalImage3] = useState(null);
+  const [criticalImage4, setCriticalImage4] = useState(null);
+  const [criticalImage5, setCriticalImage5] = useState(null);
+  const [criticalImage6, setCriticalImage6] = useState(null);
+  const [criticalImage7, setCriticalImage7] = useState(null);
+  const [criticalImage8, setCriticalImage8] = useState(null);
+  const [criticalImage, setCriticalImage] = useState([]);
   console.log(socialMediaPic, "check soccial");
 
   const handleImage = (e) => {
@@ -185,6 +205,42 @@ export default function CustomizedAccordions() {
   const handleSocialMediaPic = (e) => {
     console.log(e.target.files[0]);
     setSocialMediaPic(e.target.files[0]);
+  };
+  const handleCriticalImage1 = (e) => {
+    console.log(e.target.files[0]);
+    setCriticalImage1(e.target.files[0]);
+  };
+  const handleCriticalImage = (e) => {
+    console.log(e.target.files[0]);
+    setCriticalImage(e.target.files[0]);
+  };
+  const handleCriticalImage2 = (e) => {
+    console.log(e.target.files[0]);
+    setCriticalImage2(e.target.files[0]);
+  };
+  const handleCriticalImage3 = (e) => {
+    console.log(e.target.files[0]);
+    setCriticalImage3(e.target.files[0]);
+  };
+  const handleCriticalImage4 = (e) => {
+    console.log(e.target.files[0]);
+    setCriticalImage4(e.target.files[0]);
+  };
+  const handleCriticalImage5= (e) => {
+    console.log(e.target.files[0]);
+    setCriticalImage5(e.target.files[0]);
+  };
+  const handleCriticalImage6 = (e) => {
+    console.log(e.target.files[0]);
+    setCriticalImage6(e.target.files[0]);
+  };
+  const handleCriticalImage7 = (e) => {
+    console.log(e.target.files[0]);
+    setCriticalImage7(e.target.files[0]);
+  };
+  const handleCriticalImage8 = (e) => {
+    console.log(e.target.files[0]);
+    setCriticalImage8(e.target.files[0]);
   };
   const handleInheritanceaPic = (e) => {
     setInheritancePic(e.target.files[0]);
@@ -268,6 +324,8 @@ export default function CustomizedAccordions() {
       highriskfinding,
       lowriskfinding,
       mediumriskfinding,
+      criticalRiskFinding,
+      criticalRiskDetails,
       suggestion,
       gas,
       featureHead1,
@@ -290,14 +348,23 @@ export default function CustomizedAccordions() {
       mediumriskDetails,
       suggestionDetails,
       gasDetails,
-      summary1,
-      summary2,
-      summary3,
-      summary4,
-      summary5,
-      summary6,
-      summary7,
-      summary8,
+      summary,
+      fnTest1,
+      fnTest1Passed,
+      fnTest1Desc,
+      fnTest2,
+      fnTest2Passed,
+      fnTest2Desc,
+      fnTest3,
+      fnTest3Passed,
+      fnTest3Desc,
+      fnTest4,
+      fnTest4Passed,
+      fnTest4Desc,
+      fnTest5,
+      fnTest5Passed,
+      fnTest5Desc,
+    
     } = input;
 
     axios
@@ -365,6 +432,8 @@ export default function CustomizedAccordions() {
           highriskfinding,
           lowriskfinding,
           mediumriskfinding,
+          criticalRiskFinding,
+      criticalRiskDetails,
           suggestion,
           gas,
           featureHead1,
@@ -387,14 +456,23 @@ export default function CustomizedAccordions() {
           mediumriskDetails,
           suggestionDetails,
           gasDetails,
-          summary1,
-          summary2,
-          summary3,
-          summary4,
-          summary5,
-          summary6,
-          summary7,
-          summary8,
+          summary,
+          fnTest1,
+          fnTest1Passed,
+          fnTest1Desc,
+          fnTest2,
+          fnTest2Passed,
+          fnTest2Desc,
+          fnTest3,
+          fnTest3Passed,
+          fnTest3Desc,
+          fnTest4,
+          fnTest4Passed,
+          fnTest4Desc,
+          fnTest5,
+          fnTest5Passed,
+          fnTest5Desc,
+      
         }
       )
       .then((res) => {
@@ -437,6 +515,14 @@ export default function CustomizedAccordions() {
         logo: image,
         inheritancePic: inheritancePic,
         socialMediaPic: socialMediaPic,
+        criticalImage1: criticalImage1,
+        criticalImage2: criticalImage2,
+        criticalImage3: criticalImage3,
+        criticalImage4: criticalImage4,
+        criticalImage5: criticalImage5,
+        criticalImage6: criticalImage6,
+        criticalImage7: criticalImage7,
+        criticalImage8: criticalImage8,
       })
     );
   };
@@ -1677,6 +1763,15 @@ export default function CustomizedAccordions() {
               </Grid>
               <Grid item xs={12} md={3}>
                 <TextField
+                  name="criticalRiskFinding"
+                  label="Critical Risk Findings"
+                  onChange={handleChange}
+                  value={input?.criticalRiskFinding}
+                  type="number"
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
                   type="number"
                   name="lowriskfinding"
                   label="Medium Risk Findings"
@@ -1722,6 +1817,14 @@ export default function CustomizedAccordions() {
               </Grid>
               <Grid item xs={12} md={3}>
                 <TextField
+                  name="criticalRiskDetails"
+                  label="Critical Risk Details"
+                  value={input?.criticalRiskDetails}
+                  onChange={handleChange}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
                   name="lowriskDetails"
                   label="Finding Low Risk Details"
                   value={input?.lowriskDetails}
@@ -1751,6 +1854,215 @@ export default function CustomizedAccordions() {
                   value={input?.gasDetails}
                   onChange={handleChange}
                 />
+              </Grid>
+
+              <Grid item xs={12} md={12}>
+                <h2>
+
+Images of Critical Risk Finding
+                </h2>
+              </Grid>
+
+              <Grid item xs={12} md={6}>
+                {/* <input type="file" onChange={handleChange} /> */}
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                  disabled
+                >
+                  Upload Critical Image  +
+                  <input
+                    hidden
+                    name="criticalImage"
+                    onChange={handleImage}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                {/* <input type="file" onChange={handleChange} /> */}
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                >
+                  Upload Critical Image 1  +
+                  <input
+                    hidden
+                    name="criticalImage1"
+                    onChange={handleCriticalImage1}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                {/* <input type="file" onChange={handleChange} /> */}
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                >
+                  Upload Critical Image 2 +
+                  <input
+                    hidden
+                    name="criticalImage2"
+                    onChange={handleCriticalImage2}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                {/* <input type="file" onChange={handleChange} /> */}
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                >
+                  Upload Critical Image 3 +
+                  <input
+                    hidden
+                    name="criticalImage3"
+                    onChange={handleCriticalImage3}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                {/* <input type="file" onChange={handleChange} /> */}
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                >
+                  Upload Critical Image 4 +
+                  <input
+                    hidden
+                    name="criticalImage4"
+                    onChange={handleCriticalImage4}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                {/* <input type="file" onChange={handleChange} /> */}
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                >
+                  Upload Critical Image 5 +
+                  <input
+                    hidden
+                    name="criticalImage5"
+                    onChange={handleCriticalImage5}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                {/* <input type="file" onChange={handleChange} /> */}
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                >
+                  Upload Critical Image 6 +
+                  <input
+                    hidden
+                    name="criticalImage6"
+                    onChange={handleCriticalImage6}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                {/* <input type="file" onChange={handleChange} /> */}
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                >
+                  Upload Critical Image 7 +
+                  <input
+                    hidden
+                    name="criticalImage7"
+                    onChange={handleCriticalImage7}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                {/* <input type="file" onChange={handleChange} /> */}
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                >
+                  Upload Critical Image 8 +
+                  <input
+                    hidden
+                    name="criticalImage8"
+                    onChange={handleCriticalImage8}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                {/* <input type="file" onChange={handleChange} /> */}
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                >
+                  Upload Critical Image  +
+                  <input
+                    hidden
+                    name="criticalImage1"
+                    onChange={handleCriticalImage1}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
               </Grid>
             </Grid>
           </Paper>
@@ -1909,77 +2221,228 @@ export default function CustomizedAccordions() {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          {/* <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-            sit amet blandit leo lobortis eget.
-          </Typography> */}
+         
           <Paper sx={{ padding: "15px" }}>
             <Grid container spacing={2} sx={{ width: "60%", margin: "auto" }}>
               <Grid item xs={12} md={3}>
                 <TextField
-                  name="summary1"
-                  label="Summary 1"
+                  name="summary"
+                  label="Summary(Saperated With ,)"
                   onChange={handleChange}
-                  value={input?.summary1}
-                />
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <TextField
-                  name="summary2"
-                  label="Summary 2"
-                  onChange={handleChange}
-                  value={input?.summary2}
-                />
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <TextField
-                  name="summary3"
-                  label="Summary 3"
-                  onChange={handleChange}
-                  value={input?.summary3}
-                />
-              </Grid>
-              <Grid item xs={12} md={3}>
-                <TextField
-                  name="summary4"
-                  label="Summary 4"
-                  onChange={handleChange}
-                  value={input?.summary3}
+                  value={input?.summary}
                 />
               </Grid>
             
+            </Grid>
+          </Paper>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion
+        expanded={expanded === "panel10"}
+        onChange={handleChangePanel("panel10")}
+      >
+        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+          <Typography sx={{ color: "green", fontWeight: "bold" }}>
+           FUNCTIONAL TESTS
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+         
+          <Paper sx={{ padding: "15px" }}>
+            <Grid container spacing={2} sx={{ width: "90%", margin: "auto" }}>
               <Grid item xs={12} md={3}>
                 <TextField
-                  name="summary5"
-                  label="Summary 5"
+                  name="fnTest1"
+                  label="Functional Test1"
                   onChange={handleChange}
-                  value={input?.summary5}
+                  value={input?.fnTest1}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Functional Test 1
+                    </InputLabel>
+                    <Select
+                      sx={{ width: "14em" }}
+                      error={input?.fnTest1Passed === ""}
+                      helperText={input?.fnTest1Passed === "" ? "Required!" : " "}
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={input?.fnTest1Passed}
+                      label="Test 1 Passed"
+                      name="fnTest1Passed"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={true}>Yes</MenuItem>
+                      <MenuItem value={false}>No </MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest1Desc"
+                  label="Functional Test1 Description"
+                  onChange={handleChange}
+                  value={input?.fnTest1Desc}
                 />
               </Grid>
               <Grid item xs={12} md={3}>
                 <TextField
-                  name="summary6"
-                  label="Summary 6"
+                  name="fnTest2"
+                  label="Functional Test2"
                   onChange={handleChange}
-                  value={input?.summary6}
+                  value={input?.fnTest2}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Functional Test 2
+                    </InputLabel>
+                    <Select
+                      sx={{ width: "14em" }}
+                      // error={input?.fnTest2Passed === ""}
+                      // helperText={input?.fnTest2Passed === "" ? "Required!" : " "}
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={input?.fnTest2Passed}
+                      label="Test 2 Passed"
+                      name="fnTest2Passed"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={true}>Yes</MenuItem>
+                      <MenuItem value={false}>No </MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest2Desc"
+                  label="Functional Test2 Description"
+                  onChange={handleChange}
+                  value={input?.fnTest2Desc}
                 />
               </Grid>
               <Grid item xs={12} md={3}>
                 <TextField
-                  name="summary7"
-                  label="Summary 7"
+                  name="fnTest3"
+                  label="Functional Test3"
                   onChange={handleChange}
-                  value={input?.summary7}
+                  value={input?.fnTest3}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Functional Test 3
+                    </InputLabel>
+                    <Select
+                      sx={{ width: "14em" }}
+                      // error={input?.fnTest2Passed === ""}
+                      // helperText={input?.fnTest2Passed === "" ? "Required!" : " "}
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={input?.fnTest3Passed}
+                      label="Test 3 Passed"
+                      name="fnTest3Passed"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={true}>Yes</MenuItem>
+                      <MenuItem value={false}>No </MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest3Desc"
+                  label="Functional Test3 Description"
+                  onChange={handleChange}
+                  value={input?.fnTest3Desc}
                 />
               </Grid>
               <Grid item xs={12} md={3}>
                 <TextField
-                  name="summary8"
-                  label="Summary 8"
+                  name="fnTest4"
+                  label="Functional Test4"
                   onChange={handleChange}
-                  value={input?.summary8}
+                  value={input?.fnTest4}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Functional Test 4
+                    </InputLabel>
+                    <Select
+                      sx={{ width: "14em" }}
+                      // error={input?.fnTest2Passed === ""}
+                      // helperText={input?.fnTest2Passed === "" ? "Required!" : " "}
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={input?.fnTest4Passed}
+                      label="Test 4 Passed"
+                      name="fnTest4Passed"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={true}>Yes</MenuItem>
+                      <MenuItem value={false}>No </MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest4Desc"
+                  label="Functional Test4 Description"
+                  onChange={handleChange}
+                  value={input?.fnTest4Desc}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest5"
+                  label="Functional Test5"
+                  onChange={handleChange}
+                  value={input?.fnTest5}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Functional Test 5
+                    </InputLabel>
+                    <Select
+                      sx={{ width: "14em" }}
+                      // error={input?.fnTest2Passed === ""}
+                      // helperText={input?.fnTest2Passed === "" ? "Required!" : " "}
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={input?.fnTest5Passed}
+                      label="Test 5 Passed"
+                      name="fnTest5Passed"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={true}>Yes</MenuItem>
+                      <MenuItem value={false}>No </MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest5Desc"
+                  label="Functional Test5 Description"
+                  onChange={handleChange}
+                  value={input?.fnTest5Desc}
                 />
               </Grid>
             </Grid>

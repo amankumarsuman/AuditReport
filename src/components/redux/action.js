@@ -24,3 +24,9 @@ export const renderAddPublisherForm = (payload) => {
     payload: payload,
   };
 };
+export const userLoggedIn = (payload) => {
+  return {
+    type: AUDIT_REPORT_TYPES.USER_LOGIN_STATUS,
+    payload: payload,
+  };
+};

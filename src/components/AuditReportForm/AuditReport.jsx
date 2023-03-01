@@ -19,11 +19,19 @@ import second from "../assets/2.png";
 import third from "../assets/3.png";
 import fourth from "../assets/4.png";
 import manualAudit from "../assets/13.png";
-import { Document, Link, Page, Text, View } from "@react-pdf/renderer";
 
 function AuditReport() {
   const ReduxStoredData = useSelector((state) => state.publisher?.auditData);
   const logo = useSelector((state) => state.publisher?.logo);
+
+  const criticalImageArray=[ReduxStoredData?.criticalImage1,
+    ReduxStoredData?.criticalImage2,
+    ReduxStoredData?.criticalImage3,
+    ReduxStoredData?.criticalImage4,
+    ReduxStoredData?.criticalImage5,
+    ReduxStoredData?.criticalImage6,
+    ReduxStoredData?.criticalImage7,
+    ReduxStoredData?.criticalImage8]
   const socialMediaPic = useSelector(
     (state) => state.publisher?.socialMediaLogo
   );
@@ -56,17 +64,6 @@ function AuditReport() {
     })();
   };
 
-  // import React from '@react-pdf/renderer';
-
-  const CustomLink = ({ text, url }) => (
-    <Text
-      style={{ color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}
-      onClick={() => window.open(url, '_blank')}
-    >
-      {text}
-    </Text>
-  );
-
   return (
     <>
       <div
@@ -79,14 +76,14 @@ function AuditReport() {
       >
         <div id="page" className={styles.divOne}>
           <div style={{ textAlign: "center" }}>
-            <img width="90%" style={{ marginTop: "100px" }} src={expelee} />
+            <img width="50%" style={{ marginTop: "100px" }} src={expelee} />
           </div>
 
-          <div style={{ textAlign: "center",marginTop:"40px",marginBottom:"50px" }}>
+          <div style={{ textAlign: "center" }}>
             <span
               style={{
                 color: "white",
-                fontSize: "35px",
+                fontSize: "25px",
                 fontWeight: "bold",
               }}
             >
@@ -96,7 +93,7 @@ function AuditReport() {
             <span
               style={{
                 color: "#F56C0C",
-                fontSize: "35px",
+                fontSize: "25px",
                 fontWeight: "bold",
                 marginLeft: "10px",
               }}
@@ -108,7 +105,7 @@ function AuditReport() {
           <div
             style={{
               color: "white",
-              fontSize: "70px",
+              fontSize: "50px",
               fontWeight: "bold",
               textAlign: "center",
               marginTop: "30px",
@@ -120,7 +117,7 @@ function AuditReport() {
           <div
             style={{
               color: "white",
-              fontSize: "70px",
+              fontSize: "50px",
               fontWeight: "bold",
               textAlign: "center",
             }}
@@ -152,34 +149,30 @@ function AuditReport() {
           {/* <div>page 1</div> */}
         </div>
 
-
-{/* overview */}
-
-        <div style={{ width: "850px" }}>
+        <div style={{ width: "650px" }}>
           <div id="page" className={styles.backgroundTwo}>
             <div
               style={{
-                fontSize: "70px",
+                fontSize: "40px",
                 color: "#454545",
                 textAlign: "center",
               }}
             >
               <h1
                 className={styles.overviewDesc}
-                style={{ paddingTop: "120px" }}
+                style={{ paddingTop: "100px" }}
               >
                 OVERVIEW
               </h1>
             </div>
             <div
               style={{
-                fontSize: "26px",
+                fontSize: "20px",
                 textAlign: "center",
                 // color: "#343434",
                 color: "#41484E",
                 width: "90%",
                 margin: "auto",
-                marginTop:"-60px"
                 // fontfamily: 'Century Gothic'
               }}
               className={styles.overviewDesc}
@@ -190,7 +183,7 @@ function AuditReport() {
               exploits, and manipulation hacks. According to the smart contract
               audit:
             </div>
-            <div style={{ marginTop: "80px" }}>
+            <div style={{ marginTop: "40px" }}>
               <div
                 style={{
                   width: "88%",
@@ -209,16 +202,16 @@ function AuditReport() {
                     marginRight: "10px",
                     width: "50%",
                     borderRadius: "20px 0px 0px 0px",
-                    padding: "20px",
+                    padding: "10px",
                   }}
                 >
                   <span style={{ marginTop: "5px", marginLeft: "20px" }}>
-                    <LibraryAddIcon sx={{ color: "white", fontSize: "30px" }} />
+                    <LibraryAddIcon sx={{ color: "white", fontSize: "20px" }} />
                   </span>
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       marginLeft: "10px",
                       fontWeight: "bold",
                       marginLeft: "20px",
@@ -239,14 +232,13 @@ function AuditReport() {
                     marginBottom: "5px",
                     width: "50%",
                     borderRadius: "0px 20px 0px 0px",
-                    padding: "20px",
-
+                    padding: "10px",
                   }}
                 >
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       marginLeft: "10px",
                       fontFamily: "'Century Gothic', sans-serif",
                     }}
@@ -283,7 +275,7 @@ function AuditReport() {
                     marginRight: "10px",
                     width: "50%",
                     borderRadius: "0px 0px 0px 0px",
-                    padding: "20px",
+                    padding: "10px",
                   }}
                 >
                   <span
@@ -293,13 +285,13 @@ function AuditReport() {
                     }}
                   >
                     <AddModeratorIcon
-                      sx={{ color: "white", fontSize: "30px" }}
+                      sx={{ color: "white", fontSize: "20px" }}
                     />
                   </span>
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       marginLeft: "10px",
                       fontFamily: "'Century Gothic', sans-serif",
                       fontWeight: "bold",
@@ -317,13 +309,13 @@ function AuditReport() {
                     marginBottom: "5px",
                     width: "50%",
                     borderRadius: "0px 0px 0px 0px",
-                    padding: "20px",
+                    padding: "10px",
                   }}
                 >
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       marginLeft: "10px",
                       fontFamily: "'Century Gothic', sans-serif",
                     }}
@@ -359,16 +351,16 @@ function AuditReport() {
                     marginRight: "10px",
                     width: "50%",
                     borderRadius: "0px 0px 0px 20px",
-                    padding: "20px",
+                    padding: "10px",
                   }}
                 >
                   <span style={{ marginLeft: "15px", marginRight: "15px" }}>
-                    <DateRangeIcon sx={{ color: "white", fontSize: "30px" }} />
+                    <DateRangeIcon sx={{ color: "white", fontSize: "20px" }} />
                   </span>
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       marginLeft: "10px",
                       fontFamily: "'Century Gothic', sans-serif",
                       fontWeight: "bold",
@@ -386,7 +378,7 @@ function AuditReport() {
                     marginBottom: "15px",
                     width: "50%",
                     borderRadius: "0px 0px 20px 0px",
-                    padding: "20px",
+                    padding: "10px",
                   }}
                 >
                   {/* <span>
@@ -395,7 +387,7 @@ function AuditReport() {
                   <span
                     style={{
                       color: "white",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       marginLeft: "10px",
                       fontFamily: "'Century Gothic', sans-serif",
                       fontWeight: "bold",
@@ -411,9 +403,9 @@ function AuditReport() {
             <div
               style={{
                 color: "black",
-                fontSize: "40px",
+                fontSize: "30px",
                 textAlign: "center",
-                marginTop: "150px",
+                marginTop: "80px",
                 fontWeight: "bold",
                 fontFamily: "'Century Gothic', sans-serif",
               }}
@@ -421,17 +413,16 @@ function AuditReport() {
               Audit Passed With{" "}
               <span
                 style={{
-                  color: `${
-                    ReduxStoredData?.risk === "No"
-                      ? "green"
-                      : ReduxStoredData?.risk === "Low"
+                  color: `${ReduxStoredData?.risk === "No"
+                    ? "green"
+                    : ReduxStoredData?.risk === "Low"
                       ? "#98fb98"
                       : ReduxStoredData?.risk === "Moderate"
-                      ? "yellow"
-                      : ReduxStoredData?.risk === "High"
-                      ? "red"
-                      : null
-                  }`,
+                        ? "yellow"
+                        : ReduxStoredData?.risk === "High"
+                          ? "red"
+                          : null
+                    }`,
                 }}
               >
                 {ReduxStoredData?.risk ? ReduxStoredData?.risk : "No"}
@@ -455,11 +446,11 @@ function AuditReport() {
 
         {/* description */}
         {ReduxStoredData?.description ? (
-          <div style={{ width: "850px", height: "100%",position:"relative" }}>
+          <div style={{ width: "650px", height: "100%", position: "relative" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
-                  // fontSize: "30px",
+                  fontSize: "30px",
                   color: "#454545",
                   textAlign: "center",
 
@@ -468,9 +459,9 @@ function AuditReport() {
               >
                 <p
                   style={{
-                    paddingTop: "180px",
+                    paddingTop: "160px",
                     fontWeight: "bold",
-                    fontSize: "120px",
+                    fontSize: "90px",
                   }}
                 >
                   PROJECT
@@ -480,9 +471,8 @@ function AuditReport() {
                     // paddingTop: 0,
                     fontWeight: "bold",
                     paddingBottom: "15px",
-                    fontSize: "80px",
-                    marginTop: "-25px",
-                   
+                    fontSize: "60px",
+                    marginTop: "-15px",
                   }}
                 >
                   DESCRIPTION
@@ -490,7 +480,7 @@ function AuditReport() {
                 <p
                   style={{
                     fontWeight: "bold",
-                    fontSize: "60px",
+                    fontSize: "40px",
                     paddingTop: "-10px",
                   }}
                 >
@@ -499,12 +489,25 @@ function AuditReport() {
               </div>
 
               <div style={{ paddingTop: "20px" }}>
-                <p style={{ fontSize: "25px", width: "85%", margin: "auto",color:"#454545" }}>
+                <p style={{ fontSize: "20px", width: "85%", margin: "auto" }}>
                   {ReduxStoredData?.description}
                 </p>
               </div>
 
-              <div style={{position:"absolute",bottom:550,left:"-55px"}}>
+              <div style={{ position: "absolute", bottom: 800, left: "-55px" }} >
+                {/* {logo && (
+                  <img
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      border: "5px solid black",
+                      padding: "10px",
+                      borderRadius: "50%",
+                      marginTop: "50px",
+                    }}
+                    src={URL.createObjectURL(logo)}
+                    alt="img"
+                  /> */}
                 {logo && (
                   <img
                     style={{
@@ -513,7 +516,7 @@ function AuditReport() {
                       border: "5px solid black",
                       padding: "10px",
                       borderRadius: "50%",
-                      marginTop: "50px",
+                      // marginTop: "90px",
                     }}
                     src={URL.createObjectURL(logo)}
                     alt="img"
@@ -524,10 +527,8 @@ function AuditReport() {
           </div>
         ) : null}
 
-
-{/* social media */}
         {ReduxStoredData?.weblink ? (
-          <div style={{ width: "850px", height: "100%" }}>
+          <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -566,7 +567,6 @@ socialMediaPic &&
             <img
               style={{ width: "70%", height: "70%" }}
               src={URL.createObjectURL(socialMediaPic)}
-
               alt="img"
             />
             } */}
@@ -574,12 +574,12 @@ socialMediaPic &&
                   {socialMediaPic && (
                     <img
                       style={{
-                        height: "290px",
-                        width: "468px",
+                        height: "190px",
+                        width: "310px",
                         // borderRadius: "50%",
                         // border:"1px solid red",
-                        marginTop: "143px",
-                        marginLeft: "-16px",
+                        marginTop: "97px",
+                        marginLeft: "-78px",
                       }}
                       src={URL.createObjectURL(socialMediaPic)}
                       alt="Uploaded Image"
@@ -587,87 +587,103 @@ socialMediaPic &&
                   )}
                 </div>
               </div>
-
               <div style={{ marginLeft: "70px", marginTop: "-40px" }}>
                 {ReduxStoredData?.weblink ? (
                   <>
-       
-
-
-                    <div>
-        
+                    {/* <div>
                       <span
                         onClick={() => handleNavigate(ReduxStoredData?.weblink)}
                         style={{
-                          fontSize: "37px",
+                          fontSize: "30px",
                           fontWeight: "bold",
                           cursor: "pointer",
                           marginTop: "-13px",
-                          color:"#454545"
                         }}
 
-                        // href={ReduxStoredData?.weblink}
+                      // href={ReduxStoredData?.weblink}
                       >
-                        <LanguageIcon sx={{ color: "#4974ED",fontSize:"30px" }} />{" "}
+                        <LanguageIcon sx={{ color: "#4974ED" }} />{" "}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: "27px",
+                          fontWeight: "bold",
+                          cursor: "pointer",
+                        }}
+                      >
+                        {ReduxStoredData?.weblink}{" "}
+                      </span>
+                    </div> */}
+
+                    <div>
+
+                      <span
+                        onClick={() => handleNavigate(ReduxStoredData?.weblink)}
+                        style={{
+                          fontSize: "20px",
+                          fontWeight: "bold",
+                          cursor: "pointer",
+                          marginTop: "-13px",
+                          color: "#454545"
+                        }}
+
+                      // href={ReduxStoredData?.weblink}
+                      >
+                        <LanguageIcon sx={{ color: "#4974ED", fontSize: "17px" }} />{" "}
                         {ReduxStoredData?.weblink}
                       </span>
-                     
-         
+
+
                     </div>
                   </>
                 ) : null}
-                {/* <br /> */}
+
 
                 {ReduxStoredData?.telegramLink ? (
-                  <div  style={{ marginTop: "10px" }}>
+                  <div style={{ marginTop: "5px" }}>
                     <span
                       onClick={() =>
                         handleNavigate(ReduxStoredData?.telegramLink)
                       }
                       style={{
-                        fontSize: "37px",
+                        fontSize: "20px",
                         fontWeight: "bold",
                         cursor: "pointer",
-                        color:"#454545"
-
-                        // marginTop:"10px"
-                        
+                        color: "#454545"
                       }}
-                      // href={ReduxStoredData?.telegramLink}
+                    // href={ReduxStoredData?.telegramLink}
                     >
                       {" "}
-                      <TelegramIcon sx={{ color: "#4974ED",fontSize:"30px" }} />{" "}
+                      <TelegramIcon sx={{ color: "#4974ED", fontSize: "17px" }} />{" "}
                       {ReduxStoredData?.telegramLink}
                     </span>
                   </div>
                 ) : null}
-                {/* <br /> */}
+
 
                 {ReduxStoredData?.twitterLink ? (
-                  <div style={{ marginTop: "10px" }}>
+                  <div style={{ marginTop: "5px" }} >
                     <span
                       onClick={() =>
                         handleNavigate(ReduxStoredData?.twitterLink)
                       }
                       style={{
-                        fontSize: "22px",
+                        fontSize: "20px",
                         fontWeight: "bold",
                         cursor: "pointer",
-                        color:"#454545"
-
+                        color: "#454545"
                       }}
-                      // href={ReduxStoredData?.twitterLink}
+                    // href={ReduxStoredData?.twitterLink}
                     >
                       {" "}
-                      <TwitterIcon sx={{ color: "#4974ED",fontSize:"30px" }} />{" "}
+                      <TwitterIcon sx={{ color: "#4974ED", fontSize: "17px" }} />{" "}
                     </span>
                     <span
                       style={{
                         fontWeight: "bold",
                         cursor: "pointer",
-                        fontSize: "37px",
-                        color:"#454545"
-
+                        fontSize: "20px",
+                        color: "#454545"
                       }}
                     >
                       {ReduxStoredData?.twitterLink}
@@ -680,20 +696,20 @@ socialMediaPic &&
                 style={{
                   color: "#454545",
                   textAlign: "center",
-                  // marginTop:"150px",
-                  width: "85%",
+                  marginTop: "150px",
+                  width: "90%",
                   margin: "auto",
                 }}
               >
                 <p
                   style={{
-                    fontSize: "25px",
-                    // color: "#454545",
+                    fontSize: "20px",
+                    color: "#454545",
                     textAlign: "center",
                     fontWeight: "bold",
                     // lineHeight: "1px",
-color:"black",
-                    marginTop: "70px",
+
+                    marginTop: "40px",
                   }}
                 >
                   It’s always good to check the social profiles of the project,
@@ -701,8 +717,8 @@ color:"black",
                 </p>
                 <p
                   style={{
-                    fontSize: "35px",
-                    color: "black",
+                    fontSize: "30px",
+                    color: "#454545",
                     textAlign: "center",
                     fontWeight: "bold",
 
@@ -718,7 +734,7 @@ color:"black",
 
         {/* contract details */}
         {ReduxStoredData?.tokenName ? (
-          <div style={{ width: "850px", height: "100%" }}>
+          <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -730,9 +746,9 @@ color:"black",
               >
                 <p
                   style={{
-                    paddingTop: "130px",
+                    paddingTop: "100px",
                     fontWeight: "bold",
-                    fontSize: "60px",
+                    fontSize: "50px",
                     color: "#4974ED",
                   }}
                 >
@@ -740,9 +756,9 @@ color:"black",
                 </p>
                 <Grid
                   container
-                  spacing={5}
+                  spacing={2}
                   sx={{ width: "95%", margin: "auto" }}
-                  // sx={{ paddingLeft: "100px", paddingRight: "100px" }}
+                // sx={{ paddingLeft: "100px", paddingRight: "100px" }}
                 >
                   <Grid item xs={6}>
                     {/* <TextField
@@ -755,12 +771,11 @@ color:"black",
                       id="outlined-number"
                       label="Token Name"
                       fullWidth
-                      sx={{padding:"10px 0px 0px 0px"}}
                       //   type="number"
                       value={ReduxStoredData?.tokenName?.toUpperCase()}
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "23px", fontWeight:"bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -772,11 +787,9 @@ color:"black",
                     <TextField
                       fullWidth
                       id="outlined-number"
-                      sx={{padding:"10px 0px 0px 0px"}}
-
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "23px", fontWeight: "bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -790,12 +803,10 @@ color:"black",
                   <Grid item xs={6}>
                     <TextField
                       fullWidth
-                      sx={{padding:"10px 0px 0px 0px"}}
-
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "23px", fontWeight: "bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -809,11 +820,9 @@ color:"black",
                     <TextField
                       fullWidth
                       id="outlined-number"
-                      sx={{padding:"10px 0px 0px 0px"}}
-
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "23px", fontWeight: "bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -827,11 +836,9 @@ color:"black",
                     <TextField
                       id="outlined-number"
                       fullWidth
-                      sx={{padding:"10px 0px 0px 0px"}}
-
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "23px", fontWeight: "bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -844,12 +851,10 @@ color:"black",
                   <Grid item xs={6}>
                     <TextField
                       fullWidth
-                      sx={{padding:"10px 0px 0px 0px"}}
-
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "23px", fontWeight: "bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -862,12 +867,10 @@ color:"black",
                   <Grid item xs={6}>
                     <TextField
                       fullWidth
-                      sx={{padding:"10px 0px 0px 0px"}}
-
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "23px", fontWeight: "bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -880,12 +883,10 @@ color:"black",
                   <Grid item xs={6}>
                     <TextField
                       fullWidth
-                      sx={{padding:"10px 0px 0px 0px"}}
-
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "23px", fontWeight: "bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -898,12 +899,10 @@ color:"black",
                   <Grid item xs={6}>
                     <TextField
                       fullWidth
-                      sx={{padding:"10px 0px 0px 0px"}}
-
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "23px", fontWeight: "bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -916,11 +915,9 @@ color:"black",
                   <Grid item xs={12}>
                     <TextField
                       id="outlined-number"
-                      sx={{padding:"10px 0px 0px 0px"}}
-
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "25px", fontWeight: "bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "16px", fontWeight: "bold" },
@@ -934,12 +931,10 @@ color:"black",
                   <Grid item xs={12}>
                     <TextField
                       id="outlined-number"
-                      sx={{padding:"10px 0px 0px 0px"}}
-
                       fullWidth
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "23px", fontWeight: "bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -952,12 +947,10 @@ color:"black",
                   <Grid item xs={12}>
                     <TextField
                       fullWidth
-                      sx={{padding:"10px 0px 0px 0px"}}
-
                       id="outlined-number"
                       InputLabelProps={{
                         shrink: true,
-                        style: { fontSize: "23px", fontWeight: "bold" },
+                        style: { fontSize: "20px", fontWeight: "bold" },
                       }}
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
@@ -979,7 +972,7 @@ color:"black",
         </div>
 
         {/* function overview */}
-        <div style={{ width: "850px", height: "100%" }}>
+        <div style={{ width: "650px", height: "100%" }}>
           <div id="page" className={styles.backgroundTwo}>
             <div
               style={{
@@ -991,9 +984,9 @@ color:"black",
             >
               <p
                 style={{
-                  paddingTop: "150px",
+                  paddingTop: "100px",
                   fontWeight: "bold",
-                  fontSize: "65px",
+                  fontSize: "50px",
                   color: "#4974ED",
                 }}
               >
@@ -1014,11 +1007,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "30px 0px 0px 0px",
@@ -1031,15 +1024,14 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.canTakeBackOwnership === "Detected"
-                        ? "red"
-                        : "#00ff72"
-                    }`,
-                    padding: "20px",
+                    color: `${ReduxStoredData?.canTakeBackOwnership === "Detected"
+                      ? "red"
+                      : "#00ff72"
+                      }`,
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 30px 0px 0px",
@@ -1054,11 +1046,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1071,16 +1063,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.ownerChangeBalance === "Detected"
-                        ? "red"
-                        : "#00ff72"
-                    }`,
+                    color: `${ReduxStoredData?.ownerChangeBalance === "Detected"
+                      ? "red"
+                      : "#00ff72"
+                      }`,
 
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1095,11 +1086,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1112,16 +1103,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.blacklist === "Detected"
-                        ? "red"
-                        : "#00ff72"
-                    }`,
+                    color: `${ReduxStoredData?.blacklist === "Detected"
+                      ? "red"
+                      : "#00ff72"
+                      }`,
 
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1136,11 +1126,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1153,16 +1143,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.ModifyFees === "Detected"
-                        ? "red"
-                        : "#00ff72"
-                    }`,
+                    color: `${ReduxStoredData?.ModifyFees === "Detected"
+                      ? "red"
+                      : "#00ff72"
+                      }`,
 
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1177,11 +1166,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1194,14 +1183,13 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.Proxy === "Detected" ? "red" : "#00ff72"
-                    }`,
+                    color: `${ReduxStoredData?.Proxy === "Detected" ? "red" : "#00ff72"
+                      }`,
 
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1216,11 +1204,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1233,16 +1221,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.Whitelisted === "Detected"
-                        ? "red"
-                        : "#00ff72"
-                    }`,
+                    color: `${ReduxStoredData?.Whitelisted === "Detected"
+                      ? "red"
+                      : "#00ff72"
+                      }`,
 
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1257,11 +1244,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1274,16 +1261,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.AntiWhale === "Detected"
-                        ? "red"
-                        : "#00ff72"
-                    }`,
+                    color: `${ReduxStoredData?.AntiWhale === "Detected"
+                      ? "red"
+                      : "#00ff72"
+                      }`,
 
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1298,11 +1284,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1315,16 +1301,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.TradingCooldown === "Detected"
-                        ? "red"
-                        : "#00ff72"
-                    }`,
+                    color: `${ReduxStoredData?.TradingCooldown === "Detected"
+                      ? "red"
+                      : "#00ff72"
+                      }`,
 
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1339,11 +1324,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1356,16 +1341,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.TransferPausable === "Detected"
-                        ? "red"
-                        : "#00ff72"
-                    }`,
+                    color: `${ReduxStoredData?.TransferPausable === "Detected"
+                      ? "red"
+                      : "#00ff72"
+                      }`,
 
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1380,11 +1364,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1397,16 +1381,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.CannotSellAll === "Detected"
-                        ? "red"
-                        : "#00ff72"
-                    }`,
+                    color: `${ReduxStoredData?.CannotSellAll === "Detected"
+                      ? "red"
+                      : "#00ff72"
+                      }`,
 
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1421,11 +1404,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1438,16 +1421,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.HiddenOwner === "Detected"
-                        ? "red"
-                        : "#00ff72"
-                    }`,
+                    color: `${ReduxStoredData?.HiddenOwner === "Detected"
+                      ? "red"
+                      : "#00ff72"
+                      }`,
 
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1462,11 +1444,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#0096FF",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 0px 0px 30px",
@@ -1479,14 +1461,13 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#343434",
-                    fontSize: "25px",
+                    fontSize: "20px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.Mint === "Detected" ? "red" : "#00ff72"
-                    }`,
+                    color: `${ReduxStoredData?.Mint === "Detected" ? "red" : "#00ff72"
+                      }`,
 
-                    padding: "20px",
+                    padding: "10px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 0px 30px 0px",
@@ -1502,7 +1483,7 @@ color:"black",
         </div>
 
         {/* vulnerabilities */}
-        <div style={{ width: "850px", height: "100%" }}>
+        <div style={{ width: "650px", height: "100%" }}>
           <div id="page" className={styles.backgroundTwo}>
             <div
               style={{
@@ -1512,9 +1493,9 @@ color:"black",
             >
               <p
                 style={{
-                  paddingTop: "140px",
+                  paddingTop: "100px",
                   fontWeight: "bold",
-                  fontSize: "55px",
+                  fontSize: "40px",
                   color: "#4974ED",
                 }}
               >
@@ -1535,12 +1516,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "30px 0px 0px 0px",
@@ -1553,20 +1533,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.designLogic === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.designLogic === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 30px 0px 0px",
@@ -1581,14 +1557,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1601,20 +1574,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.CompilerWarnings === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.CompilerWarnings === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1629,14 +1598,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1649,20 +1615,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.PrivateUserDataLeak === "Not Passed"
-                        ? "red"
-                        : "white"
-                    }`,
+                    color: `${ReduxStoredData?.PrivateUserDataLeak === "Not Passed"
+                      ? "red"
+                      : "white"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1677,14 +1639,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1697,20 +1656,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.TimestampDependence === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.TimestampDependence === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1725,14 +1680,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1745,20 +1697,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.IntegerOverFlowAndUnderFlow === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.IntegerOverFlowAndUnderFlow === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1773,14 +1721,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1793,20 +1738,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.RaceConditions === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.RaceConditions === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1821,14 +1762,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1841,20 +1779,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.DelayInDataDelivery === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.DelayInDataDelivery === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1869,14 +1803,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1889,20 +1820,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.OracleCalls === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.OracleCalls === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1917,14 +1844,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1937,20 +1861,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.FrontRunning === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.FrontRunning === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -1965,14 +1885,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -1985,18 +1902,14 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.revert === "Passed" ? "white" : "red"
-                    }`,
+                    color: `${ReduxStoredData?.revert === "Passed" ? "white" : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -2009,14 +1922,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "20px 20px 0px 0px",
@@ -2029,20 +1939,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.blockGasLimit === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.blockGasLimit === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 20px 0px 0px",
@@ -2057,14 +1963,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 0px 0px 0px",
@@ -2077,20 +1980,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.methodExePermission === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.methodExePermission === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2105,14 +2004,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2125,18 +2021,14 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.ecoModel === "Passed" ? "white" : "red"
-                    }`,
+                    color: `${ReduxStoredData?.ecoModel === "Passed" ? "white" : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2151,14 +2043,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2171,20 +2060,16 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     // color: "white",
-                    color: `${
-                      ReduxStoredData?.exchangeRateImpact === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.exchangeRateImpact === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2199,15 +2084,12 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2220,19 +2102,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.maliciousLog === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.maliciousLog === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2247,14 +2125,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2267,17 +2142,13 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.scoping === "Passed" ? "white" : "red"
-                    }`,
+                    color: `${ReduxStoredData?.scoping === "Passed" ? "white" : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2292,14 +2163,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2312,19 +2180,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.storagePointer === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.storagePointer === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2339,14 +2203,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2359,17 +2220,13 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.arithmatic === "Passed" ? "white" : "red"
-                    }`,
+                    color: `${ReduxStoredData?.arithmatic === "Passed" ? "white" : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2384,14 +2241,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2404,17 +2258,13 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.racecond === "Passed" ? "white" : "red"
-                    }`,
+                    color: `${ReduxStoredData?.racecond === "Passed" ? "white" : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2429,14 +2279,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 0px 30px",
@@ -2449,19 +2296,15 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.zeppelinModule === "Passed"
-                        ? "white"
-                        : "red"
-                    }`,
+                    color: `${ReduxStoredData?.zeppelinModule === "Passed"
+                      ? "white"
+                      : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     // borderRadius: "0px 0px 30px 0px",
@@ -2476,14 +2319,11 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "#262727",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
                     color: "white",
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 0px 0px 30px",
@@ -2496,17 +2336,13 @@ color:"black",
                   xs={6}
                   sx={{
                     backgroundColor: "rgb(37, 150, 190)",
-                    fontSize: "15px",
-
+                    fontSize: "10px",
                     fontWeight: "bold",
                     textAlign: "center",
-                    color: `${
-                      ReduxStoredData?.fallbackFn === "Passed" ? "white" : "red"
-                    }`,
+                    color: `${ReduxStoredData?.fallbackFn === "Passed" ? "white" : "red"
+                      }`,
 
-                    padding: "10px",
-
-
+                    padding: "8px",
                     height: "70%",
                     borderBottom: "5px solid white",
                     borderRadius: "0px 0px 30px 0px",
@@ -2523,12 +2359,12 @@ color:"black",
 
         {/* risk classification */}
         <div id="page">
-          <img width="42.6%" height="100%" src={third} />
+          <img width="42.5%" height="100%" src={third} />
         </div>
 
         {/* audit summary */}
         {ReduxStoredData?.tool1 ? (
-          <div style={{ width: "850px", height: "100%" }}>
+          <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -2540,9 +2376,9 @@ color:"black",
               >
                 <p
                   style={{
-                    paddingTop: "130px",
+                    paddingTop: "100px",
                     fontWeight: "bold",
-                    fontSize: "80px",
+                    fontSize: "50px",
                     color: "#4974ED",
                   }}
                 >
@@ -2553,128 +2389,67 @@ color:"black",
                 <p
                   style={{
                     fontWeight: "bold",
-                    fontSize: "40px",
+                    fontSize: "30px",
                   }}
                 >
                   Used Tools:
                 </p>
-                {ReduxStoredData?.manualReview?
-
                 <p
                   style={{
-                    fontSize: "25px",
-                    fontWeight:"bold",
-                    marginTop:"-15px"
-
+                    fontSize: "20px",
                   }}
                 >
                   Manual Review - {ReduxStoredData?.manualReview}
-                 
-                </p>:null
-                }
-
-                {
-                   ReduxStoredData?.tool1?
-
+                </p>
                 <p
                   style={{
-                    fontSize: "21px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
+                    fontSize: "20px",
                   }}
                 >
-                   - { ReduxStoredData?.tool1}
-                </p>:null
-                }
-
-                {
-ReduxStoredData?.tool2?
-
+                  - {ReduxStoredData?.tool1}
+                </p>
                 <p
                   style={{
-                    fontSize: "21px",
-                    color:"#454545",
-
-                    fontWeight:"bold"
-
+                    fontSize: "20px",
                   }}
                 >
                   - {ReduxStoredData?.tool2}
-                </p>:null
-                }
-
-                {
-                  ReduxStoredData?.tool3?
-
+                </p>
                 <p
                   style={{
-                    fontSize: "21px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
-
+                    fontSize: "20px",
                   }}
                 >
-                   - {ReduxStoredData?.tool3}
-                </p>:null
-                }
-
-                {ReduxStoredData?.tool4?
-                
+                  - {ReduxStoredData?.tool3}
+                </p>
                 <p
                   style={{
-                    fontSize: "21px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
-
+                    fontSize: "20px",
                   }}
                 >
-                   - {ReduxStoredData?.tool4}
-                </p>:null
-              }
-              {ReduxStoredData?.tool5?
-              
+                  - {ReduxStoredData?.tool4}
+                </p>
                 <p
                   style={{
-                    fontSize: "21px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
-
+                    fontSize: "20px",
                   }}
                 >
-                   - {ReduxStoredData?.tool4}
-                </p>:null
-            }
-            {ReduxStoredData?.tool5?
-            
+                  - {ReduxStoredData?.tool4}
+                </p>
                 <p
                   style={{
-                    fontSize: "21px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
-
+                    fontSize: "20px",
                   }}
                 >
-                   - {ReduxStoredData?.tool5}
-                </p>:null
-          }
-          {ReduxStoredData?.tool6?
-          
+                  - {ReduxStoredData?.tool5}
+                </p>
                 <p
                   style={{
-                    fontSize: "21px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
+                    fontSize: "20px",
                   }}
                 >
                   - {ReduxStoredData?.tool6}
-                </p>:null
-        }
+                </p>
               </div>
               <div
                 style={{
@@ -2690,12 +2465,12 @@ ReduxStoredData?.tool2?
                   marginLeft: "50px",
                   fontWeight: "bold",
 
-                  fontSize: "50px",
+                  fontSize: "30px",
                 }}
               >
                 Inheritance Trees:
               </p>
-              <div style={{marginLeft:"25px",marginTop:"-10px",}}>
+              <div>
                 {/* <img
             style={{ marginLeft: "80px" }}
             src="https://www.onepointesolutions.com/wp-content/uploads/2022/05/5-Types-of-Chemistry.jpg"
@@ -2703,7 +2478,7 @@ ReduxStoredData?.tool2?
           /> */}
                 {inheritancePic && (
                   <img
-                    style={{ height: "250px", width: "800px",marginTop:"-10px", }}
+                    style={{ height: "200px", width: "600px" }}
                     src={URL.createObjectURL(inheritancePic)}
                     alt="inheritance Image"
                   />
@@ -2715,8 +2490,8 @@ ReduxStoredData?.tool2?
 
         {/* summary */}
 
-        {ReduxStoredData?.summary1 ? (
-          <div style={{ width: "850px", height: "100%" }}>
+        {ReduxStoredData?.summary ? (
+          <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div style={{ width: "90%", margin: "auto", marginTop: "-40px" }}>
                 <p
@@ -2728,132 +2503,215 @@ ReduxStoredData?.tool2?
                 >
                   Summary:
                 </p>
-{ReduxStoredData?.summary1?
 
-                <p
-                  style={{
-                    fontSize: "22px",
-                    fontWeight:"bold",
-                    color:"#454545"
+                {ReduxStoredData?.summary?.split(",")?.map((el) => (
 
-                  }}
-                >
-                  - {ReduxStoredData?.summary1}
-                </p>:null
-}
-{
-  ReduxStoredData?.summary2?
+                  <p
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: "bold",
+                      color: "#454545"
 
+                    }}
+                  >
+                    <li>
 
-                <p
-                  style={{
-                    fontSize: "22px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
-                  }}
-                >
-                  - {ReduxStoredData?.summary2}
-                </p>:null
-}
-
-{
-  ReduxStoredData?.summary3?
-
-
-                <p
-                  style={{
-                    fontSize: "22px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
-                  }}
-                >
-                  - {ReduxStoredData?.summary3}
-                </p>:null
-}
-
-{
-  ReduxStoredData?.summary4?
-
-                <p
-                  style={{
-                    fontSize: "22px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
-                  }}
-                >
-                  - {ReduxStoredData?.summary4}
-                </p>:null
-}
-{
-  ReduxStoredData?.summary5?
-
-                <p
-                  style={{
-                    fontSize: "22px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
-                  }}
-                >
-                  - {ReduxStoredData?.summary5}
-                </p>:null
-}
-{
-  ReduxStoredData?.summary6?
-
-
-                <p
-                  style={{
-                    fontSize: "22px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
-                  }}
-                >
-                  - {ReduxStoredData?.summary6}
-                </p>:null
-}
-{
-  ReduxStoredData?.summary7?
-
-                <p
-                  style={{
-                    fontSize: "22px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
-                  }}
-                >
-                  - {ReduxStoredData?.summary7}
-                </p>:null
-}
-{
-  ReduxStoredData?.summary8?
-
-                <p
-                  style={{
-                    fontSize: "22px",
-                    fontWeight:"bold",
-                    color:"#454545"
-
-                  }}
-                >
-                  - {ReduxStoredData?.summary8}
-                </p>:null
-}
+                      {el}
+                    </li>
+                  </p>
+                ))}
               </div>
-
-              <div></div>
             </div>
           </div>
         ) : null}
 
+
+        {/* functional tests */}
+        {/* {ReduxStoredData?.functionalTests? ( */}
+        <div style={{ width: "650px", height: "100%" }}>
+          <div id="page" className={styles.backgroundTwo}>
+            {/* <div style={{paddingTop:"130px",textAlign:"center",fontSize:"80px",fontWeight:"bold",color:"#4974ED"}}>
+            Functional Tests
+            </div> */}
+
+            <div
+              style={{
+                color: "#454545",
+                textAlign: "center",
+              }}
+            >
+              <p
+                style={{
+                  paddingTop: "140px",
+                  fontWeight: "bold",
+                  fontSize: "55px",
+                  color: "#4974ED",
+                }}
+              >
+                FUNCTIONAL TESTS
+              </p>
+
+
+            </div>
+
+            {/* {ReduxStoredData?.fnTest1?.split(",")?.map((el,i)=>(
+             <span style>
+             <p>
+              {el}
+             </p>
+            
+             </span>
+            ))} */}
+            {ReduxStoredData?.fnTest1 ?
+              <span style={{width:"90%"}}>
+                <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "25px" }}>
+                  1-{ReduxStoredData?.fnTest1}
+                  <span>
+                    {ReduxStoredData?.fnTest1Passed ?
+                      <span style={{ marginLeft: "20px", color: "green" }}>
+                        (Passed):
+                      </span> : <span style={{ marginLeft: "20px", color: "red" }} >(Failed):</span>
+                    }
+                  </span>
+
+                </div>
+
+                <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "18px", marginTop: "20px",width:"93%", }}>
+                  <span style={{width:"90%"}}>
+                    {ReduxStoredData?.fnTest1Desc}
+                  </span>
+                </div>
+              </span> : null
+            }
+
+
+            {
+              ReduxStoredData?.fnTest2 ?
+                <>
+
+                  <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "25px", marginTop: "20px" }}>
+                    2-{ReduxStoredData?.fnTest2}
+                    <span>
+                      {ReduxStoredData?.fnTest2Passed ?
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span> : <span style={{ marginLeft: "20px", color: "red" }} >(Failed):</span>
+                      }
+                    </span>
+
+                  </div>
+
+                  <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "18px", marginTop: "20px", }}>
+                    <span>
+                      {ReduxStoredData?.fnTest2Desc}
+                    </span>
+                  </div>
+                </> : null
+            }
+            {
+              ReduxStoredData?.fnTest3 ?
+                <>
+
+                  <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "25px", marginTop: "20px" }}>
+                    3-{ReduxStoredData?.fnTest3}
+                    <span>
+                      {ReduxStoredData?.fnTest3Passed ?
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span> : <span style={{ marginLeft: "20px", color: "red" }} >(Failed):</span>
+                      }
+                    </span>
+
+                  </div>
+
+                  <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "18px", marginTop: "20px", }}>
+                    <span>
+                      {ReduxStoredData?.fnTest3Desc}
+                    </span>
+                  </div>
+                </> : null
+            }
+
+
+            {ReduxStoredData?.fnTest4 ?
+              <>
+                <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "25px", marginTop: "20px" }}>
+                  4-{ReduxStoredData?.fnTest4}
+                  <span>
+                    {ReduxStoredData?.fnTest4Passed ?
+                      <span style={{ marginLeft: "20px", color: "green" }}>
+                        (Passed):
+                      </span> : <span style={{ marginLeft: "20px", color: "red" }} >(Failed):</span>
+                    }
+                  </span>
+
+                </div>
+
+                <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "18px", marginTop: "20px", }}>
+                  <span>
+                    {ReduxStoredData?.fnTest4Desc}
+                  </span>
+                </div>
+
+              </> : null
+            }
+
+
+            {ReduxStoredData?.fnTest5 ?
+              <>
+                <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "25px" }}>
+                  5-{ReduxStoredData?.fnTest5}
+                  <span>
+                    {ReduxStoredData?.fnTest5Passed ?
+                      <span style={{ marginLeft: "20px", color: "green" }}>
+                        (Passed):
+                      </span> : <span style={{ marginLeft: "20px", color: "red" }} >(Failed):</span>
+                    }
+                  </span>
+
+                </div>
+
+                <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "18px", marginTop: "20px", }}>
+                  <span>
+                    {ReduxStoredData?.fnTest5Desc}
+                  </span>
+                </div>
+
+              </> : null
+            }
+
+
+
+
+            {ReduxStoredData?.fnTest6 ?
+              <>
+                <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "25px" }}>
+                  5-{ReduxStoredData?.fnTest6}
+                  <span>
+                    {ReduxStoredData?.fnTest6Passed ?
+                      <span style={{ marginLeft: "20px", color: "green" }}>
+                        (Passed):
+                      </span> : <span style={{ marginLeft: "20px", color: "red" }} >(Failed):</span>
+                    }
+                  </span>
+
+                </div>
+
+                <div style={{ marginLeft: "20px", fontWeight: "bold", fontSize: "25px", marginTop: "20px", }}>
+                  <span>
+                    {ReduxStoredData?.fnTest6Desc}
+                  </span>
+                </div>
+
+              </> : null
+            }
+          </div>
+        </div>
+
+
         {/* features */}
         {ReduxStoredData?.featureHead1 ? (
-          <div style={{ width: "850px", height: "100%" }}>
+          <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -2927,16 +2785,17 @@ ReduxStoredData?.tool2?
 
         {/* manualaudit */}
         <div id="page">
-          <img width="42.5%" height="100%" src={manualAudit} />
+          <img width="42.6%" height="100%" src={manualAudit} />
         </div>
 
         {/* finding */}
         {ReduxStoredData?.highriskfinding ||
-        ReduxStoredData?.mediumriskfinding ||
-        ReduxStoredData?.lowriskfinding ||
-        ReduxStoredData?.suggestion ||
-        ReduxStoredData?.gas ? (
-          <div style={{ width: "850px", height: "100%" }}>
+          ReduxStoredData?.mediumriskfinding ||
+          ReduxStoredData?.lowriskfinding ||
+          ReduxStoredData?.suggestion ||
+          ReduxStoredData?.criticalRiskFinding ||
+          ReduxStoredData?.gas ? (
+          <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -2948,9 +2807,9 @@ ReduxStoredData?.tool2?
               >
                 <p
                   style={{
-                    paddingTop: "120px",
+                    paddingTop: "100px",
                     fontWeight: "bold",
-                    fontSize: "80px",
+                    fontSize: "60px",
                     color: "blue",
                   }}
                 >
@@ -2961,136 +2820,154 @@ ReduxStoredData?.tool2?
                 <p
                   style={{
                     fontWeight: "bold",
-                    fontSize: "25px",
+                    fontSize: "20px",
                   }}
                 >
                   <ul>
+
+                    {ReduxStoredData?.criticalRiskFinding ? (
+                      <li style={{ color: "brown", marginBottom: "5px" }}>
+                        Critical Risk Findings:<span style={{ color: "black", fontWeight: "bold" }}>
+                          {ReduxStoredData?.criticalRiskFinding}
+                        </span>
+                      </li>
+                    ) : <li style={{ color: "brown", marginBottom: "5px" }}>
+                      Critical Risk Findings:<span style={{ color: "black", fontWeight: "bold" }}>0</span>
+                    </li>}
                     {ReduxStoredData?.highriskfinding ? (
-                      <li style={{ color: "red",marginBottom:"5px" }}>
-                        High Risk Findings:<span style={{color:"black",fontWeight:"bold"}}>
-                        {ReduxStoredData?.highriskfinding}
+                        <li style={{ color: "red", marginBottom: "5px" }}>
+                          High Risk Findings:<span style={{ color: "black", fontWeight: "bold" }}>
+                            {ReduxStoredData?.highriskfinding}
                           </span>
-                      </li>
-                    ) : <li style={{ color: "red",marginBottom:"5px"  }}>
-                    High Risk Findings:<span style={{color:"black",fontWeight:"bold"}}>0</span>
-                  </li>}
-                    {ReduxStoredData?.mediumriskfinding ? (
-                      <li style={{ color: "rgba(244,145,110,255)" ,marginBottom:"5px" }}>
+                        </li>
+                      ) : <li style={{ color: "red", marginBottom: "5px" }}>
+                        High Risk Findings:<span style={{ color: "black", fontWeight: "bold" }}>0</span>
+                      </li>}
+                      {ReduxStoredData?.mediumriskfinding ? (
+                        <li style={{ color: "yellow", marginBottom: "5px" }}>
+                          Medium Risk Findings:
+                          <span style={{ color: "black", fontWeight: "bold" }}> {ReduxStoredData?.mediumriskfinding}</span>
+
+
+                        </li>
+                      ) : <li style={{ color: "yellow", marginBottom: "5px" }}>
                         Medium Risk Findings:
-                    <span style={{color:"black",fontWeight:"bold"}}> {ReduxStoredData?.mediumriskfinding}</span>
+                        <span style={{ color: "black", fontWeight: "bold" }}>0</span>
+                      </li>}
 
-                       
-                      </li>
-                    ) :  <li style={{ color: "rgba(244,145,110,255)",marginBottom:"5px"  }}>
-                    Medium Risk Findings:
-                    <span style={{color:"black",fontWeight:"bold"}}>0</span>
-                  </li>}
+                      {ReduxStoredData?.lowriskfinding ? (
+                        <li style={{ color: "green", marginBottom: "5px" }}>
+                          Low Risk Findings:
+                          <span style={{ color: "black", fontWeight: "bold" }}>{ReduxStoredData?.lowriskfinding}</span>
 
-                    {ReduxStoredData?.lowriskfinding ? (
-                      <li style={{ color: "green",marginBottom:"5px"  }}>
+                        </li>
+                      ) : <li style={{ color: "green", marginBottom: "5px" }}>
                         Low Risk Findings:
-                        <span style={{color:"black",fontWeight:"bold"}}>{ReduxStoredData?.lowriskfinding}</span>
+                        <span style={{ color: "black", fontWeight: "bold" }}>0</span>
 
-                      </li>
-                    ) : <li style={{ color: "green",marginBottom:"5px"  }}>
-                    Low Risk Findings:
-                    <span style={{color:"black",fontWeight:"bold"}}>0</span>
+                      </li>}
 
-                  </li> }
+                      {ReduxStoredData?.suggestion ? (
+                        <li style={{ color: "blue", marginBottom: "5px" }}>
+                          High Risk Findings:
+                          <span style={{ color: "black", fontWeight: "bold" }}>{ReduxStoredData?.suggestion}</span>
 
-                    {ReduxStoredData?.suggestion ? (
-                      <li style={{ color: "blue",marginBottom:"5px"  }}>
+                        </li>
+                      ) : <li style={{ color: "blue", marginBottom: "5px" }}>
                         High Risk Findings:
-                        <span style={{color:"black",fontWeight:"bold"}}>{ReduxStoredData?.suggestion}</span>
+                        <span style={{ color: "black", fontWeight: "bold" }}>0</span>
 
-                      </li>
-                    ) :   <li style={{ color: "blue",marginBottom:"5px"  }}>
-                    High Risk Findings:
-                    <span style={{color:"black",fontWeight:"bold"}}>0</span>
+                      </li>}
+                      {ReduxStoredData?.gas ? (
+                        <li style={{ color: "purple", marginBottom: "5px" }}>
+                          Gas Optimizations:
+                          <span style={{ color: "black", fontWeight: "bold" }}>{ReduxStoredData?.gas}</span>
 
-                  </li>}
-                    {ReduxStoredData?.gas ? (
-                      <li style={{ color: "purple",marginBottom:"5px"  }}>
+                        </li>
+                      ) : <li style={{ color: "purple", marginBottom: "5px" }}>
                         Gas Optimizations:
-                        <span style={{color:"black",fontWeight:"bold"}}>{ReduxStoredData?.gas}</span>
+                        <span style={{ color: "black", fontWeight: "bold" }}>0</span>
 
-                      </li>
-                    ) : <li style={{ color: "purple",marginBottom:"5px"  }}>
-                    Gas Optimizations:
-                    <span style={{color:"black",fontWeight:"bold"}}>0</span>
-
-                  </li>}
+                      </li>}
                   </ul>
                 </p>
                 <Divider sx={{ backgroundColor: "grey", height: "2px" }} />
-                {ReduxStoredData?.lowriskfinding
-                  ? 
-                  <>
-                  <p style={{ color: "green",marginBottom:"20px",fontSize:"30px",fontWeight:"bold" }} >Low Risk Finding: </p>
-                  <span style={{fontSize:"25px",fontWeight:"bold",lineHeight:1.4,color:"#454545"}}>
-
-                  {ReduxStoredData?.highriskDetails}
-                  </span>
-                  
-                  </>
-                  
+                {ReduxStoredData?.highriskfinding
+                  ? ReduxStoredData?.highriskDetails
                   : null}
                 {ReduxStoredData?.lowriskfinding
-                  ? 
-                  <>
-                  <p style={{ color: "red",marginBottom:"20px",fontSize:"30px",fontWeight:"bold" }} >High Risk Finding: </p>
-                  <span style={{fontSize:"25px",fontWeight:"bold",lineHeight:1.4,color:"#454545"}}>
-
-                  {ReduxStoredData?.lowriskDetails}
-                  </span>
-                  
-                  </>
-                
+                  ? ReduxStoredData?.lowriskDetails
                   : null}
                 {ReduxStoredData?.mediumriskfinding
-                  ? 
-                  <>
-                  <p style={{ color: "rgba(244,145,110,255)",marginBottom:"20px",fontSize:"30px",fontWeight:"bold" }} >Medium Risk Finding: </p>
-                  <span style={{fontSize:"25px",fontWeight:"bold",lineHeight:1.4,color:"#454545"}}>
-
-                  {ReduxStoredData?.mediumriskDetails}
-                  </span>
-                  
-                  </>
-                  
+                  ? ReduxStoredData?.mediumriskDetails
                   : null}
                 {ReduxStoredData?.suggestion
-                  ? 
-                  <>
-                  <p style={{ color: "blue",marginBottom:"20px",fontSize:"30px",fontWeight:"bold" }} >Suggestions: </p>
-                  <span style={{fontSize:"25px",fontWeight:"bold",lineHeight:1.4,color:"#454545"}}>
-
-                  {ReduxStoredData?.suggestionDetails}
-                  </span>
-                  
-                  </>
-                  
+                  ? ReduxStoredData?.suggestionDetails
                   : null}
-                {ReduxStoredData?.gas ? 
-                  <>
-                  <p style={{ color: "purple",marginBottom:"20px",fontSize:"30px",fontWeight:"bold" }} >Gas: </p>
-                  <span style={{fontSize:"25px",fontWeight:"bold",lineHeight:1.4,color:"#454545"}}>
-
-                  {ReduxStoredData?.gasDetails}
-                  </span>
-                  
-                  </>
-               : null}
+                {ReduxStoredData?.gas ? ReduxStoredData?.gasDetails : null}
               </div>
             </div>
           </div>
         ) : null}
 
+
+
+        {/* critical risk */}
+
+
+        <div style={{ width: "650px", height: "100%" }}>
+          <div id="page" className={styles.backgroundTwo}>
+            {/* <div style={{paddingTop:"130px",textAlign:"center",fontSize:"80px",fontWeight:"bold",color:"#4974ED"}}>
+            Functional Tests
+            </div> */}
+
+            <div
+              style={{
+                color: "#454545",
+                textAlign: "center",
+              }}
+            >
+              <p
+                style={{
+                  paddingTop: "140px",
+                  fontWeight: "bold",
+                  fontSize: "45px",
+                  color: "brown",
+                }}
+              >
+                CRITICAL RISK FINDINGS
+                <Divider variant="middle" sx={{ width: "85%", margin: "auto", padding: "1px", border: "1px solid black", background: "black", marginTop: "30px", marginBottom: "20px" }} />
+              </p>
+
+
+            </div>
+
+      {ReduxStoredData?.criticalRiskDetails?.split("@").map((el,i)=>(
+        <div className={styles.criticalElement}>
+{
+  el
+}
+
+{/* {criticalImageArray && (
+              <img
+                style={{ height: "300px", width: "300px", borderRadius: "50%" }}
+                src={URL.createObjectURL(criticalImageArray[i])}
+                alt="Uploaded Image"
+              />
+            )} */}
+        </div>
+        
+      
+      ))}
+          </div>
+        </div>
+
+
         <div id="page">
-          <img width="42.6%" height="100%" src={fourth} />
+          <img width="42.5%" height="100%" src={fourth} />
         </div>
         <div id="page">
-          <img width="42.6%" height="100%" src={second} />
+          <img width="42.5%" height="100%" src={second} />
         </div>
       </div>
       <Button variant="contained" onClick={exportPdf}>
