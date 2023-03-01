@@ -26,6 +26,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import AuditReport from "./AuditReport";
+import PdfReport from "./PdfWithLink";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -161,15 +163,14 @@ export default function CustomizedAccordions() {
     mediumriskDetails: "",
     suggestionDetails: "",
     gasDetails: "",
-    summary1:"",
-    summary2:"",
-    summary3:"",
-    summary4:"",
-    summary5:"",
-    summary6:"",
-    summary7:"",
-    summary8:"",
-    
+    summary1: "",
+    summary2: "",
+    summary3: "",
+    summary4: "",
+    summary5: "",
+    summary6: "",
+    summary7: "",
+    summary8: "",
   };
 
   // const [input, setInput] = useState(init);
@@ -1905,7 +1906,7 @@ export default function CustomizedAccordions() {
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
           <Typography sx={{ color: "green", fontWeight: "bold" }}>
-           SUMMARY
+            SUMMARY
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -1949,7 +1950,7 @@ export default function CustomizedAccordions() {
                   value={input?.summary3}
                 />
               </Grid>
-            
+
               <Grid item xs={12} md={3}>
                 <TextField
                   name="summary5"
@@ -2012,6 +2013,12 @@ export default function CustomizedAccordions() {
       <div>
         Pdf report
         <AuditReport />
+        {/* <PDFDownloadLink document={<PdfReport />} fileName="example.pdf">
+          {({ blob, url, loading, error }) =>
+            loading ? "Loading document..." : "Download PDF"
+          }
+        </PDFDownloadLink> */}
+        {/* <PdfReport /> */}
       </div>
     </div>
   );

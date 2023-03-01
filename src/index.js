@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./components/redux/store";
 import { HashRouter } from "react-router-dom";
+import PdfReport from "./components/AuditReportForm/PdfWithLink";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,6 +14,7 @@ root.render(
     <Provider store={store}>
       <HashRouter>
         <App />
+        {/* <PdfReport /> */}
       </HashRouter>
     </Provider>
   </React.StrictMode>

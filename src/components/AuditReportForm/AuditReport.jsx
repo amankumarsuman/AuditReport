@@ -56,12 +56,91 @@ function AuditReport() {
     })();
   };
 
+  // const exportPdf = async () => {
+  //   const elements = Array.from(document.querySelectorAll("#page"));
+  //   const pdf = new jsPDF("p", "mm", "a4");
+  //   let y = 0;
+  //   const pageHeight = pdf.internal.pageSize.height;
+
+  //   for (let index = 0; index < elements.length; index++) {
+  //     const element = elements[index];
+  //     const canvas = await html2canvas(element);
+  //     const imgData = canvas.toDataURL("image/png");
+  //     const imgHeight =
+  //       (canvas.height * pdf.internal.pageSize.width) / canvas.width;
+  //     const remainingHeight = pageHeight - y;
+
+  //     if (imgHeight <= remainingHeight) {
+  //       pdf.addImage(
+  //         imgData,
+  //         "PNG",
+  //         0,
+  //         y,
+  //         pdf.internal.pageSize.width,
+  //         imgHeight
+  //       );
+  //       y += imgHeight;
+  //     } else {
+  //       pdf.addPage();
+  //       y = 0;
+  //     }
+  //   }
+
+  //   pdf.save(`${ReduxStoredData?.companyName} Audit Report`);
+  // };
+
+  // const exportPdf = async () => {
+  //   const elements = Array.from(document.querySelectorAll("#page"));
+  //   const pdf = new jsPDF("p", "mm", "a4");
+  //   let y = 0;
+  //   const pageHeight = pdf.internal.pageSize.height;
+
+  //   for (let index = 0; index < elements.length; index++) {
+  //     const element = elements[index];
+  //     const canvas = await html2canvas(element);
+  //     const imgData = canvas.toDataURL("image/png");
+  //     const imgHeight =
+  //       (canvas.height * pdf.internal.pageSize.width) / canvas.width;
+  //     const remainingHeight = pageHeight - y;
+
+  //     if (imgHeight <= remainingHeight) {
+  //       pdf.addImage(
+  //         imgData,
+  //         "PNG",
+  //         0,
+  //         y,
+  //         pdf.internal.pageSize.width,
+  //         imgHeight
+  //       );
+  //       addLinksToPdf(pdf, element, y, imgHeight);
+  //       y += imgHeight;
+  //     } else {
+  //       pdf.addPage();
+  //       y = 0;
+  //       index--;
+  //     }
+  //   }
+
+  //   pdf.save(`${ReduxStoredData?.companyName} Audit Report`);
+  // };
+
+  // const addLinksToPdf = (pdf, element, startY, height) => {
+  //   const links = Array.from(element.querySelectorAll("a[href]"));
+  //   for (const link of links) {
+  //     const { top, left, width, height } = link.getBoundingClientRect();
+  //     const x = left;
+  //     const y = startY + top + height;
+  //     const href = link.getAttribute("href");
+  //     pdf.link(x, y, width, height, { url: href });
+  //   }
+  // };
+
   // import React from '@react-pdf/renderer';
 
   const CustomLink = ({ text, url }) => (
     <Text
-      style={{ color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}
-      onClick={() => window.open(url, '_blank')}
+      style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }}
+      onClick={() => window.open(url, "_blank")}
     >
       {text}
     </Text>
@@ -152,8 +231,7 @@ function AuditReport() {
           {/* <div>page 1</div> */}
         </div>
 
-
-{/* overview */}
+        {/* overview */}
 
         <div style={{ width: "650px" }}>
           <div id="page" className={styles.backgroundTwo}>
@@ -453,7 +531,7 @@ function AuditReport() {
 
         {/* description */}
         {ReduxStoredData?.description ? (
-          <div style={{ width: "650px", height: "100%",position:"relative" }}>
+          <div style={{ width: "650px", height: "100%", position: "relative" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div
                 style={{
@@ -501,7 +579,7 @@ function AuditReport() {
                 </p>
               </div>
 
-              <div style={{position:"absolute",bottom:850,left:"-35px"}}>
+              <div style={{ position: "absolute", bottom: 850, left: "-35px" }}>
                 {logo && (
                   <img
                     style={{
@@ -586,11 +664,7 @@ socialMediaPic &&
               <div style={{ marginLeft: "70px", marginTop: "-40px" }}>
                 {ReduxStoredData?.weblink ? (
                   <>
-       
-
-
                     <div>
-        
                       <span
                         onClick={() => handleNavigate(ReduxStoredData?.weblink)}
                         style={{
@@ -604,16 +678,15 @@ socialMediaPic &&
                       >
                         <LanguageIcon sx={{ color: "#4974ED" }} />{" "}
                         {ReduxStoredData?.weblink}
+                        <a href="https://www.google.com">google link</a>
                       </span>
-                     
-         
                     </div>
                   </>
                 ) : null}
                 {/* <br /> */}
 
                 {ReduxStoredData?.telegramLink ? (
-                  <div  style={{ marginTop: "10px" }}>
+                  <div style={{ marginTop: "10px" }}>
                     <span
                       onClick={() =>
                         handleNavigate(ReduxStoredData?.telegramLink)
@@ -623,7 +696,6 @@ socialMediaPic &&
                         fontWeight: "bold",
                         cursor: "pointer",
                         // marginTop:"10px"
-                        
                       }}
                       // href={ReduxStoredData?.telegramLink}
                     >
@@ -2399,110 +2471,91 @@ socialMediaPic &&
                 >
                   Used Tools:
                 </p>
-                {ReduxStoredData?.manualReview?
+                {ReduxStoredData?.manualReview ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                      marginTop: "-15px",
+                    }}
+                  >
+                    Manual Review - {ReduxStoredData?.manualReview}
+                  </p>
+                ) : null}
 
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold",
-                    marginTop:"-15px"
+                {ReduxStoredData?.tool1 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.tool1}
+                  </p>
+                ) : null}
 
-                  }}
-                >
-                  Manual Review - {ReduxStoredData?.manualReview}
-                 
-                </p>:null
-                }
+                {ReduxStoredData?.tool2 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.tool2}
+                  </p>
+                ) : null}
 
-                {
-                   ReduxStoredData?.tool1?
+                {ReduxStoredData?.tool3 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.tool3}
+                  </p>
+                ) : null}
 
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-
-                  }}
-                >
-                   - { ReduxStoredData?.tool1}
-                </p>:null
-                }
-
-                {
-ReduxStoredData?.tool2?
-
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-
-                  }}
-                >
-                  - {ReduxStoredData?.tool2}
-                </p>:null
-                }
-
-                {
-                  ReduxStoredData?.tool3?
-
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-
-                  }}
-                >
-                   - {ReduxStoredData?.tool3}
-                </p>:null
-                }
-
-                {ReduxStoredData?.tool4?
-                
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-
-                  }}
-                >
-                   - {ReduxStoredData?.tool4}
-                </p>:null
-              }
-              {ReduxStoredData?.tool5?
-              
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-
-                  }}
-                >
-                   - {ReduxStoredData?.tool4}
-                </p>:null
-            }
-            {ReduxStoredData?.tool5?
-            
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-
-                  }}
-                >
-                   - {ReduxStoredData?.tool5}
-                </p>:null
-          }
-          {ReduxStoredData?.tool6?
-          
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-                  }}
-                >
-                  - {ReduxStoredData?.tool6}
-                </p>:null
-        }
+                {ReduxStoredData?.tool4 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.tool4}
+                  </p>
+                ) : null}
+                {ReduxStoredData?.tool5 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.tool4}
+                  </p>
+                ) : null}
+                {ReduxStoredData?.tool5 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.tool5}
+                  </p>
+                ) : null}
+                {ReduxStoredData?.tool6 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.tool6}
+                  </p>
+                ) : null}
               </div>
               <div
                 style={{
@@ -2523,7 +2576,7 @@ ReduxStoredData?.tool2?
               >
                 Inheritance Trees:
               </p>
-              <div style={{marginLeft:"25px",marginTop:"-10px",}}>
+              <div style={{ marginLeft: "25px", marginTop: "-10px" }}>
                 {/* <img
             style={{ marginLeft: "80px" }}
             src="https://www.onepointesolutions.com/wp-content/uploads/2022/05/5-Types-of-Chemistry.jpg"
@@ -2531,7 +2584,11 @@ ReduxStoredData?.tool2?
           /> */}
                 {inheritancePic && (
                   <img
-                    style={{ height: "200px", width: "600px",marginTop:"-10px", }}
+                    style={{
+                      height: "200px",
+                      width: "600px",
+                      marginTop: "-10px",
+                    }}
                     src={URL.createObjectURL(inheritancePic)}
                     alt="inheritance Image"
                   />
@@ -2556,106 +2613,88 @@ ReduxStoredData?.tool2?
                 >
                   Summary:
                 </p>
-{ReduxStoredData?.summary1?
+                {ReduxStoredData?.summary1 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.summary1}
+                  </p>
+                ) : null}
+                {ReduxStoredData?.summary2 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.summary2}
+                  </p>
+                ) : null}
 
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-                  }}
-                >
-                  - {ReduxStoredData?.summary1}
-                </p>:null
-}
-{
-  ReduxStoredData?.summary2?
+                {ReduxStoredData?.summary3 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.summary3}
+                  </p>
+                ) : null}
 
-
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-                  }}
-                >
-                  - {ReduxStoredData?.summary2}
-                </p>:null
-}
-
-{
-  ReduxStoredData?.summary3?
-
-
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-                  }}
-                >
-                  - {ReduxStoredData?.summary3}
-                </p>:null
-}
-
-{
-  ReduxStoredData?.summary4?
-
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-                  }}
-                >
-                  - {ReduxStoredData?.summary4}
-                </p>:null
-}
-{
-  ReduxStoredData?.summary5?
-
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-                  }}
-                >
-                  - {ReduxStoredData?.summary5}
-                </p>:null
-}
-{
-  ReduxStoredData?.summary6?
-
-
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-                  }}
-                >
-                  - {ReduxStoredData?.summary6}
-                </p>:null
-}
-{
-  ReduxStoredData?.summary7?
-
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-                  }}
-                >
-                  - {ReduxStoredData?.summary7}
-                </p>:null
-}
-{
-  ReduxStoredData?.summary8?
-
-                <p
-                  style={{
-                    fontSize: "20px",
-                    fontWeight:"bold"
-                  }}
-                >
-                  - {ReduxStoredData?.summary8}
-                </p>:null
-}
+                {ReduxStoredData?.summary4 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.summary4}
+                  </p>
+                ) : null}
+                {ReduxStoredData?.summary5 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.summary5}
+                  </p>
+                ) : null}
+                {ReduxStoredData?.summary6 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.summary6}
+                  </p>
+                ) : null}
+                {ReduxStoredData?.summary7 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.summary7}
+                  </p>
+                ) : null}
+                {ReduxStoredData?.summary8 ? (
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    - {ReduxStoredData?.summary8}
+                  </p>
+                ) : null}
               </div>
 
               <div></div>
