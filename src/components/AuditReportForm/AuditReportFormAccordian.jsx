@@ -179,7 +179,14 @@ export default function CustomizedAccordions() {
     fnTest5:"",
     fnTest5Passed:true,
     fnTest5Desc:"",
-    
+    criticalImage1:null,
+    criticalImage2: null,
+    criticalImage3: null,
+    criticalImage4: null,
+    criticalImage5: null,
+    criticalImage6: null,
+    criticalImage7: null,
+    criticalImage8: null,
     
   };
 
@@ -207,7 +214,7 @@ export default function CustomizedAccordions() {
     setSocialMediaPic(e.target.files[0]);
   };
   const handleCriticalImage1 = (e) => {
-    console.log(e.target.files[0]);
+    console.log(e.target.files[0],"test critical");
     setCriticalImage1(e.target.files[0]);
   };
   const handleCriticalImage = (e) => {
@@ -739,6 +746,14 @@ export default function CustomizedAccordions() {
         logo: image,
         inheritancePic: inheritancePic,
         socialMediaPic: socialMediaPic,
+        criticalImage1:criticalImage1,
+        criticalImage2: criticalImage2,
+        criticalImage3: criticalImage3,
+        criticalImage4: criticalImage4,
+        criticalImage5: criticalImage5,
+        criticalImage6: criticalImage6,
+        criticalImage7: criticalImage7,
+        criticalImage8: criticalImage8,
       })
     );
   };
@@ -2054,7 +2069,7 @@ Images of Critical Risk Finding
                   Upload Critical Image  +
                   <input
                     hidden
-                    name="criticalImage1"
+                    name="criticalImage9"
                     onChange={handleCriticalImage1}
                     accept="image/*"
                     multiple
