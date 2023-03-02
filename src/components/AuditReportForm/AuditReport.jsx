@@ -24,10 +24,20 @@ function AuditReport() {
   const ReduxStoredData = useSelector((state) => state.publisher?.auditData);
   const ReduxStoredData2 = useSelector((state) => state.publisher);
   const logo = useSelector((state) => state.publisher?.logo);
+  // const HignRiskImageArray = useSelector(
+  //   (state) => state.publisher?.highRiskImages
+  // );
   console.log(logo, "logo");
   console.log(ReduxStoredData?.publisher, "redux stored");
   const [arr1, setArr1] = useState();
   const criticalImageArray = [
+    "",
+    ReduxStoredData2?.highRiskImages[0],
+    "",
+    ReduxStoredData2?.highRiskImages[1],
+    "",
+  ];
+  const HignRiskImageArray = [
     "",
     ReduxStoredData2?.criticalImage1,
     "",
@@ -40,11 +50,33 @@ function AuditReport() {
     ReduxStoredData2?.criticalImage7,
     ReduxStoredData2?.criticalImage8,
   ];
-  console.log(criticalImageArray, "criticalImageArray");
+
+  // const HignRiskImageArray = [];
+  const lowImageArray = [];
+  const mediumImageArray = [];
+  const suggestionImageArr = [];
+  const gasImageArray = [];
+  // const highRiskArr = [];
+  // const lowArr = [];
+  // const mediumArr = [];
+  // const suggestionArr = [];
+  // const gasArr = [];
   const criticalArr = ReduxStoredData?.criticalRiskDetails
     ?.split("@")
     ?.map((el) => el);
-  console.log(criticalArr?.length);
+  const highRiskArr = ReduxStoredData?.highriskDetails
+    ?.split("@")
+    ?.map((el) => el);
+  const suggestionArr = ReduxStoredData?.suggestionDetails
+    ?.split("@")
+    ?.map((el) => el);
+  const gasArr = ReduxStoredData?.gasDetails?.split("@")?.map((el) => el);
+  const mediumArr = ReduxStoredData?.mediumriskDetails
+    ?.split("@")
+    ?.map((el) => el);
+  const lowArr = ReduxStoredData?.lowriskDetails?.split("@")?.map((el) => el);
+
+  // console.log(criticalArr?.length);
 
   const getCriticalArr = () => {
     for (let i = 0; i < criticalArr?.length; i++) {}
@@ -339,7 +371,7 @@ function AuditReport() {
             }}
           >
             {ReduxStoredData?.companyName}
-            <a href="https://www.google.com/">Google</a>
+            {/* <a href="https://www.google.com/">Google</a> */}
           </div>
           {/* <div>page 1</div> */}
         </div>
@@ -796,7 +828,7 @@ socialMediaPic &&
                           marginTop: "-13px",
                         }}
 
-                      // href={ReduxStoredData?.weblink}
+                        // href={ReduxStoredData?.weblink}
                       >
                         <LanguageIcon sx={{ color: "#4974ED" }} />{" "}
                       </span>
@@ -828,7 +860,7 @@ socialMediaPic &&
                           sx={{ color: "#4974ED", fontSize: "17px" }}
                         />{" "}
                         {ReduxStoredData?.weblink}
-                        <a href="https://www.google.com">google link</a>
+                        {/* <a href="https://www.google.com">google link</a> */}
                       </span>
                     </div>
                   </>
@@ -1089,12 +1121,12 @@ socialMediaPic &&
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
                       }}
-                      label="Compiler"
-                      value={ReduxStoredData?.compiler}
+                      label="Decimals"
+                      value={ReduxStoredData?.decimal}
                       variant="standard"
                     />
                   </Grid>
-                  <Grid item xs={6}>
+                  {/* <Grid item xs={6}>
                     <TextField
                       fullWidth
                       id="outlined-number"
@@ -1109,7 +1141,7 @@ socialMediaPic &&
                       value={ReduxStoredData?.optimizationEnabled}
                       variant="standard"
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item xs={12}>
                     <TextField
                       id="outlined-number"
@@ -2794,32 +2826,32 @@ socialMediaPic &&
         ) : null}
 
         {/* functional tests */}
-        {/* {ReduxStoredData?.functionalTests? ( */}
-        <div style={{ width: "650px", height: "100%" }}>
-          <div id="page" className={styles.backgroundTwo}>
-            {/* <div style={{paddingTop:"130px",textAlign:"center",fontSize:"80px",fontWeight:"bold",color:"#4974ED"}}>
+        {ReduxStoredData?.fnTest1 ? (
+          <div style={{ width: "650px", height: "100%" }}>
+            <div id="page" className={styles.backgroundTwo}>
+              {/* <div style={{paddingTop:"130px",textAlign:"center",fontSize:"80px",fontWeight:"bold",color:"#4974ED"}}>
             Functional Tests
             </div> */}
 
-            <div
-              style={{
-                color: "#454545",
-                textAlign: "center",
-              }}
-            >
-              <p
+              <div
                 style={{
-                  paddingTop: "140px",
-                  fontWeight: "bold",
-                  fontSize: "55px",
-                  color: "#4974ED",
+                  color: "#454545",
+                  textAlign: "center",
                 }}
               >
-                FUNCTIONAL TESTS
-              </p>
-            </div>
+                <p
+                  style={{
+                    paddingTop: "140px",
+                    fontWeight: "bold",
+                    fontSize: "55px",
+                    color: "#4974ED",
+                  }}
+                >
+                  FUNCTIONAL TESTS
+                </p>
+              </div>
 
-            {/* {ReduxStoredData?.fnTest1?.split(",")?.map((el,i)=>(
+              {/* {ReduxStoredData?.fnTest1?.split(",")?.map((el,i)=>(
              <span style>
              <p>
               {el}
@@ -2827,228 +2859,229 @@ socialMediaPic &&
             
              </span>
             ))} */}
-            {ReduxStoredData?.fnTest1 ? (
-              <span style={{ width: "90%" }}>
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                  }}
-                >
-                  1-{ReduxStoredData?.fnTest1}
-                  <span>
-                    {ReduxStoredData?.fnTest1Passed ? (
-                      <span style={{ marginLeft: "20px", color: "green" }}>
-                        (Passed):
-                      </span>
-                    ) : (
-                      <span style={{ marginLeft: "20px", color: "red" }}>
-                        (Failed):
-                      </span>
-                    )}
-                  </span>
-                </div>
+              {ReduxStoredData?.fnTest1 ? (
+                <span style={{ width: "90%" }}>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                    }}
+                  >
+                    1-{ReduxStoredData?.fnTest1}
+                    <span>
+                      {ReduxStoredData?.fnTest1Passed ? (
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span>
+                      ) : (
+                        <span style={{ marginLeft: "20px", color: "red" }}>
+                          (Failed):
+                        </span>
+                      )}
+                    </span>
+                  </div>
 
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "18px",
-                    marginTop: "20px",
-                    width: "93%",
-                  }}
-                >
-                  <span style={{ width: "90%" }}>
-                    {ReduxStoredData?.fnTest1Desc}
-                  </span>
-                </div>
-              </span>
-            ) : null}
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      marginTop: "20px",
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+                      {ReduxStoredData?.fnTest1Desc}
+                    </span>
+                  </div>
+                </span>
+              ) : null}
 
-            {ReduxStoredData?.fnTest2 ? (
-              <>
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                    marginTop: "20px",
-                  }}
-                >
-                  2-{ReduxStoredData?.fnTest2}
-                  <span>
-                    {ReduxStoredData?.fnTest2Passed ? (
-                      <span style={{ marginLeft: "20px", color: "green" }}>
-                        (Passed):
-                      </span>
-                    ) : (
-                      <span style={{ marginLeft: "20px", color: "red" }}>
-                        (Failed):
-                      </span>
-                    )}
-                  </span>
-                </div>
+              {ReduxStoredData?.fnTest2 ? (
+                <>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    2-{ReduxStoredData?.fnTest2}
+                    <span>
+                      {ReduxStoredData?.fnTest2Passed ? (
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span>
+                      ) : (
+                        <span style={{ marginLeft: "20px", color: "red" }}>
+                          (Failed):
+                        </span>
+                      )}
+                    </span>
+                  </div>
 
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "18px",
-                    marginTop: "20px",
-                  }}
-                >
-                  <span>{ReduxStoredData?.fnTest2Desc}</span>
-                </div>
-              </>
-            ) : null}
-            {ReduxStoredData?.fnTest3 ? (
-              <>
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                    marginTop: "20px",
-                  }}
-                >
-                  3-{ReduxStoredData?.fnTest3}
-                  <span>
-                    {ReduxStoredData?.fnTest3Passed ? (
-                      <span style={{ marginLeft: "20px", color: "green" }}>
-                        (Passed):
-                      </span>
-                    ) : (
-                      <span style={{ marginLeft: "20px", color: "red" }}>
-                        (Failed):
-                      </span>
-                    )}
-                  </span>
-                </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <span>{ReduxStoredData?.fnTest2Desc}</span>
+                  </div>
+                </>
+              ) : null}
+              {ReduxStoredData?.fnTest3 ? (
+                <>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    3-{ReduxStoredData?.fnTest3}
+                    <span>
+                      {ReduxStoredData?.fnTest3Passed ? (
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span>
+                      ) : (
+                        <span style={{ marginLeft: "20px", color: "red" }}>
+                          (Failed):
+                        </span>
+                      )}
+                    </span>
+                  </div>
 
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "18px",
-                    marginTop: "20px",
-                  }}
-                >
-                  <span>{ReduxStoredData?.fnTest3Desc}</span>
-                </div>
-              </>
-            ) : null}
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <span>{ReduxStoredData?.fnTest3Desc}</span>
+                  </div>
+                </>
+              ) : null}
 
-            {ReduxStoredData?.fnTest4 ? (
-              <>
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                    marginTop: "20px",
-                  }}
-                >
-                  4-{ReduxStoredData?.fnTest4}
-                  <span>
-                    {ReduxStoredData?.fnTest4Passed ? (
-                      <span style={{ marginLeft: "20px", color: "green" }}>
-                        (Passed):
-                      </span>
-                    ) : (
-                      <span style={{ marginLeft: "20px", color: "red" }}>
-                        (Failed):
-                      </span>
-                    )}
-                  </span>
-                </div>
+              {ReduxStoredData?.fnTest4 ? (
+                <>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    4-{ReduxStoredData?.fnTest4}
+                    <span>
+                      {ReduxStoredData?.fnTest4Passed ? (
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span>
+                      ) : (
+                        <span style={{ marginLeft: "20px", color: "red" }}>
+                          (Failed):
+                        </span>
+                      )}
+                    </span>
+                  </div>
 
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "18px",
-                    marginTop: "20px",
-                  }}
-                >
-                  <span>{ReduxStoredData?.fnTest4Desc}</span>
-                </div>
-              </>
-            ) : null}
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <span>{ReduxStoredData?.fnTest4Desc}</span>
+                  </div>
+                </>
+              ) : null}
 
-            {ReduxStoredData?.fnTest5 ? (
-              <>
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                  }}
-                >
-                  5-{ReduxStoredData?.fnTest5}
-                  <span>
-                    {ReduxStoredData?.fnTest5Passed ? (
-                      <span style={{ marginLeft: "20px", color: "green" }}>
-                        (Passed):
-                      </span>
-                    ) : (
-                      <span style={{ marginLeft: "20px", color: "red" }}>
-                        (Failed):
-                      </span>
-                    )}
-                  </span>
-                </div>
+              {ReduxStoredData?.fnTest5 ? (
+                <>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                    }}
+                  >
+                    5-{ReduxStoredData?.fnTest5}
+                    <span>
+                      {ReduxStoredData?.fnTest5Passed ? (
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span>
+                      ) : (
+                        <span style={{ marginLeft: "20px", color: "red" }}>
+                          (Failed):
+                        </span>
+                      )}
+                    </span>
+                  </div>
 
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "18px",
-                    marginTop: "20px",
-                  }}
-                >
-                  <span>{ReduxStoredData?.fnTest5Desc}</span>
-                </div>
-              </>
-            ) : null}
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <span>{ReduxStoredData?.fnTest5Desc}</span>
+                  </div>
+                </>
+              ) : null}
 
-            {ReduxStoredData?.fnTest6 ? (
-              <>
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                  }}
-                >
-                  5-{ReduxStoredData?.fnTest6}
-                  <span>
-                    {ReduxStoredData?.fnTest6Passed ? (
-                      <span style={{ marginLeft: "20px", color: "green" }}>
-                        (Passed):
-                      </span>
-                    ) : (
-                      <span style={{ marginLeft: "20px", color: "red" }}>
-                        (Failed):
-                      </span>
-                    )}
-                  </span>
-                </div>
+              {ReduxStoredData?.fnTest6 ? (
+                <>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                    }}
+                  >
+                    5-{ReduxStoredData?.fnTest6}
+                    <span>
+                      {ReduxStoredData?.fnTest6Passed ? (
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span>
+                      ) : (
+                        <span style={{ marginLeft: "20px", color: "red" }}>
+                          (Failed):
+                        </span>
+                      )}
+                    </span>
+                  </div>
 
-                <div
-                  style={{
-                    marginLeft: "20px",
-                    fontWeight: "bold",
-                    fontSize: "25px",
-                    marginTop: "20px",
-                  }}
-                >
-                  <span>{ReduxStoredData?.fnTest6Desc}</span>
-                </div>
-              </>
-            ) : null}
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <span>{ReduxStoredData?.fnTest6Desc}</span>
+                  </div>
+                </>
+              ) : null}
+            </div>
           </div>
-        </div>
+        ) : null}
 
         {/* features */}
         {ReduxStoredData?.featureHead1 ? (
@@ -3230,14 +3263,14 @@ socialMediaPic &&
 
                     {ReduxStoredData?.suggestion ? (
                       <li style={{ color: "blue", marginBottom: "5px" }}>
-                        High Risk Findings:
+                        Suggestions:
                         <span style={{ color: "black", fontWeight: "bold" }}>
                           {ReduxStoredData?.suggestion}
                         </span>
                       </li>
                     ) : (
                       <li style={{ color: "blue", marginBottom: "5px" }}>
-                        High Risk Findings:
+                        Suggestions:
                         <span style={{ color: "black", fontWeight: "bold" }}>
                           0
                         </span>
@@ -3261,7 +3294,7 @@ socialMediaPic &&
                   </ul>
                 </p>
                 <Divider sx={{ backgroundColor: "grey", height: "2px" }} />
-                {ReduxStoredData?.highriskfinding
+                {/* {ReduxStoredData?.highriskfinding
                   ? ReduxStoredData?.highriskDetails
                   : null}
                 {ReduxStoredData?.lowriskfinding
@@ -3273,198 +3306,1091 @@ socialMediaPic &&
                 {ReduxStoredData?.suggestion
                   ? ReduxStoredData?.suggestionDetails
                   : null}
-                {ReduxStoredData?.gas ? ReduxStoredData?.gasDetails : null}
+                {ReduxStoredData?.gas ? ReduxStoredData?.gasDetails : null} */}
               </div>
             </div>
           </div>
         ) : null}
 
         {/* critical risk */}
-
-        <div style={{ width: "650px", height: "100%" }}>
-          <div id="page" className={styles.backgroundTwo}>
-            {/* <div style={{paddingTop:"130px",textAlign:"center",fontSize:"80px",fontWeight:"bold",color:"#4974ED"}}>
-            Functional Tests
-            </div> */}
-
-            <div
-              style={{
-                color: "#454545",
-                textAlign: "center",
-              }}
-            >
-              <p
-                style={{
-                  paddingTop: "140px",
-                  fontWeight: "bold",
-                  fontSize: "45px",
-                  color: "brown",
-                }}
-              >
-                CRITICAL RISK FINDINGS
-                <Divider
-                  variant="middle"
-                  sx={{
-                    width: "85%",
-                    margin: "auto",
-                    padding: "1px",
-                    border: "1px solid black",
-                    background: "black",
-                    marginTop: "30px",
-                    marginBottom: "20px",
+        {ReduxStoredData?.criticalRiskDetails ? (
+          <>
+            <div style={{ width: "650px", height: "100%" }}>
+              <div id="page" className={styles.backgroundTwo}>
+                <div
+                  style={{
+                    color: "#454545",
+                    textAlign: "center",
                   }}
-                />
-              </p>
-            </div>
-
-            {ReduxStoredData?.criticalRiskDetails
-              ?.split("@")
-              .slice(0, 8)
-              ?.map((el, i) => (
-                <div className={styles.criticalElement}>
-                  {el}
-                  {/* {console.log(criticalImageArray[0])} */}
-                  {criticalImageArray[i] ? (
-                    <img
-                      style={{
-                        height: "100px",
-                        width: "570px",
-                        borderRadius: "20px",
-                        border: "3px dotted black",
-                        marginTop: "20px",
+                >
+                  <p
+                    style={{
+                      paddingTop: "140px",
+                      fontWeight: "bold",
+                      fontSize: "45px",
+                      color: "brown",
+                    }}
+                  >
+                    CRITICAL RISK FINDINGS
+                    <Divider
+                      variant="middle"
+                      sx={{
+                        width: "85%",
+                        margin: "auto",
+                        padding: "1px",
+                        border: "1px solid black",
+                        background: "black",
+                        marginTop: "30px",
+                        marginBottom: "20px",
                       }}
-                      src={URL.createObjectURL(criticalImageArray[i])}
-                      alt="Uploaded Image"
                     />
-                  ) : null}
-
-                  {/* {criticalImageArray && (
-              <img
-                style={{ height: "300px", width: "300px", borderRadius: "50%" }}
-                src={URL.createObjectURL(criticalImageArray[i])}
-                alt="Uploaded Image"
-              />
-            )} */}
+                  </p>
                 </div>
-              ))}
-          </div>
-        </div>
 
-        {/* critical risk 2 */}
-
-        {criticalArr?.length > 8 ? (
-          <div style={{ width: "650px", height: "100%" }}>
-            <div id="page" className={styles.backgroundTwo}>
-              {/* <div style={{paddingTop:"130px",textAlign:"center",fontSize:"80px",fontWeight:"bold",color:"#4974ED"}}>
-            Functional Tests
-            </div> */}
-
-              <div
-                style={{
-                  color: "#454545",
-                  textAlign: "center",
-                }}
-              >
-                <p
-                  style={{
-                    paddingTop: "140px",
-                    fontWeight: "bold",
-                    fontSize: "45px",
-                    color: "brown",
-                  }}
-                >
-                  CRITICAL RISK FINDINGS
-                  <Divider
-                    variant="middle"
-                    sx={{
-                      width: "85%",
-                      margin: "auto",
-                      padding: "1px",
-                      border: "1px solid black",
-                      background: "black",
-                      marginTop: "30px",
-                      marginBottom: "20px",
-                    }}
-                  />
-                </p>
+                {ReduxStoredData?.criticalRiskDetails
+                  ?.split("@")
+                  .slice(0, 4)
+                  ?.map((el, i) => (
+                    <div className={styles.criticalElement}>
+                      {el}
+                      {/* {console.log(criticalImageArray[0])} */}
+                      {criticalImageArray[i] ? (
+                        <img
+                          style={{
+                            height: "100px",
+                            width: "570px",
+                            borderRadius: "20px",
+                            border: "3px dotted black",
+                            marginTop: "20px",
+                          }}
+                          src={URL.createObjectURL(criticalImageArray[i])}
+                          alt="Uploaded Image"
+                        />
+                      ) : null}
+                    </div>
+                  ))}
               </div>
-
-              {ReduxStoredData?.criticalRiskDetails
-                ?.split("@")
-                .slice(8, 16)
-                ?.map((el, i) => (
-                  <div className={styles.criticalElement}>
-                    {el}
-
-                    {/* {criticalImageArray && (
-              <img
-                style={{ height: "300px", width: "300px", borderRadius: "50%" }}
-                src={URL.createObjectURL(criticalImageArray[i])}
-                alt="Uploaded Image"
-              />
-            )} */}
-                  </div>
-                ))}
             </div>
-          </div>
+
+            {/* critical risk 2 */}
+
+            {criticalArr?.length > 4 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "brown",
+                      }}
+                    >
+                      CRITICAL RISK FINDINGS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.criticalRiskDetails
+                    ?.split("@")
+                    .slice(4, 8)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {criticalImageArray[i] ? (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(criticalImageArray[i])}
+                            alt="Uploaded Image"
+                          />
+                        ) : null}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+            {/* critical risk 3 */}
+
+            {criticalArr?.length > 8 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "brown",
+                      }}
+                    >
+                      CRITICAL RISK FINDINGS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.criticalRiskDetails
+                    ?.split("@")
+                    .slice(8, 12)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {criticalImageArray[i] ? (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(criticalImageArray[i])}
+                            alt="Uploaded Image"
+                          />
+                        ) : null}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+          </>
         ) : null}
-        {/* critical risk 3 */}
 
-        {criticalArr?.length > 16 ? (
-          <div style={{ width: "650px", height: "100%" }}>
-            <div id="page" className={styles.backgroundTwo}>
-              {/* <div style={{paddingTop:"130px",textAlign:"center",fontSize:"80px",fontWeight:"bold",color:"#4974ED"}}>
-            Functional Tests
-            </div> */}
+        {/* high risk details */}
 
-              <div
-                style={{
-                  color: "#454545",
-                  textAlign: "center",
-                }}
-              >
-                <p
+        {ReduxStoredData?.highriskDetails ? (
+          <>
+            <div style={{ width: "650px", height: "100%" }}>
+              <div id="page" className={styles.backgroundTwo}>
+                <div
                   style={{
-                    paddingTop: "140px",
-                    fontWeight: "bold",
-                    fontSize: "45px",
-                    color: "brown",
+                    color: "#454545",
+                    textAlign: "center",
                   }}
                 >
-                  CRITICAL RISK FINDINGS
-                  <Divider
-                    variant="middle"
-                    sx={{
-                      width: "85%",
-                      margin: "auto",
-                      padding: "1px",
-                      border: "1px solid black",
-                      background: "black",
-                      marginTop: "30px",
-                      marginBottom: "20px",
+                  <p
+                    style={{
+                      paddingTop: "140px",
+                      fontWeight: "bold",
+                      fontSize: "45px",
+                      color: "red",
                     }}
-                  />
-                </p>
+                  >
+                    HIGH RISK FINDINGS
+                    <Divider
+                      variant="middle"
+                      sx={{
+                        width: "85%",
+                        margin: "auto",
+                        padding: "1px",
+                        border: "1px solid black",
+                        background: "black",
+                        marginTop: "30px",
+                        marginBottom: "20px",
+                      }}
+                    />
+                  </p>
+                </div>
+
+                {ReduxStoredData?.highriskDetails
+                  ?.split("@")
+                  .slice(0, 4)
+                  ?.map((el, i) => (
+                    <div className={styles.criticalElement}>
+                      {el}
+
+                      {HignRiskImageArray[i] ? (
+                        <img
+                          style={{
+                            height: "100px",
+                            width: "570px",
+                            borderRadius: "20px",
+                            border: "3px dotted black",
+                            marginTop: "20px",
+                          }}
+                          src={URL.createObjectURL(HignRiskImageArray[i])}
+                          alt="Uploaded Image"
+                        />
+                      ) : null}
+                    </div>
+                  ))}
               </div>
-
-              {ReduxStoredData?.criticalRiskDetails
-                ?.split("@")
-                .slice(16, 24)
-                ?.map((el, i) => (
-                  <div className={styles.criticalElement}>
-                    {el}
-
-                    {/* {criticalImageArray && (
-              <img
-                style={{ height: "300px", width: "300px", borderRadius: "50%" }}
-                src={URL.createObjectURL(criticalImageArray[i])}
-                alt="Uploaded Image"
-              />
-            )} */}
-                  </div>
-                ))}
             </div>
-          </div>
+
+            {/* hign risk 2 */}
+
+            {highRiskArr?.length > 4 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "red",
+                      }}
+                    >
+                      HIGH RISK FINDINGS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.highriskDetails
+                    ?.split("@")
+                    .slice(4, 8)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {HignRiskImageArray[i] && (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(HignRiskImageArray[i])}
+                            alt="Uploaded Image"
+                          />
+                        )}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+            {/* HIGH risk 3 */}
+
+            {highRiskArr?.length > 8 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "red",
+                      }}
+                    >
+                      HIGH RISK FINDINGS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.highriskDetails
+                    ?.split("@")
+                    .slice(8, 12)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {HignRiskImageArray[i] && (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(HignRiskImageArray[i])}
+                            alt="Uploaded Image"
+                          />
+                        )}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+          </>
+        ) : null}
+
+        {/* Medium risk details */}
+
+        {ReduxStoredData?.mediumriskDetails ? (
+          <>
+            <div style={{ width: "650px", height: "100%" }}>
+              <div id="page" className={styles.backgroundTwo}>
+                <div
+                  style={{
+                    color: "#454545",
+                    textAlign: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      paddingTop: "140px",
+                      fontWeight: "bold",
+                      fontSize: "45px",
+                      color: "yellow",
+                    }}
+                  >
+                    MEDIUM RISK FINDINGS
+                    <Divider
+                      variant="middle"
+                      sx={{
+                        width: "85%",
+                        margin: "auto",
+                        padding: "1px",
+                        border: "1px solid black",
+                        background: "black",
+                        marginTop: "30px",
+                        marginBottom: "20px",
+                      }}
+                    />
+                  </p>
+                </div>
+
+                {ReduxStoredData?.mediumriskDetails
+                  ?.split("@")
+                  .slice(0, 4)
+                  ?.map((el, i) => (
+                    <div className={styles.criticalElement}>
+                      {el}
+
+                      {mediumImageArray[i] ? (
+                        <img
+                          style={{
+                            height: "100px",
+                            width: "570px",
+                            borderRadius: "20px",
+                            border: "3px dotted black",
+                            marginTop: "20px",
+                          }}
+                          src={URL.createObjectURL(mediumImageArray[i])}
+                          alt="Uploaded Image"
+                        />
+                      ) : null}
+                    </div>
+                  ))}
+              </div>
+            </div>
+
+            {/* medium risk 2 */}
+
+            {mediumArr?.length > 4 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "yellow",
+                      }}
+                    >
+                      MEDIUM RISK FINDINGS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.mediumriskDetails
+                    ?.split("@")
+                    .slice(4, 8)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {mediumImageArray[i] && (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(mediumImageArray[i])}
+                            alt="Uploaded Image"
+                          />
+                        )}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+            {/* medium risk 3 */}
+
+            {mediumArr?.length > 8 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "yellow",
+                      }}
+                    >
+                      MEDIUM RISK FINDINGS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.mediumriskDetails
+                    ?.split("@")
+                    .slice(8, 12)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {mediumImageArray[i] && (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(mediumImageArray[i])}
+                            alt="Uploaded Image"
+                          />
+                        )}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+          </>
+        ) : null}
+
+        {/* Low risk details */}
+
+        {ReduxStoredData?.lowriskDetails ? (
+          <>
+            <div style={{ width: "650px", height: "100%" }}>
+              <div id="page" className={styles.backgroundTwo}>
+                <div
+                  style={{
+                    color: "#454545",
+                    textAlign: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      paddingTop: "140px",
+                      fontWeight: "bold",
+                      fontSize: "45px",
+                      color: "green",
+                    }}
+                  >
+                    LOW RISK FINDINGS
+                    <Divider
+                      variant="middle"
+                      sx={{
+                        width: "85%",
+                        margin: "auto",
+                        padding: "1px",
+                        border: "1px solid black",
+                        background: "black",
+                        marginTop: "30px",
+                        marginBottom: "20px",
+                      }}
+                    />
+                  </p>
+                </div>
+
+                {ReduxStoredData?.lowriskDetails
+                  ?.split("@")
+                  .slice(0, 4)
+                  ?.map((el, i) => (
+                    <div className={styles.criticalElement}>
+                      {el}
+
+                      {lowImageArray[i] ? (
+                        <img
+                          style={{
+                            height: "100px",
+                            width: "570px",
+                            borderRadius: "20px",
+                            border: "3px dotted black",
+                            marginTop: "20px",
+                          }}
+                          src={URL.createObjectURL(lowImageArray[i])}
+                          alt="Uploaded Image"
+                        />
+                      ) : null}
+                    </div>
+                  ))}
+              </div>
+            </div>
+
+            {/* LOW risk 2 */}
+
+            {lowArr?.length > 4 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "green",
+                      }}
+                    >
+                      LOW RISK FINDINGS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.lowriskDetails
+                    ?.split("@")
+                    .slice(4, 8)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {lowImageArray[i] && (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(lowImageArray[i])}
+                            alt="Uploaded Image"
+                          />
+                        )}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+
+            {/* LOW risk 3 */}
+
+            {lowArr?.length > 8 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "green",
+                      }}
+                    >
+                      LOW RISK FINDINGS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.lowriskDetails
+                    ?.split("@")
+                    .slice(8, 12)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {lowImageArray[i] ? (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(lowImageArray[i])}
+                            alt="Uploaded Image"
+                          />
+                        ) : null}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+          </>
+        ) : null}
+
+        {/* Suggestion  details */}
+
+        {ReduxStoredData?.suggestionDetails ? (
+          <>
+            <div style={{ width: "650px", height: "100%" }}>
+              <div id="page" className={styles.backgroundTwo}>
+                <div
+                  style={{
+                    color: "#454545",
+                    textAlign: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      paddingTop: "140px",
+                      fontWeight: "bold",
+                      fontSize: "45px",
+                      color: "blue",
+                    }}
+                  >
+                    SUGGESTIONS DETAILS
+                    <Divider
+                      variant="middle"
+                      sx={{
+                        width: "85%",
+                        margin: "auto",
+                        padding: "1px",
+                        border: "1px solid black",
+                        background: "black",
+                        marginTop: "30px",
+                        marginBottom: "20px",
+                      }}
+                    />
+                  </p>
+                </div>
+
+                {ReduxStoredData?.suggestionDetails
+                  ?.split("@")
+                  .slice(0, 4)
+                  ?.map((el, i) => (
+                    <div className={styles.criticalElement}>
+                      {el}
+
+                      {suggestionImageArr[i] ? (
+                        <img
+                          style={{
+                            height: "100px",
+                            width: "570px",
+                            borderRadius: "20px",
+                            border: "3px dotted black",
+                            marginTop: "20px",
+                          }}
+                          src={URL.createObjectURL(suggestionImageArr[i])}
+                          alt="Uploaded Image"
+                        />
+                      ) : null}
+                    </div>
+                  ))}
+              </div>
+            </div>
+
+            {/* suggestion 2 */}
+
+            {suggestionArr?.length > 4 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "blue",
+                      }}
+                    >
+                      SUGGESTIONS DETAILS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.suggestionDetails
+                    ?.split("@")
+                    .slice(4, 8)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {suggestionImageArr[i] ? (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(suggestionImageArr[i])}
+                            alt="Uploaded Image"
+                          />
+                        ) : null}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+
+            {/* suggestion 3 */}
+
+            {suggestionArr?.length > 8 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "blue",
+                      }}
+                    >
+                      SUGGESTION DETAILS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.suggestionDetails
+                    ?.split("@")
+                    .slice(8, 12)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {suggestionImageArr[i] && (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(suggestionImageArr[i])}
+                            alt="Uploaded Image"
+                          />
+                        )}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+          </>
+        ) : null}
+
+        {/* gas details */}
+        {ReduxStoredData?.gasDetails ? (
+          <>
+            <div style={{ width: "650px", height: "100%" }}>
+              <div id="page" className={styles.backgroundTwo}>
+                <div
+                  style={{
+                    color: "#454545",
+                    textAlign: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      paddingTop: "140px",
+                      fontWeight: "bold",
+                      fontSize: "45px",
+                      color: "green",
+                    }}
+                  >
+                    GAS DETAILS
+                    <Divider
+                      variant="middle"
+                      sx={{
+                        width: "85%",
+                        margin: "auto",
+                        padding: "1px",
+                        border: "1px solid black",
+                        background: "black",
+                        marginTop: "30px",
+                        marginBottom: "20px",
+                      }}
+                    />
+                  </p>
+                </div>
+
+                {ReduxStoredData?.gasDetails
+                  ?.split("@")
+                  .slice(0, 4)
+                  ?.map((el, i) => (
+                    <div className={styles.criticalElement}>
+                      {el}
+
+                      {gasImageArray[i] ? (
+                        <img
+                          style={{
+                            height: "100px",
+                            width: "570px",
+                            borderRadius: "20px",
+                            border: "3px dotted black",
+                            marginTop: "20px",
+                          }}
+                          src={URL.createObjectURL(gasImageArray[i])}
+                          alt="Uploaded Image"
+                        />
+                      ) : null}
+                    </div>
+                  ))}
+              </div>
+            </div>
+
+            {/* gas details 2 */}
+
+            {gasArr?.length > 4 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "green",
+                      }}
+                    >
+                      GAS DETAILS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.gasDetails
+                    ?.split("@")
+                    .slice(4, 8)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {gasImageArray[i] && (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(gasImageArray[i])}
+                            alt="Uploaded Image"
+                          />
+                        )}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+
+            {/* gas details 3 */}
+
+            {gasArr?.length > 8 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "green",
+                      }}
+                    >
+                      GAS DETAILS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+
+                  {ReduxStoredData?.gasDetails
+                    ?.split("@")
+                    .slice(8, 12)
+                    ?.map((el, i) => (
+                      <div className={styles.criticalElement}>
+                        {el}
+
+                        {gasImageArray[i] && (
+                          <img
+                            style={{
+                              height: "300px",
+                              width: "300px",
+                              borderRadius: "50%",
+                            }}
+                            src={URL.createObjectURL(gasImageArray[i])}
+                            alt="Uploaded Image"
+                          />
+                        )}
+                      </div>
+                    ))}
+                </div>
+              </div>
+            ) : null}
+          </>
         ) : null}
 
         <div id="page">

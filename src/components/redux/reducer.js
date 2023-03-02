@@ -18,7 +18,8 @@ const init = {
   isEdit: false,
   individualPublisherData: {},
   totalPublisher: 0,
-  userLoginStatus:false
+  userLoginStatus: false,
+  highRiskImages: [],
 };
 
 export const auditReportReducer = (state = init, action) => {
@@ -26,7 +27,11 @@ export const auditReportReducer = (state = init, action) => {
 
   switch (type) {
     case AUDIT_REPORT_TYPES.SET_AUDIT_REPORT:
-      const { data, logo, socialMediaPic, inheritancePic,
+      const {
+        data,
+        logo,
+        socialMediaPic,
+        inheritancePic,
         criticalImage1,
         criticalImage2,
         criticalImage3,
@@ -36,22 +41,22 @@ export const auditReportReducer = (state = init, action) => {
         criticalImage7,
         criticalImage8,
       } = payload;
-console.log(socialMediaPic)
+      console.log(socialMediaPic);
       return {
         ...state,
         auditData: data,
         logo: logo,
         socialMediaLogo: socialMediaPic,
         inheritancePic: inheritancePic,
-        criticalImage1:criticalImage1,
-        criticalImage2:criticalImage2,
-        criticalImage3:criticalImage3,
-        criticalImage4:criticalImage4,
-        criticalImage5:criticalImage5,
-        criticalImage6:criticalImage6,
-        criticalImage7:criticalImage7,
-        criticalImage8:criticalImage8
-              };
+        criticalImage1: criticalImage1,
+        criticalImage2: criticalImage2,
+        criticalImage3: criticalImage3,
+        criticalImage4: criticalImage4,
+        criticalImage5: criticalImage5,
+        criticalImage6: criticalImage6,
+        criticalImage7: criticalImage7,
+        criticalImage8: criticalImage8,
+      };
     case AUDIT_REPORT_TYPES.SET_AUDIT_REPORT_INDIVIDUAL_DATA:
       //  const{data,logo,socialMediaPic,inheritancePic}=payload
 
@@ -61,11 +66,16 @@ console.log(socialMediaPic)
         isEdit: true,
       };
 
+    case AUDIT_REPORT_TYPES.USER_LOGIN_STATUS:
+      return {
+        ...state,
+        userLoginStatus: payload.status,
+      };
 
-      case AUDIT_REPORT_TYPES.USER_LOGIN_STATUS:
-      return{
-...state,
-userLoginStatus:payload.status
+    case AUDIT_REPORT_TYPES.ADD_IMAGES:
+      return {
+        ...state,
+        highRiskImages: [...state.highRiskImages, ...payload],
       };
     default:
       return state;

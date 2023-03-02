@@ -30,3 +30,9 @@ export const userLoggedIn = (payload) => {
     payload: payload,
   };
 };
+
+export const addImages = (images) => ({
+  type: AUDIT_REPORT_TYPES.ADD_IMAGES,
+
+  payload: images,
+});

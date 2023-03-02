@@ -20,6 +20,7 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  addImages,
   individualPublisherDataEditedSuccessfully,
   setAuditForm,
 } from "../redux/action";
@@ -97,7 +98,7 @@ export default function CustomizedAccordions() {
     language: "",
     address: "",
     totalSupply: "",
-    compiler: "",
+    decimal: "",
     optimizationEnabled: "",
     sha256Checksum: "",
     ownerWallet: "",
@@ -189,6 +190,7 @@ export default function CustomizedAccordions() {
     criticalImage6: null,
     criticalImage7: null,
     criticalImage8: null,
+    highRiskImage: null,
   };
 
   // const [input, setInput] = useState(init);
@@ -205,7 +207,14 @@ export default function CustomizedAccordions() {
   const [criticalImage7, setCriticalImage7] = useState(null);
   const [criticalImage8, setCriticalImage8] = useState(null);
   const [criticalImage, setCriticalImage] = useState([]);
+  const [highRiskImage, setHighRiskImage] = useState([]);
   console.log(socialMediaPic, "check soccial");
+  console.log(highRiskImage, "highRiskImage");
+
+  const handleHighRiskImageChange = (event) => {
+    const files = event.target.files;
+    setHighRiskImage(files);
+  };
 
   const handleImage = (e) => {
     setImage(e.target.files[0]);
@@ -288,7 +297,7 @@ export default function CustomizedAccordions() {
       language,
       address,
       totalSupply,
-      compiler,
+      decimal,
       optimizationEnabled,
       sha256Checksum,
       ownerWallet,
@@ -395,7 +404,7 @@ export default function CustomizedAccordions() {
           language,
           address,
           totalSupply,
-          compiler,
+          decimal,
           optimizationEnabled,
           sha256Checksum,
           ownerWallet,
@@ -753,8 +762,10 @@ export default function CustomizedAccordions() {
         criticalImage6: criticalImage6,
         criticalImage7: criticalImage7,
         criticalImage8: criticalImage8,
+        highRiskImage,
       })
     );
+    dispatch(addImages(highRiskImage));
   };
 
   return (
@@ -1014,9 +1025,9 @@ export default function CustomizedAccordions() {
               </Grid>
               <Grid item xs={3} md={3}>
                 <TextField
-                  name="compiler"
-                  label="Compiler"
-                  value={input?.compiler}
+                  name="decimal"
+                  label="Decimals"
+                  value={input?.decimal}
                   onChange={handleChange}
                   // inputProps={{ style: { textTransform: "uppercase" } }}
                 />
@@ -1788,7 +1799,7 @@ export default function CustomizedAccordions() {
                 <TextField
                   type="number"
                   name="lowriskfinding"
-                  label="Medium Risk Findings"
+                  label="Low Risk Findings"
                   onChange={handleChange}
                   value={input?.lowriskfinding}
                 />
@@ -1797,7 +1808,7 @@ export default function CustomizedAccordions() {
                 <TextField
                   type="number"
                   name="mediumriskfinding"
-                  label="Low Risk Findings"
+                  label="Medium Risk Findings"
                   onChange={handleChange}
                   value={input?.mediumriskfinding}
                 />
@@ -2047,6 +2058,25 @@ export default function CustomizedAccordions() {
                     hidden
                     name="criticalImage8"
                     onChange={handleCriticalImage8}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                >
+                  Upload High Risk Images+
+                  <input
+                    hidden
+                    name="highRiskImage"
+                    onChange={handleHighRiskImageChange}
                     accept="image/*"
                     multiple
                     type="file"
