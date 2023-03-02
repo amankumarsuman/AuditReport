@@ -93,82 +93,82 @@ function AuditReport() {
   };
   //main function to convert html to pdf & download pdf
 
-  // const exportPdf = () => {
-  //   const elements = Array.from(document.querySelectorAll("#page"));
-  //   const pdf = new jsPDF("p", "mm", "a4");
-
-  //   (async function processElements() {
-  //     for (let index = 0; index < elements.length; index++) {
-  //       const element = elements[index];
-  //       const canvas = await html2canvas(element);
-  //       const imgData = canvas.toDataURL("image/png");
-  //       pdf.addImage(imgData, "PNG", 0, 0);
-
-  //       if (index < elements.length - 1) {
-  //         pdf.addPage();
-  //       } else {
-  //         console.log("downloading");
-  //         pdf.save(`${ReduxStoredData?.companyName} Audit Report`);
-  //       }
-  //     }
-  //   })();
-  // };
-  //********************************************************************************** */
-  //new fn to enable links
-  const exportPdf = async () => {
+  const exportPdf = () => {
     const elements = Array.from(document.querySelectorAll("#page"));
     const pdf = new jsPDF("p", "mm", "a4");
-    let y = 0;
-    let currentPage = 1;
-    const pageHeight = pdf.internal.pageSize.height;
 
-    for (let index = 0; index < elements.length; index++) {
-      const element = elements[index];
-      const canvas = await html2canvas(element);
-      const imgData = canvas.toDataURL("image/png");
-      const imgHeight =
-        (canvas.height * pdf.internal.pageSize.width) / canvas.width;
-      const remainingHeight = pageHeight - y;
+    (async function processElements() {
+      for (let index = 0; index < elements.length; index++) {
+        const element = elements[index];
+        const canvas = await html2canvas(element);
+        const imgData = canvas.toDataURL("image/png");
+        pdf.addImage(imgData, "PNG", 0, 0);
 
-      if (imgHeight <= remainingHeight) {
-        pdf.addImage(
-          imgData,
-          "PNG",
-          0,
-          y,
-          pdf.internal.pageSize.width,
-          imgHeight
-        );
-        y += imgHeight;
-      } else {
-        const backgroundImgData = pdf.internal
-          .getCanvas("pc", currentPage)
-          .toDataURL("image/png");
-        pdf.addPage();
-        y = 0;
-        currentPage++;
-        pdf.addImage(
-          backgroundImgData,
-          "PNG",
-          0,
-          0,
-          pdf.internal.pageSize.width,
-          pdf.internal.pageSize.height
-        );
-        pdf.addImage(
-          imgData,
-          "PNG",
-          0,
-          y,
-          pdf.internal.pageSize.width,
-          imgHeight
-        );
-        y += imgHeight;
+        if (index < elements.length - 1) {
+          pdf.addPage();
+        } else {
+          console.log("downloading");
+          pdf.save(`${ReduxStoredData?.companyName} Audit Report`);
+        }
       }
-    }
-
-    pdf.save(`${ReduxStoredData?.companyName} Audit Report`);
+    })();
   };
+  //********************************************************************************** */
+  //new fn to enable links
+  // const exportPdf = async () => {
+  //   const elements = Array.from(document.querySelectorAll("#page"));
+  //   const pdf = new jsPDF("p", "mm", "a4");
+  //   let y = 0;
+  //   let currentPage = 1;
+  //   const pageHeight = pdf.internal.pageSize.height;
+
+  //   for (let index = 0; index < elements.length; index++) {
+  //     const element = elements[index];
+  //     const canvas = await html2canvas(element);
+  //     const imgData = canvas.toDataURL("image/png");
+  //     const imgHeight =
+  //       (canvas.height * pdf.internal.pageSize.width) / canvas.width;
+  //     const remainingHeight = pageHeight - y;
+
+  //     if (imgHeight <= remainingHeight) {
+  //       pdf.addImage(
+  //         imgData,
+  //         "PNG",
+  //         0,
+  //         y,
+  //         pdf.internal.pageSize.width,
+  //         imgHeight
+  //       );
+  //       y += imgHeight;
+  //     } else {
+  //       const backgroundImgData = pdf.internal
+  //         .getCanvas("pc", currentPage)
+  //         .toDataURL("image/png");
+  //       pdf.addPage();
+  //       y = 0;
+  //       currentPage++;
+  //       pdf.addImage(
+  //         backgroundImgData,
+  //         "PNG",
+  //         0,
+  //         0,
+  //         pdf.internal.pageSize.width,
+  //         pdf.internal.pageSize.height
+  //       );
+  //       pdf.addImage(
+  //         imgData,
+  //         "PNG",
+  //         0,
+  //         y,
+  //         pdf.internal.pageSize.width,
+  //         imgHeight
+  //       );
+  //       y += imgHeight;
+  //     }
+  //   }
+
+  //   pdf.save(`${ReduxStoredData?.companyName} Audit Report`);
+  // };
 
   // const exportPdf = async () => {
   //   const elements = Array.from(document.querySelectorAll("#page"));
@@ -3347,28 +3347,51 @@ socialMediaPic &&
                   </p>
                 </div>
 
-                {ReduxStoredData?.criticalRiskDetails
-                  ?.split("@")
-                  .slice(0, 4)
-                  ?.map((el, i) => (
-                    <div className={styles.criticalElement}>
-                      {el}
-                      {/* {console.log(criticalImageArray[0])} */}
-                      {criticalImageArray[i] ? (
-                        <img
-                          style={{
-                            height: "100px",
-                            width: "570px",
-                            borderRadius: "20px",
-                            border: "3px dotted black",
-                            marginTop: "20px",
-                          }}
-                          src={URL.createObjectURL(criticalImageArray[i])}
-                          alt="Uploaded Image"
-                        />
-                      ) : null}
-                    </div>
-                  ))}
+                {criticalImageArray?.length > 2
+                  ? ReduxStoredData?.criticalRiskDetails
+                      ?.split("@")
+                      .slice(0, 4)
+                      ?.map((el, i) => (
+                        <div className={styles.criticalElement}>
+                          {el}
+                          {/* {console.log(criticalImageArray[0])} */}
+                          {criticalImageArray[i] ? (
+                            <img
+                              style={{
+                                height: "100px",
+                                width: "570px",
+                                borderRadius: "20px",
+                                border: "3px dotted black",
+                                marginTop: "20px",
+                              }}
+                              src={URL.createObjectURL(criticalImageArray[i])}
+                              alt="Uploaded Image"
+                            />
+                          ) : null}
+                        </div>
+                      ))
+                  : ReduxStoredData?.criticalRiskDetails
+                      ?.split("@")
+                      .slice(0, 8)
+                      ?.map((el, i) => (
+                        <div className={styles.criticalElement}>
+                          {el}
+                          {/* {console.log(criticalImageArray[0])} */}
+                          {criticalImageArray[i] ? (
+                            <img
+                              style={{
+                                height: "100px",
+                                width: "570px",
+                                borderRadius: "20px",
+                                border: "3px dotted black",
+                                marginTop: "20px",
+                              }}
+                              src={URL.createObjectURL(criticalImageArray[i])}
+                              alt="Uploaded Image"
+                            />
+                          ) : null}
+                        </div>
+                      ))}
               </div>
             </div>
 
