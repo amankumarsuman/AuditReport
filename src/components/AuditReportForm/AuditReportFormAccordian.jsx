@@ -182,6 +182,21 @@ export default function CustomizedAccordions() {
     fnTest5: "",
     fnTest5Passed: true,
     fnTest5Desc: "",
+    fnTest6:"",
+          fnTest6Passed:true,
+          fnTest6Desc:"",
+          fnTest7:"",
+          fnTest7Passed:true,
+          fnTest7Desc:"",
+          fnTest8:"",
+          fnTest8Passed:true,
+          fnTest8Desc:"",
+          fnTest9:"",
+          fnTest9Passed:true,
+          fnTest9Desc:"",
+          fnTest10:"",
+          fnTest10Passed:true,
+          fnTest10Desc:"",
     criticalImage1: null,
     criticalImage2: null,
     criticalImage3: null,
@@ -381,6 +396,21 @@ export default function CustomizedAccordions() {
       fnTest5,
       fnTest5Passed,
       fnTest5Desc,
+      fnTest6,
+          fnTest6Passed,
+          fnTest6Desc,
+          fnTest7,
+          fnTest7Passed,
+          fnTest7Desc,
+          fnTest8,
+          fnTest8Passed,
+          fnTest8Desc,
+          fnTest9,
+          fnTest9Passed,
+          fnTest9Desc,
+          fnTest10,
+          fnTest10Passed,
+          fnTest10Desc,
     } = input;
 
     axios
@@ -488,6 +518,21 @@ export default function CustomizedAccordions() {
           fnTest5,
           fnTest5Passed,
           fnTest5Desc,
+          fnTest6,
+          fnTest6Passed,
+          fnTest6Desc,
+          fnTest7,
+          fnTest7Passed,
+          fnTest7Desc,
+          fnTest8,
+          fnTest8Passed,
+          fnTest8Desc,
+          fnTest9,
+          fnTest9Passed,
+          fnTest9Desc,
+          fnTest10,
+          fnTest10Passed,
+          fnTest10Desc,
         }
       )
       .then((res) => {
@@ -2462,8 +2507,7 @@ export default function CustomizedAccordions() {
                     </InputLabel>
                     <Select
                       sx={{ width: "14em" }}
-                      // error={input?.fnTest2Passed === ""}
-                      // helperText={input?.fnTest2Passed === "" ? "Required!" : " "}
+                     
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={input?.fnTest5Passed}
@@ -2485,6 +2529,202 @@ export default function CustomizedAccordions() {
                   value={input?.fnTest5Desc}
                 />
               </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest6"
+                  label="Functional Test6"
+                  onChange={handleChange}
+                  value={input?.fnTest6}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Functional Test 6
+                    </InputLabel>
+                    <Select
+                      sx={{ width: "14em" }}
+                     
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={input?.fnTest6Passed}
+                      label="Test 6 Passed"
+                      name="fnTest6Passed"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={true}>Yes</MenuItem>
+                      <MenuItem value={false}>No </MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest6Desc"
+                  label="Functional Test6 Description"
+                  onChange={handleChange}
+                  value={input?.fnTest6Desc}
+                />
+              </Grid>
+
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest7"
+                  label="Functional Test7"
+                  onChange={handleChange}
+                  value={input?.fnTest7}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Functional Test 7
+                    </InputLabel>
+                    <Select
+                      sx={{ width: "14em" }}
+                     
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={input?.fnTest5Passed}
+                      label="Test 7 Passed"
+                      name="fnTest7Passed"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={true}>Yes</MenuItem>
+                      <MenuItem value={false}>No </MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest7Desc"
+                  label="Functional Test7 Description"
+                  onChange={handleChange}
+                  value={input?.fnTest7Desc}
+                />
+              </Grid>
+
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest8"
+                  label="Functional Test8"
+                  onChange={handleChange}
+                  value={input?.fnTest8}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Functional Test 8
+                    </InputLabel>
+                    <Select
+                      sx={{ width: "14em" }}
+                     
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={input?.fnTest8Passed}
+                      label="Test 8 Passed"
+                      name="fnTest8Passed"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={true}>Yes</MenuItem>
+                      <MenuItem value={false}>No </MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest8Desc"
+                  label="Functional Test8 Description"
+                  onChange={handleChange}
+                  value={input?.fnTest8Desc}
+                />
+              </Grid>
+
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest9"
+                  label="Functional Test9"
+                  onChange={handleChange}
+                  value={input?.fnTest9}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Functional Test 9
+                    </InputLabel>
+                    <Select
+                      sx={{ width: "14em" }}
+                     
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={input?.fnTest9Passed}
+                      label="Test 9 Passed"
+                      name="fnTest9Passed"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={true}>Yes</MenuItem>
+                      <MenuItem value={false}>No </MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest9Desc"
+                  label="Functional Test9 Description"
+                  onChange={handleChange}
+                  value={input?.fnTest9Desc}
+                />
+              </Grid>
+
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest10"
+                  label="Functional Test10"
+                  onChange={handleChange}
+                  value={input?.fnTest10}
+                />
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <Box sx={{ minWidth: 120 }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Functional Test 10
+                    </InputLabel>
+                    <Select
+                      sx={{ width: "14em" }}
+                     
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={input?.fnTest10Passed}
+                      label="Test 10 Passed"
+                      name="fnTest10Passed"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={true}>Yes</MenuItem>
+                      <MenuItem value={false}>No </MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={3}>
+                <TextField
+                  name="fnTest10Desc"
+                  label="Functional Test10 Description"
+                  onChange={handleChange}
+                  value={input?.fnTest10Desc}
+                />
+              </Grid>
+
+
             </Grid>
           </Paper>
         </AccordionDetails>

@@ -1057,11 +1057,27 @@ socialMediaPic &&
                       inputProps={{
                         style: { fontSize: "20px", fontWeight: "bold" },
                       }}
+                      label="Decimals"
+                      value={ReduxStoredData?.decimal}
+                      variant="standard"
+                    />
+                  </Grid>
+                  {/* <Grid item xs={6}>
+                    <TextField
+                      fullWidth
+                      id="outlined-number"
+                      InputLabelProps={{
+                        shrink: true,
+                        style: { fontSize: "20px", fontWeight: "bold" },
+                      }}
+                      inputProps={{
+                        style: { fontSize: "20px", fontWeight: "bold" },
+                      }}
                       label="Language"
                       value={ReduxStoredData?.language}
                       variant="standard"
                     />
-                  </Grid>
+                  </Grid> */}
                   <Grid item xs={12}>
                     <TextField
                       id="outlined-number"
@@ -1110,22 +1126,7 @@ socialMediaPic &&
                       variant="standard"
                     />
                   </Grid>
-                  <Grid item xs={6}>
-                    <TextField
-                      fullWidth
-                      id="outlined-number"
-                      InputLabelProps={{
-                        shrink: true,
-                        style: { fontSize: "20px", fontWeight: "bold" },
-                      }}
-                      inputProps={{
-                        style: { fontSize: "20px", fontWeight: "bold" },
-                      }}
-                      label="Decimals"
-                      value={ReduxStoredData?.decimal}
-                      variant="standard"
-                    />
-                  </Grid>
+               
                   {/* <Grid item xs={6}>
                     <TextField
                       fullWidth
@@ -2829,9 +2830,7 @@ socialMediaPic &&
         {ReduxStoredData?.fnTest1 ? (
           <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
-              {/* <div style={{paddingTop:"130px",textAlign:"center",fontSize:"80px",fontWeight:"bold",color:"#4974ED"}}>
-            Functional Tests
-            </div> */}
+             
 
               <div
                 style={{
@@ -2892,7 +2891,31 @@ socialMediaPic &&
                     }}
                   >
                     <span style={{ width: "90%" }}>
-                      {ReduxStoredData?.fnTest1Desc}
+                     
+                      {ReduxStoredData?.fnTest1Desc?.length>60?
+                    ReduxStoredData?.fnTest1Desc?.slice(0,60):ReduxStoredData?.fnTest1Desc
+                  }
+
+                  
+                
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      lineHeight:1.5,
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+               
+
+                  
+                  {ReduxStoredData?.fnTest1Desc?.length>60?
+                    ReduxStoredData?.fnTest1Desc?.slice(60):null
+                  }
                     </span>
                   </div>
                 </span>
@@ -2922,15 +2945,44 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                  <div
+                
+
+<div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
                       marginTop: "20px",
+                      width: "93%",
                     }}
                   >
-                    <span>{ReduxStoredData?.fnTest2Desc}</span>
+                    <span style={{ width: "90%" }}>
+                     
+                      {ReduxStoredData?.fnTest2Desc?.length>60?
+                    ReduxStoredData?.fnTest2Desc?.slice(0,60):ReduxStoredData?.fnTest2Desc
+                  }
+
+                  
+               
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                     lineHeight:1.5,
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+               
+
+                  
+                  {ReduxStoredData?.fnTest2Desc?.length>60?
+                    ReduxStoredData?.fnTest2Desc?.slice(60):null
+                  }
+                    </span>
                   </div>
                 </>
               ) : null}
@@ -2958,16 +3010,47 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                  <div
+                 
+
+<div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
                       marginTop: "20px",
+                      width: "93%",
                     }}
                   >
-                    <span>{ReduxStoredData?.fnTest3Desc}</span>
+                    <span style={{ width: "90%" }}>
+                     
+                      {ReduxStoredData?.fnTest3Desc?.length>60?
+                    ReduxStoredData?.fnTest3Desc?.slice(0,60):ReduxStoredData?.fnTest3Desc
+                  }
+
+                  
+                
+                    </span>
                   </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      lineHeight:1.5,
+
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+               
+
+                  
+                  {ReduxStoredData?.fnTest3Desc?.length>60?
+                    ReduxStoredData?.fnTest3Desc?.slice(60):null
+                  }
+                    </span>
+                  </div>
+
                 </>
               ) : null}
 
@@ -2995,16 +3078,47 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                  <div
+                 
+
+<div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
                       marginTop: "20px",
+                      width: "93%",
                     }}
                   >
-                    <span>{ReduxStoredData?.fnTest4Desc}</span>
+                    <span style={{ width: "90%" }}>
+                    
+                      {ReduxStoredData?.fnTest4Desc?.length>60?
+                    ReduxStoredData?.fnTest4Desc?.slice(0,60):ReduxStoredData?.fnTest4Desc
+                  }
+
+                  
+                
+                    </span>
                   </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      lineHeight:1.5,
+
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+               
+
+                  
+                  {ReduxStoredData?.fnTest4Desc?.length>60?
+                    ReduxStoredData?.fnTest4Desc?.slice(60):null
+                  }
+                    </span>
+                  </div>
+
                 </>
               ) : null}
 
@@ -3015,6 +3129,7 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "25px",
+                      marginTop:"20px"
                     }}
                   >
                     5-{ReduxStoredData?.fnTest5}
@@ -3031,21 +3146,84 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                  <div
+                 
+
+<div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
                       marginTop: "20px",
+                      width: "93%",
                     }}
                   >
-                    <span>{ReduxStoredData?.fnTest5Desc}</span>
+                    <span style={{ width: "90%" }}>
+                     
+                      {ReduxStoredData?.fnTest5Desc?.length>60?
+                    ReduxStoredData?.fnTest5Desc?.slice(0,60):ReduxStoredData?.fnTest5Desc
+                  }
+
+               
+                    </span>
                   </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      lineHeight:1.5,
+
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+               
+
+                  
+                  {ReduxStoredData?.fnTest5Desc?.length>60?
+                    ReduxStoredData?.fnTest5Desc?.slice(60):null
+                  }
+                    </span>
+                  </div>
+
                 </>
               ) : null}
 
+              
+            </div>
+          </div>
+        ) : null}
+
+
+
+{/* functional test 2 */}
+
+{ReduxStoredData?.fnTest6 ? (
+          <div style={{ width: "650px", height: "100%" }}>
+            <div id="page" className={styles.backgroundTwo}>
+             
+
+              <div
+                style={{
+                  color: "#454545",
+                  textAlign: "center",
+                }}
+              >
+                <p
+                  style={{
+                    paddingTop: "140px",
+                    fontWeight: "bold",
+                    fontSize: "55px",
+                    color: "#4974ED",
+                  }}
+                >
+                  FUNCTIONAL TESTS
+                </p>
+              </div>
+
+          
               {ReduxStoredData?.fnTest6 ? (
-                <>
+                <span style={{ width: "90%" }}>
                   <div
                     style={{
                       marginLeft: "20px",
@@ -3053,7 +3231,7 @@ socialMediaPic &&
                       fontSize: "25px",
                     }}
                   >
-                    5-{ReduxStoredData?.fnTest6}
+                    6-{ReduxStoredData?.fnTest6}
                     <span>
                       {ReduxStoredData?.fnTest6Passed ? (
                         <span style={{ marginLeft: "20px", color: "green" }}>
@@ -3071,14 +3249,311 @@ socialMediaPic &&
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
+                      fontSize: "18px",
+                      marginTop: "20px",
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+                     
+                      {ReduxStoredData?.fnTest6Desc?.length>60?
+                    ReduxStoredData?.fnTest6Desc?.slice(0,60):ReduxStoredData?.fnTest6Desc
+                  }
+
+                  
+                
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      lineHeight:1.5,
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+               
+
+                  
+                  {ReduxStoredData?.fnTest6Desc?.length>60?
+                    ReduxStoredData?.fnTest6Desc?.slice(60):null
+                  }
+                    </span>
+                  </div>
+                </span>
+              ) : null}
+
+              {ReduxStoredData?.fnTest7 ? (
+                <>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
                       fontSize: "25px",
                       marginTop: "20px",
                     }}
                   >
-                    <span>{ReduxStoredData?.fnTest6Desc}</span>
+                    7-{ReduxStoredData?.fnTest7}
+                    <span>
+                      {ReduxStoredData?.fnTest7Passed ? (
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span>
+                      ) : (
+                        <span style={{ marginLeft: "20px", color: "red" }}>
+                          (Failed):
+                        </span>
+                      )}
+                    </span>
+                  </div>
+
+                
+
+<div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      marginTop: "20px",
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+                     
+                      {ReduxStoredData?.fnTest7Desc?.length>60?
+                    ReduxStoredData?.fnTest7Desc?.slice(0,60):ReduxStoredData?.fnTest7Desc
+                  }
+
+                  
+               
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                     lineHeight:1.5,
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+               
+
+                  
+                  {ReduxStoredData?.fnTest7Desc?.length>60?
+                    ReduxStoredData?.fnTest7Desc?.slice(60):null
+                  }
+                    </span>
                   </div>
                 </>
               ) : null}
+              {ReduxStoredData?.fnTest8 ? (
+                <>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    8-{ReduxStoredData?.fnTest8}
+                    <span>
+                      {ReduxStoredData?.fnTest8Passed ? (
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span>
+                      ) : (
+                        <span style={{ marginLeft: "20px", color: "red" }}>
+                          (Failed):
+                        </span>
+                      )}
+                    </span>
+                  </div>
+
+                 
+
+<div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      marginTop: "20px",
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+                     
+                      {ReduxStoredData?.fnTest8Desc?.length>60?
+                    ReduxStoredData?.fnTest8Desc?.slice(0,60):ReduxStoredData?.fnTest8Desc
+                  }
+
+                  
+                
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      lineHeight:1.5,
+
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+               
+
+                  
+                  {ReduxStoredData?.fnTest8Desc?.length>60?
+                    ReduxStoredData?.fnTest8Desc?.slice(60):null
+                  }
+                    </span>
+                  </div>
+
+                </>
+              ) : null}
+
+              {ReduxStoredData?.fnTest9 ? (
+                <>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    9-{ReduxStoredData?.fnTest9}
+                    <span>
+                      {ReduxStoredData?.fnTest9Passed ? (
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span>
+                      ) : (
+                        <span style={{ marginLeft: "20px", color: "red" }}>
+                          (Failed):
+                        </span>
+                      )}
+                    </span>
+                  </div>
+
+                 
+
+<div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      marginTop: "20px",
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+                    
+                      {ReduxStoredData?.fnTest9Desc?.length>60?
+                    ReduxStoredData?.fnTest9Desc?.slice(0,60):ReduxStoredData?.fnTest9Desc
+                  }
+
+                  
+                
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      lineHeight:1.5,
+
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+               
+
+                  
+                  {ReduxStoredData?.fnTest9Desc?.length>60?
+                    ReduxStoredData?.fnTest9Desc?.slice(60):null
+                  }
+                    </span>
+                  </div>
+
+                </>
+              ) : null}
+
+              {ReduxStoredData?.fnTest10 ? (
+                <>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "25px",
+                      marginTop:"20px"
+                    }}
+                  >
+                    10-{ReduxStoredData?.fnTest10}
+                    <span>
+                      {ReduxStoredData?.fnTest10Passed ? (
+                        <span style={{ marginLeft: "20px", color: "green" }}>
+                          (Passed):
+                        </span>
+                      ) : (
+                        <span style={{ marginLeft: "20px", color: "red" }}>
+                          (Failed):
+                        </span>
+                      )}
+                    </span>
+                  </div>
+
+                 
+
+<div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      marginTop: "20px",
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+                     
+                      {ReduxStoredData?.fnTest10Desc?.length>60?
+                    ReduxStoredData?.fnTest10Desc?.slice(0,60):ReduxStoredData?.fnTest10Desc
+                  }
+
+               
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      marginLeft: "20px",
+                      fontWeight: "bold",
+                      fontSize: "18px",
+                      lineHeight:1.5,
+
+                      width: "93%",
+                    }}
+                  >
+                    <span style={{ width: "90%" }}>
+               
+
+                  
+                  {ReduxStoredData?.fnTest10Desc?.length>60?
+                    ReduxStoredData?.fnTest10Desc?.slice(60):null
+                  }
+                    </span>
+                  </div>
+
+                </>
+              ) : null}
+
+          
             </div>
           </div>
         ) : null}
