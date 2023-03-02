@@ -3005,7 +3005,7 @@ socialMediaPic &&
 
             </div>
 
-      {ReduxStoredData?.criticalRiskDetails?.split("@").slice(0,8)?.map((el,i)=>(
+      {ReduxStoredData?.criticalRiskDetails?.split("@").slice(0,4)?.map((el,i)=>(
         <div className={styles.criticalElement}>
 {
   el
@@ -3066,7 +3066,7 @@ socialMediaPic &&
 
             </div>
 
-      {ReduxStoredData?.criticalRiskDetails?.split("@").slice(8,16)?.map((el,i)=>(
+      {ReduxStoredData?.criticalRiskDetails?.split("@").slice(4,8)?.map((el,i)=>(
         <div className={styles.criticalElement}>
 {
   el
@@ -3119,7 +3119,7 @@ socialMediaPic &&
 
             </div>
 
-      {ReduxStoredData?.criticalRiskDetails?.split("@").slice(16,24)?.map((el,i)=>(
+      {ReduxStoredData?.criticalRiskDetails?.split("@").slice(8,16)?.map((el,i)=>(
         <div className={styles.criticalElement}>
 {
   el
