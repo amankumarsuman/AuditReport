@@ -19,11 +19,21 @@ import second from "../assets/2.png";
 import third from "../assets/3.png";
 import fourth from "../assets/4.png";
 import manualAudit from "../assets/13.png";
-import { Document, Link, Page, Text, View } from "@react-pdf/renderer";
 
 function AuditReport() {
   const ReduxStoredData = useSelector((state) => state.publisher?.auditData);
   const logo = useSelector((state) => state.publisher?.logo);
+
+  const criticalImageArray = [
+    ReduxStoredData?.criticalImage1,
+    ReduxStoredData?.criticalImage2,
+    ReduxStoredData?.criticalImage3,
+    ReduxStoredData?.criticalImage4,
+    ReduxStoredData?.criticalImage5,
+    ReduxStoredData?.criticalImage6,
+    ReduxStoredData?.criticalImage7,
+    ReduxStoredData?.criticalImage8,
+  ];
   const socialMediaPic = useSelector(
     (state) => state.publisher?.socialMediaLogo
   );
@@ -34,29 +44,116 @@ function AuditReport() {
   const handleNavigate = (link) => {
     window.open(link, "_blank", "noopener,noreferrer");
   };
+  //main function to convert html to pdf & download pdf
 
-  const exportPdf = () => {
+  // const exportPdf = () => {
+  //   const elements = Array.from(document.querySelectorAll("#page"));
+  //   const pdf = new jsPDF("p", "mm", "a4");
+
+  //   (async function processElements() {
+  //     for (let index = 0; index < elements.length; index++) {
+  //       const element = elements[index];
+  //       const canvas = await html2canvas(element);
+  //       const imgData = canvas.toDataURL("image/png");
+  //       pdf.addImage(imgData, "PNG", 0, 0);
+
+  //       if (index < elements.length - 1) {
+  //         pdf.addPage();
+  //       } else {
+  //         console.log("downloading");
+  //         pdf.save(`${ReduxStoredData?.companyName} Audit Report`);
+  //       }
+  //     }
+  //   })();
+  // };
+  //********************************************************************************** */
+  //new fn to enable links
+  const exportPdf = async () => {
     const elements = Array.from(document.querySelectorAll("#page"));
     const pdf = new jsPDF("p", "mm", "a4");
+    let y = 0;
+    let currentPage = 1;
+    const pageHeight = pdf.internal.pageSize.height;
 
-    (async function processElements() {
-      for (let index = 0; index < elements.length; index++) {
-        const element = elements[index];
-        const canvas = await html2canvas(element);
-        const imgData = canvas.toDataURL("image/png");
-        pdf.addImage(imgData, "PNG", 0, 0);
+    for (let index = 0; index < elements.length; index++) {
+      const element = elements[index];
+      const canvas = await html2canvas(element);
+      const imgData = canvas.toDataURL("image/png");
+      const imgHeight =
+        (canvas.height * pdf.internal.pageSize.width) / canvas.width;
+      const remainingHeight = pageHeight - y;
 
-        if (index < elements.length - 1) {
-          pdf.addPage();
-        } else {
-          console.log("downloading");
-          pdf.save(`${ReduxStoredData?.companyName} Audit Report`);
-        }
+      if (imgHeight <= remainingHeight) {
+        pdf.addImage(
+          imgData,
+          "PNG",
+          0,
+          y,
+          pdf.internal.pageSize.width,
+          imgHeight
+        );
+        y += imgHeight;
+      } else {
+        const backgroundImgData = pdf.internal
+          .getCanvas("pc", currentPage)
+          .toDataURL("image/png");
+        pdf.addPage();
+        y = 0;
+        currentPage++;
+        pdf.addImage(
+          backgroundImgData,
+          "PNG",
+          0,
+          0,
+          pdf.internal.pageSize.width,
+          pdf.internal.pageSize.height
+        );
+        pdf.addImage(
+          imgData,
+          "PNG",
+          0,
+          y,
+          pdf.internal.pageSize.width,
+          imgHeight
+        );
+        y += imgHeight;
       }
-    })();
+    }
+
+    pdf.save(`${ReduxStoredData?.companyName} Audit Report`);
   };
 
   // const exportPdf = async () => {
+  //   const elements = Array.from(document.querySelectorAll("#page"));
+  //   const pdf = new jsPDF("p", "mm", "a4");
+
+  //   for (let index = 0; index < elements.length; index++) {
+  //     const element = elements[index];
+  //     const canvas = await html2canvas(element, { autoPagingEnabled: true });
+  //     const imgData = canvas.toDataURL("image/png");
+
+  //     if (index > 0) {
+  //       pdf.addPage();
+  //     }
+
+  //     pdf.addImage(imgData, "PNG", 0, 0);
+  //   }
+
+  //   const pdfString = pdf.output("datauristring");
+  //   const pdfBlob = pdf.output("blob");
+
+  //   // Create a download link and simulate a click to download the PDF
+  //   const downloadLink = document.createElement("a");
+  //   downloadLink.href = pdfString;
+  //   downloadLink.download = `${ReduxStoredData?.companyName} Audit Report.pdf`;
+  //   document.body.appendChild(downloadLink);
+  //   downloadLink.click();
+  //   document.body.removeChild(downloadLink);
+  // };
+
+  //*******************************  */
+
+  //const exportPdf = async () => {
   //   const elements = Array.from(document.querySelectorAll("#page"));
   //   const pdf = new jsPDF("p", "mm", "a4");
   //   let y = 0;
@@ -137,14 +234,14 @@ function AuditReport() {
 
   // import React from '@react-pdf/renderer';
 
-  const CustomLink = ({ text, url }) => (
-    <Text
-      style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }}
-      onClick={() => window.open(url, "_blank")}
-    >
-      {text}
-    </Text>
-  );
+  // const CustomLink = ({ text, url }) => (
+  //   <Text
+  //     style={{ color: "blue", textDecoration: "underline", cursor: "pointer" }}
+  //     onClick={() => window.open(url, "_blank")}
+  //   >
+  //     {text}
+  //   </Text>
+  // );
 
   return (
     <>
@@ -227,11 +324,10 @@ function AuditReport() {
             }}
           >
             {ReduxStoredData?.companyName}
+            <a href="https://www.google.com/">Google</a>
           </div>
           {/* <div>page 1</div> */}
         </div>
-
-        {/* overview */}
 
         <div style={{ width: "650px" }}>
           <div id="page" className={styles.backgroundTwo}>
@@ -579,8 +675,8 @@ function AuditReport() {
                 </p>
               </div>
 
-              <div style={{ position: "absolute", bottom: 850, left: "-35px" }}>
-                {logo && (
+              <div style={{ position: "absolute", bottom: 800, left: "-55px" }}>
+                {/* {logo && (
                   <img
                     style={{
                       width: "200px",
@@ -589,6 +685,19 @@ function AuditReport() {
                       padding: "10px",
                       borderRadius: "50%",
                       marginTop: "50px",
+                    }}
+                    src={URL.createObjectURL(logo)}
+                    alt="img"
+                  /> */}
+                {logo && (
+                  <img
+                    style={{
+                      width: "300px",
+                      height: "300px",
+                      border: "5px solid black",
+                      padding: "10px",
+                      borderRadius: "50%",
+                      // marginTop: "90px",
                     }}
                     src={URL.createObjectURL(logo)}
                     alt="img"
@@ -639,7 +748,6 @@ socialMediaPic &&
             <img
               style={{ width: "70%", height: "70%" }}
               src={URL.createObjectURL(socialMediaPic)}
-
               alt="img"
             />
             } */}
@@ -660,74 +768,105 @@ socialMediaPic &&
                   )}
                 </div>
               </div>
-
               <div style={{ marginLeft: "70px", marginTop: "-40px" }}>
                 {ReduxStoredData?.weblink ? (
                   <>
-                    <div>
+                    {/* <div>
                       <span
                         onClick={() => handleNavigate(ReduxStoredData?.weblink)}
                         style={{
-                          fontSize: "27px",
+                          fontSize: "30px",
                           fontWeight: "bold",
                           cursor: "pointer",
                           marginTop: "-13px",
                         }}
 
-                        // href={ReduxStoredData?.weblink}
+                      // href={ReduxStoredData?.weblink}
                       >
                         <LanguageIcon sx={{ color: "#4974ED" }} />{" "}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: "27px",
+                          fontWeight: "bold",
+                          cursor: "pointer",
+                        }}
+                      >
+                        {ReduxStoredData?.weblink}{" "}
+                      </span>
+                    </div> */}
+
+                    <div>
+                      <span
+                        onClick={() => handleNavigate(ReduxStoredData?.weblink)}
+                        style={{
+                          fontSize: "20px",
+                          fontWeight: "bold",
+                          cursor: "pointer",
+                          marginTop: "-13px",
+                          color: "#454545",
+                        }}
+
+                        // href={ReduxStoredData?.weblink}
+                      >
+                        <LanguageIcon
+                          sx={{ color: "#4974ED", fontSize: "17px" }}
+                        />{" "}
                         {ReduxStoredData?.weblink}
                         <a href="https://www.google.com">google link</a>
                       </span>
                     </div>
                   </>
                 ) : null}
-                {/* <br /> */}
 
                 {ReduxStoredData?.telegramLink ? (
-                  <div style={{ marginTop: "10px" }}>
+                  <div style={{ marginTop: "5px" }}>
                     <span
                       onClick={() =>
                         handleNavigate(ReduxStoredData?.telegramLink)
                       }
                       style={{
-                        fontSize: "27px",
+                        fontSize: "20px",
                         fontWeight: "bold",
                         cursor: "pointer",
-                        // marginTop:"10px"
+                        color: "#454545",
                       }}
                       // href={ReduxStoredData?.telegramLink}
                     >
                       {" "}
-                      <TelegramIcon sx={{ color: "#4974ED" }} />{" "}
+                      <TelegramIcon
+                        sx={{ color: "#4974ED", fontSize: "17px" }}
+                      />{" "}
                       {ReduxStoredData?.telegramLink}
                     </span>
                   </div>
                 ) : null}
-                {/* <br /> */}
 
                 {ReduxStoredData?.twitterLink ? (
-                  <div style={{ marginTop: "10px" }}>
+                  <div style={{ marginTop: "5px" }}>
                     <span
                       onClick={() =>
                         handleNavigate(ReduxStoredData?.twitterLink)
                       }
                       style={{
-                        fontSize: "22px",
+                        fontSize: "20px",
                         fontWeight: "bold",
                         cursor: "pointer",
+                        color: "#454545",
                       }}
                       // href={ReduxStoredData?.twitterLink}
                     >
                       {" "}
-                      <TwitterIcon sx={{ color: "#4974ED" }} />{" "}
+                      <TwitterIcon
+                        sx={{ color: "#4974ED", fontSize: "17px" }}
+                      />{" "}
                     </span>
                     <span
                       style={{
                         fontWeight: "bold",
                         cursor: "pointer",
-                        fontSize: "27px",
+                        fontSize: "20px",
+                        color: "#454545",
                       }}
                     >
                       {ReduxStoredData?.twitterLink}
@@ -740,7 +879,7 @@ socialMediaPic &&
                 style={{
                   color: "#454545",
                   textAlign: "center",
-                  // marginTop:"150px",
+                  marginTop: "150px",
                   width: "90%",
                   margin: "auto",
                 }}
@@ -2436,7 +2575,7 @@ socialMediaPic &&
 
         {/* risk classification */}
         <div id="page">
-          <img width="42.2%" height="100%" src={third} />
+          <img width="42.5%" height="100%" src={third} />
         </div>
 
         {/* audit summary */}
@@ -2471,91 +2610,62 @@ socialMediaPic &&
                 >
                   Used Tools:
                 </p>
-                {ReduxStoredData?.manualReview ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                      marginTop: "-15px",
-                    }}
-                  >
-                    Manual Review - {ReduxStoredData?.manualReview}
-                  </p>
-                ) : null}
-
-                {ReduxStoredData?.tool1 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.tool1}
-                  </p>
-                ) : null}
-
-                {ReduxStoredData?.tool2 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.tool2}
-                  </p>
-                ) : null}
-
-                {ReduxStoredData?.tool3 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.tool3}
-                  </p>
-                ) : null}
-
-                {ReduxStoredData?.tool4 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.tool4}
-                  </p>
-                ) : null}
-                {ReduxStoredData?.tool5 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.tool4}
-                  </p>
-                ) : null}
-                {ReduxStoredData?.tool5 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.tool5}
-                  </p>
-                ) : null}
-                {ReduxStoredData?.tool6 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.tool6}
-                  </p>
-                ) : null}
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  Manual Review - {ReduxStoredData?.manualReview}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.tool1}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.tool2}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.tool3}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.tool4}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.tool4}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.tool5}
+                </p>
+                <p
+                  style={{
+                    fontSize: "20px",
+                  }}
+                >
+                  - {ReduxStoredData?.tool6}
+                </p>
               </div>
               <div
                 style={{
@@ -2576,7 +2686,7 @@ socialMediaPic &&
               >
                 Inheritance Trees:
               </p>
-              <div style={{ marginLeft: "25px", marginTop: "-10px" }}>
+              <div>
                 {/* <img
             style={{ marginLeft: "80px" }}
             src="https://www.onepointesolutions.com/wp-content/uploads/2022/05/5-Types-of-Chemistry.jpg"
@@ -2584,11 +2694,7 @@ socialMediaPic &&
           /> */}
                 {inheritancePic && (
                   <img
-                    style={{
-                      height: "200px",
-                      width: "600px",
-                      marginTop: "-10px",
-                    }}
+                    style={{ height: "200px", width: "600px" }}
                     src={URL.createObjectURL(inheritancePic)}
                     alt="inheritance Image"
                   />
@@ -2600,7 +2706,7 @@ socialMediaPic &&
 
         {/* summary */}
 
-        {ReduxStoredData?.summary1 ? (
+        {ReduxStoredData?.summary ? (
           <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
               <div style={{ width: "90%", margin: "auto", marginTop: "-40px" }}>
@@ -2613,94 +2719,279 @@ socialMediaPic &&
                 >
                   Summary:
                 </p>
-                {ReduxStoredData?.summary1 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.summary1}
-                  </p>
-                ) : null}
-                {ReduxStoredData?.summary2 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.summary2}
-                  </p>
-                ) : null}
 
-                {ReduxStoredData?.summary3 ? (
+                {ReduxStoredData?.summary?.split(",")?.map((el) => (
                   <p
                     style={{
-                      fontSize: "20px",
+                      fontSize: "22px",
                       fontWeight: "bold",
+                      color: "#454545",
                     }}
                   >
-                    - {ReduxStoredData?.summary3}
+                    <li>{el}</li>
                   </p>
-                ) : null}
-
-                {ReduxStoredData?.summary4 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.summary4}
-                  </p>
-                ) : null}
-                {ReduxStoredData?.summary5 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.summary5}
-                  </p>
-                ) : null}
-                {ReduxStoredData?.summary6 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.summary6}
-                  </p>
-                ) : null}
-                {ReduxStoredData?.summary7 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.summary7}
-                  </p>
-                ) : null}
-                {ReduxStoredData?.summary8 ? (
-                  <p
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    - {ReduxStoredData?.summary8}
-                  </p>
-                ) : null}
+                ))}
               </div>
-
-              <div></div>
             </div>
           </div>
         ) : null}
+
+        {/* functional tests */}
+        {/* {ReduxStoredData?.functionalTests? ( */}
+        <div style={{ width: "650px", height: "100%" }}>
+          <div id="page" className={styles.backgroundTwo}>
+            {/* <div style={{paddingTop:"130px",textAlign:"center",fontSize:"80px",fontWeight:"bold",color:"#4974ED"}}>
+            Functional Tests
+            </div> */}
+
+            <div
+              style={{
+                color: "#454545",
+                textAlign: "center",
+              }}
+            >
+              <p
+                style={{
+                  paddingTop: "140px",
+                  fontWeight: "bold",
+                  fontSize: "55px",
+                  color: "#4974ED",
+                }}
+              >
+                FUNCTIONAL TESTS
+              </p>
+            </div>
+
+            {/* {ReduxStoredData?.fnTest1?.split(",")?.map((el,i)=>(
+             <span style>
+             <p>
+              {el}
+             </p>
+            
+             </span>
+            ))} */}
+            {ReduxStoredData?.fnTest1 ? (
+              <span style={{ width: "90%" }}>
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "25px",
+                  }}
+                >
+                  1-{ReduxStoredData?.fnTest1}
+                  <span>
+                    {ReduxStoredData?.fnTest1Passed ? (
+                      <span style={{ marginLeft: "20px", color: "green" }}>
+                        (Passed):
+                      </span>
+                    ) : (
+                      <span style={{ marginLeft: "20px", color: "red" }}>
+                        (Failed):
+                      </span>
+                    )}
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                    marginTop: "20px",
+                    width: "93%",
+                  }}
+                >
+                  <span style={{ width: "90%" }}>
+                    {ReduxStoredData?.fnTest1Desc}
+                  </span>
+                </div>
+              </span>
+            ) : null}
+
+            {ReduxStoredData?.fnTest2 ? (
+              <>
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "25px",
+                    marginTop: "20px",
+                  }}
+                >
+                  2-{ReduxStoredData?.fnTest2}
+                  <span>
+                    {ReduxStoredData?.fnTest2Passed ? (
+                      <span style={{ marginLeft: "20px", color: "green" }}>
+                        (Passed):
+                      </span>
+                    ) : (
+                      <span style={{ marginLeft: "20px", color: "red" }}>
+                        (Failed):
+                      </span>
+                    )}
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                    marginTop: "20px",
+                  }}
+                >
+                  <span>{ReduxStoredData?.fnTest2Desc}</span>
+                </div>
+              </>
+            ) : null}
+            {ReduxStoredData?.fnTest3 ? (
+              <>
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "25px",
+                    marginTop: "20px",
+                  }}
+                >
+                  3-{ReduxStoredData?.fnTest3}
+                  <span>
+                    {ReduxStoredData?.fnTest3Passed ? (
+                      <span style={{ marginLeft: "20px", color: "green" }}>
+                        (Passed):
+                      </span>
+                    ) : (
+                      <span style={{ marginLeft: "20px", color: "red" }}>
+                        (Failed):
+                      </span>
+                    )}
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                    marginTop: "20px",
+                  }}
+                >
+                  <span>{ReduxStoredData?.fnTest3Desc}</span>
+                </div>
+              </>
+            ) : null}
+
+            {ReduxStoredData?.fnTest4 ? (
+              <>
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "25px",
+                    marginTop: "20px",
+                  }}
+                >
+                  4-{ReduxStoredData?.fnTest4}
+                  <span>
+                    {ReduxStoredData?.fnTest4Passed ? (
+                      <span style={{ marginLeft: "20px", color: "green" }}>
+                        (Passed):
+                      </span>
+                    ) : (
+                      <span style={{ marginLeft: "20px", color: "red" }}>
+                        (Failed):
+                      </span>
+                    )}
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                    marginTop: "20px",
+                  }}
+                >
+                  <span>{ReduxStoredData?.fnTest4Desc}</span>
+                </div>
+              </>
+            ) : null}
+
+            {ReduxStoredData?.fnTest5 ? (
+              <>
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "25px",
+                  }}
+                >
+                  5-{ReduxStoredData?.fnTest5}
+                  <span>
+                    {ReduxStoredData?.fnTest5Passed ? (
+                      <span style={{ marginLeft: "20px", color: "green" }}>
+                        (Passed):
+                      </span>
+                    ) : (
+                      <span style={{ marginLeft: "20px", color: "red" }}>
+                        (Failed):
+                      </span>
+                    )}
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                    marginTop: "20px",
+                  }}
+                >
+                  <span>{ReduxStoredData?.fnTest5Desc}</span>
+                </div>
+              </>
+            ) : null}
+
+            {ReduxStoredData?.fnTest6 ? (
+              <>
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "25px",
+                  }}
+                >
+                  5-{ReduxStoredData?.fnTest6}
+                  <span>
+                    {ReduxStoredData?.fnTest6Passed ? (
+                      <span style={{ marginLeft: "20px", color: "green" }}>
+                        (Passed):
+                      </span>
+                    ) : (
+                      <span style={{ marginLeft: "20px", color: "red" }}>
+                        (Failed):
+                      </span>
+                    )}
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    fontWeight: "bold",
+                    fontSize: "25px",
+                    marginTop: "20px",
+                  }}
+                >
+                  <span>{ReduxStoredData?.fnTest6Desc}</span>
+                </div>
+              </>
+            ) : null}
+          </div>
+        </div>
 
         {/* features */}
         {ReduxStoredData?.featureHead1 ? (
@@ -2778,7 +3069,7 @@ socialMediaPic &&
 
         {/* manualaudit */}
         <div id="page">
-          <img width="42.5%" height="100%" src={manualAudit} />
+          <img width="42.6%" height="100%" src={manualAudit} />
         </div>
 
         {/* finding */}
@@ -2786,6 +3077,7 @@ socialMediaPic &&
         ReduxStoredData?.mediumriskfinding ||
         ReduxStoredData?.lowriskfinding ||
         ReduxStoredData?.suggestion ||
+        ReduxStoredData?.criticalRiskFinding ||
         ReduxStoredData?.gas ? (
           <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
@@ -2816,34 +3108,99 @@ socialMediaPic &&
                   }}
                 >
                   <ul>
+                    {ReduxStoredData?.criticalRiskFinding ? (
+                      <li style={{ color: "brown", marginBottom: "5px" }}>
+                        Critical Risk Findings:
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          {ReduxStoredData?.criticalRiskFinding}
+                        </span>
+                      </li>
+                    ) : (
+                      <li style={{ color: "brown", marginBottom: "5px" }}>
+                        Critical Risk Findings:
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          0
+                        </span>
+                      </li>
+                    )}
                     {ReduxStoredData?.highriskfinding ? (
-                      <li style={{ color: "red" }}>
-                        High Risk Findings:{ReduxStoredData?.highriskfinding}
+                      <li style={{ color: "red", marginBottom: "5px" }}>
+                        High Risk Findings:
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          {ReduxStoredData?.highriskfinding}
+                        </span>
                       </li>
-                    ) : null}
+                    ) : (
+                      <li style={{ color: "red", marginBottom: "5px" }}>
+                        High Risk Findings:
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          0
+                        </span>
+                      </li>
+                    )}
                     {ReduxStoredData?.mediumriskfinding ? (
-                      <li style={{ color: "rgba(244,145,110,255)" }}>
+                      <li style={{ color: "yellow", marginBottom: "5px" }}>
                         Medium Risk Findings:
-                        {ReduxStoredData?.mediumriskfinding}
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          {" "}
+                          {ReduxStoredData?.mediumriskfinding}
+                        </span>
                       </li>
-                    ) : null}
+                    ) : (
+                      <li style={{ color: "yellow", marginBottom: "5px" }}>
+                        Medium Risk Findings:
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          0
+                        </span>
+                      </li>
+                    )}
 
                     {ReduxStoredData?.lowriskfinding ? (
-                      <li style={{ color: "green" }}>
-                        Low Risk Findings:{ReduxStoredData?.lowriskfinding}
+                      <li style={{ color: "green", marginBottom: "5px" }}>
+                        Low Risk Findings:
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          {ReduxStoredData?.lowriskfinding}
+                        </span>
                       </li>
-                    ) : null}
+                    ) : (
+                      <li style={{ color: "green", marginBottom: "5px" }}>
+                        Low Risk Findings:
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          0
+                        </span>
+                      </li>
+                    )}
 
                     {ReduxStoredData?.suggestion ? (
-                      <li style={{ color: "blue" }}>
-                        High Risk Findings:{ReduxStoredData?.suggestion}
+                      <li style={{ color: "blue", marginBottom: "5px" }}>
+                        High Risk Findings:
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          {ReduxStoredData?.suggestion}
+                        </span>
                       </li>
-                    ) : null}
+                    ) : (
+                      <li style={{ color: "blue", marginBottom: "5px" }}>
+                        High Risk Findings:
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          0
+                        </span>
+                      </li>
+                    )}
                     {ReduxStoredData?.gas ? (
-                      <li style={{ color: "blue" }}>
-                        Gas Optimizations:{ReduxStoredData?.gas}
+                      <li style={{ color: "purple", marginBottom: "5px" }}>
+                        Gas Optimizations:
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          {ReduxStoredData?.gas}
+                        </span>
                       </li>
-                    ) : null}
+                    ) : (
+                      <li style={{ color: "purple", marginBottom: "5px" }}>
+                        Gas Optimizations:
+                        <span style={{ color: "black", fontWeight: "bold" }}>
+                          0
+                        </span>
+                      </li>
+                    )}
                   </ul>
                 </p>
                 <Divider sx={{ backgroundColor: "grey", height: "2px" }} />
@@ -2864,6 +3221,60 @@ socialMediaPic &&
             </div>
           </div>
         ) : null}
+
+        {/* critical risk */}
+
+        <div style={{ width: "650px", height: "100%" }}>
+          <div id="page" className={styles.backgroundTwo}>
+            {/* <div style={{paddingTop:"130px",textAlign:"center",fontSize:"80px",fontWeight:"bold",color:"#4974ED"}}>
+            Functional Tests
+            </div> */}
+
+            <div
+              style={{
+                color: "#454545",
+                textAlign: "center",
+              }}
+            >
+              <p
+                style={{
+                  paddingTop: "140px",
+                  fontWeight: "bold",
+                  fontSize: "45px",
+                  color: "brown",
+                }}
+              >
+                CRITICAL RISK FINDINGS
+                <Divider
+                  variant="middle"
+                  sx={{
+                    width: "85%",
+                    margin: "auto",
+                    padding: "1px",
+                    border: "1px solid black",
+                    background: "black",
+                    marginTop: "30px",
+                    marginBottom: "20px",
+                  }}
+                />
+              </p>
+            </div>
+
+            {ReduxStoredData?.criticalRiskDetails?.split("@").map((el, i) => (
+              <div className={styles.criticalElement}>
+                {el}
+
+                {/* {criticalImageArray && (
+              <img
+                style={{ height: "300px", width: "300px", borderRadius: "50%" }}
+                src={URL.createObjectURL(criticalImageArray[i])}
+                alt="Uploaded Image"
+              />
+            )} */}
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div id="page">
           <img width="42.5%" height="100%" src={fourth} />

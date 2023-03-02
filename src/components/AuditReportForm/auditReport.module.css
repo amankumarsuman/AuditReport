@@ -49,3 +49,19 @@ margin-top: -90px;
     font-family: 'Century Gothic', sans-serif !important;
     /* font-weight: bold; */
 }
+.criticalElement:nth-child(even) {
+    font-weight: bold;
+    /* border: 1px solid red; */
+  }
+.criticalElement:nth-child(odd) {
+    /* font-weight: bold; */
+    color: black;
+    font-size: 14px;
+    font-weight: 520;
+    /* border: 1px solid red; */
+  }
+  .criticalElement{
+    width: 95%;
+    margin: auto;
+    margin-bottom: 20px;
+  }

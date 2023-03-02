@@ -1,11 +1,10 @@
-import { PDFDownloadLink } from "@react-pdf/renderer";
 import { useSelector } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import FormWithImages from "./components/AuditReportForm/AuditFormWithImages";
 import AuditReport from "./components/AuditReportForm/AuditReport";
 import AuditReportForm from "./components/AuditReportForm/AuditReportForm";
 import CustomizedAccordions from "./components/AuditReportForm/AuditReportFormAccordian";
-import PdfReport from "./components/AuditReportForm/PdfWithLink";
+import { MyPDF } from "./components/AuditReportForm/NewAuditReport";
 import GenericPdfDownloader from "./components/AuditReportForm/PrintPdf";
 // import { Example } from "./components/AuditReportForm/PrintPdf";
 import TestReport from "./components/AuditReportForm/TestReport";
@@ -20,14 +19,12 @@ import ResponsiveAppBar from "./components/navbar/Navbar";
 import "./font/GOTHIC.TTF";
 // import "./components/font/GOTHICB.TTF"
 function App() {
-  const ReduxStoredData = useSelector((state) => state.publisher?.auditData);
-  const logo = useSelector((state) => state.publisher?.logo);
-  const socialMediaPic = useSelector(
-    (state) => state.publisher?.socialMediaLogo
-  );
-  const inheritancePic = useSelector(
-    (state) => state.publisher?.inheritancePic
-  );
+  const navigate = useNavigate();
+  const userStatus = useSelector((state) => state?.publisher?.userLoginStatus);
+
+  // const PrivateRoute = ({ auth: userStatus , children }) => {
+  //   return userStatus ? children : <navigate to="/" />;
+  // };
   return (
     <>
       {/* <LeftContainer />
@@ -40,8 +37,20 @@ function App() {
       <Routes>
         <Route exact path="/dashboard" element={<CustomizedTables />} />
         <Route path="/" element={<Login />} />
+
+        {/* {userStatus?
+        
+        <Route exact path="/auditform" 
+      
+        element={<CustomizedAccordions />} 
+        
+        />:
+        <Route path="/" element={<Login />} />
+
+      } */}
         <Route exact path="/auditform" element={<CustomizedAccordions />} />
         <Route exact path="testing" element={<FormWithImages />} />
+        <Route exact path="/auditReport" element={<MyPDF />} />
       </Routes>
       {/* <PDFDownloadLink
         document={
