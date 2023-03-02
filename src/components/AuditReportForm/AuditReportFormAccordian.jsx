@@ -20,12 +20,15 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  addImages,
   individualPublisherDataEditedSuccessfully,
   setAuditForm,
 } from "../redux/action";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import AuditReport from "./AuditReport";
+import PdfReport from "./PdfWithLink";
+import { PDFDownloadLink } from "@react-pdf/renderer";
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -95,7 +98,7 @@ export default function CustomizedAccordions() {
     language: "",
     address: "",
     totalSupply: "",
-    compiler: "",
+    decimal: "",
     optimizationEnabled: "",
     sha256Checksum: "",
     ownerWallet: "",
@@ -139,7 +142,7 @@ export default function CustomizedAccordions() {
     highriskfinding: 0,
     lowriskfinding: 0,
     mediumriskfinding: 0,
-    criticalRiskFinding:0,
+    criticalRiskFinding: 0,
     suggestion: 0,
     gas: 0,
     featureHead1: "",
@@ -161,25 +164,25 @@ export default function CustomizedAccordions() {
     lowriskDetails: "",
     mediumriskDetails: "",
     suggestionDetails: "",
-    criticalRiskDetails:"",
+    criticalRiskDetails: "",
     gasDetails: "",
-    summary:"",
-    fnTest1:"",
-    fnTest1Passed:true,
-    fnTest1Desc:"",
-    fnTest2:"",
-    fnTest2Passed:true,
-    fnTest2Desc:"",
-    fnTest3:"",
-    fnTest3Passed:true,
-    fnTest3Desc:"",
-    fnTest4:"",
-    fnTest4Passed:true,
-    fnTest4Desc:"",
-    fnTest5:"",
-    fnTest5Passed:true,
-    fnTest5Desc:"",
-    criticalImage1:null,
+    summary: "",
+    fnTest1: "",
+    fnTest1Passed: true,
+    fnTest1Desc: "",
+    fnTest2: "",
+    fnTest2Passed: true,
+    fnTest2Desc: "",
+    fnTest3: "",
+    fnTest3Passed: true,
+    fnTest3Desc: "",
+    fnTest4: "",
+    fnTest4Passed: true,
+    fnTest4Desc: "",
+    fnTest5: "",
+    fnTest5Passed: true,
+    fnTest5Desc: "",
+    criticalImage1: null,
     criticalImage2: null,
     criticalImage3: null,
     criticalImage4: null,
@@ -187,7 +190,7 @@ export default function CustomizedAccordions() {
     criticalImage6: null,
     criticalImage7: null,
     criticalImage8: null,
-    
+    highRiskImage: null,
   };
 
   // const [input, setInput] = useState(init);
@@ -204,7 +207,14 @@ export default function CustomizedAccordions() {
   const [criticalImage7, setCriticalImage7] = useState(null);
   const [criticalImage8, setCriticalImage8] = useState(null);
   const [criticalImage, setCriticalImage] = useState([]);
+  const [highRiskImage, setHighRiskImage] = useState([]);
   console.log(socialMediaPic, "check soccial");
+  console.log(highRiskImage, "highRiskImage");
+
+  const handleHighRiskImageChange = (event) => {
+    const files = event.target.files;
+    setHighRiskImage(files);
+  };
 
   const handleImage = (e) => {
     setImage(e.target.files[0]);
@@ -214,7 +224,7 @@ export default function CustomizedAccordions() {
     setSocialMediaPic(e.target.files[0]);
   };
   const handleCriticalImage1 = (e) => {
-    console.log(e.target.files[0],"test critical");
+    console.log(e.target.files[0], "test critical");
     setCriticalImage1(e.target.files[0]);
   };
   const handleCriticalImage = (e) => {
@@ -233,7 +243,7 @@ export default function CustomizedAccordions() {
     console.log(e.target.files[0]);
     setCriticalImage4(e.target.files[0]);
   };
-  const handleCriticalImage5= (e) => {
+  const handleCriticalImage5 = (e) => {
     console.log(e.target.files[0]);
     setCriticalImage5(e.target.files[0]);
   };
@@ -287,7 +297,7 @@ export default function CustomizedAccordions() {
       language,
       address,
       totalSupply,
-      compiler,
+      decimal,
       optimizationEnabled,
       sha256Checksum,
       ownerWallet,
@@ -371,7 +381,6 @@ export default function CustomizedAccordions() {
       fnTest5,
       fnTest5Passed,
       fnTest5Desc,
-    
     } = input;
 
     axios
@@ -395,7 +404,7 @@ export default function CustomizedAccordions() {
           language,
           address,
           totalSupply,
-          compiler,
+          decimal,
           optimizationEnabled,
           sha256Checksum,
           ownerWallet,
@@ -440,7 +449,7 @@ export default function CustomizedAccordions() {
           lowriskfinding,
           mediumriskfinding,
           criticalRiskFinding,
-      criticalRiskDetails,
+          criticalRiskDetails,
           suggestion,
           gas,
           featureHead1,
@@ -479,7 +488,6 @@ export default function CustomizedAccordions() {
           fnTest5,
           fnTest5Passed,
           fnTest5Desc,
-      
         }
       )
       .then((res) => {
@@ -746,7 +754,7 @@ export default function CustomizedAccordions() {
         logo: image,
         inheritancePic: inheritancePic,
         socialMediaPic: socialMediaPic,
-        criticalImage1:criticalImage1,
+        criticalImage1: criticalImage1,
         criticalImage2: criticalImage2,
         criticalImage3: criticalImage3,
         criticalImage4: criticalImage4,
@@ -754,8 +762,10 @@ export default function CustomizedAccordions() {
         criticalImage6: criticalImage6,
         criticalImage7: criticalImage7,
         criticalImage8: criticalImage8,
+        highRiskImage,
       })
     );
+    dispatch(addImages(highRiskImage));
   };
 
   return (
@@ -1015,9 +1025,9 @@ export default function CustomizedAccordions() {
               </Grid>
               <Grid item xs={3} md={3}>
                 <TextField
-                  name="compiler"
-                  label="Compiler"
-                  value={input?.compiler}
+                  name="decimal"
+                  label="Decimals"
+                  value={input?.decimal}
                   onChange={handleChange}
                   // inputProps={{ style: { textTransform: "uppercase" } }}
                 />
@@ -1789,7 +1799,7 @@ export default function CustomizedAccordions() {
                 <TextField
                   type="number"
                   name="lowriskfinding"
-                  label="Medium Risk Findings"
+                  label="Low Risk Findings"
                   onChange={handleChange}
                   value={input?.lowriskfinding}
                 />
@@ -1798,7 +1808,7 @@ export default function CustomizedAccordions() {
                 <TextField
                   type="number"
                   name="mediumriskfinding"
-                  label="Low Risk Findings"
+                  label="Medium Risk Findings"
                   onChange={handleChange}
                   value={input?.mediumriskfinding}
                 />
@@ -1872,10 +1882,7 @@ export default function CustomizedAccordions() {
               </Grid>
 
               <Grid item xs={12} md={12}>
-                <h2>
-
-Images of Critical Risk Finding
-                </h2>
+                <h2>Images of Critical Risk Finding</h2>
               </Grid>
 
               <Grid item xs={12} md={6}>
@@ -1886,7 +1893,7 @@ Images of Critical Risk Finding
                   component="label"
                   disabled
                 >
-                  Upload Critical Image  +
+                  Upload Critical Image +
                   <input
                     hidden
                     name="criticalImage"
@@ -1906,7 +1913,7 @@ Images of Critical Risk Finding
                   variant="contained"
                   component="label"
                 >
-                  Upload Critical Image 1  +
+                  Upload Critical Image 1 +
                   <input
                     hidden
                     name="criticalImage1"
@@ -2060,13 +2067,32 @@ Images of Critical Risk Finding
                 </Button>
               </Grid>
               <Grid item xs={12} md={6}>
+                <Button
+                  sx={{ textTransform: "none" }}
+                  variant="contained"
+                  component="label"
+                >
+                  Upload High Risk Images+
+                  <input
+                    hidden
+                    name="highRiskImage"
+                    onChange={handleHighRiskImageChange}
+                    accept="image/*"
+                    multiple
+                    type="file"
+                  />
+                  {/* {input?.logo && <img src={URL.createObjectURL(input?.logo)} alt="Preview" />} */}
+                  {/* {image && <img src={URL.createObjectURL(image)} alt="Preview" />} */}
+                </Button>
+              </Grid>
+              <Grid item xs={12} md={6}>
                 {/* <input type="file" onChange={handleChange} /> */}
                 <Button
                   sx={{ textTransform: "none" }}
                   variant="contained"
                   component="label"
                 >
-                  Upload Critical Image  +
+                  Upload Critical Image +
                   <input
                     hidden
                     name="criticalImage9"
@@ -2232,11 +2258,10 @@ Images of Critical Risk Finding
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
           <Typography sx={{ color: "green", fontWeight: "bold" }}>
-           SUMMARY
+            SUMMARY
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-         
           <Paper sx={{ padding: "15px" }}>
             <Grid container spacing={2} sx={{ width: "60%", margin: "auto" }}>
               <Grid item xs={12} md={3}>
@@ -2247,7 +2272,6 @@ Images of Critical Risk Finding
                   value={input?.summary}
                 />
               </Grid>
-            
             </Grid>
           </Paper>
         </AccordionDetails>
@@ -2258,11 +2282,10 @@ Images of Critical Risk Finding
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
           <Typography sx={{ color: "green", fontWeight: "bold" }}>
-           FUNCTIONAL TESTS
+            FUNCTIONAL TESTS
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-         
           <Paper sx={{ padding: "15px" }}>
             <Grid container spacing={2} sx={{ width: "90%", margin: "auto" }}>
               <Grid item xs={12} md={3}>
@@ -2282,7 +2305,9 @@ Images of Critical Risk Finding
                     <Select
                       sx={{ width: "14em" }}
                       error={input?.fnTest1Passed === ""}
-                      helperText={input?.fnTest1Passed === "" ? "Required!" : " "}
+                      helperText={
+                        input?.fnTest1Passed === "" ? "Required!" : " "
+                      }
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={input?.fnTest1Passed}
@@ -2490,6 +2515,12 @@ Images of Critical Risk Finding
       <div>
         Pdf report
         <AuditReport />
+        {/* <PDFDownloadLink document={<PdfReport />} fileName="example.pdf">
+          {({ blob, url, loading, error }) =>
+            loading ? "Loading document..." : "Download PDF"
+          }
+        </PDFDownloadLink> */}
+        {/* <PdfReport /> */}
       </div>
     </div>
   );
