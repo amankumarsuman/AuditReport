@@ -30,14 +30,14 @@ function AuditReport() {
   console.log(logo, "logo");
   console.log(ReduxStoredData?.publisher, "redux stored");
   const [arr1, setArr1] = useState();
-  const criticalImageArray = [
+  const HignRiskImageArray = [
     "",
     ReduxStoredData2?.highRiskImages[0],
     "",
     ReduxStoredData2?.highRiskImages[1],
     "",
   ];
-  const HignRiskImageArray = [
+  const criticalImageArray = [
     "",
     ReduxStoredData2?.criticalImage1,
     "",
@@ -61,9 +61,9 @@ function AuditReport() {
   // const mediumArr = [];
   // const suggestionArr = [];
   // const gasArr = [];
-  const criticalArr = ReduxStoredData?.criticalRiskDetails
-    ?.split("@")
-    ?.map((el) => el);
+  const criticalArr = ReduxStoredData?.criticalRiskDetails?.split("@");
+
+  console.log(criticalArr, "criticalArr");
   const highRiskArr = ReduxStoredData?.highriskDetails
     ?.split("@")
     ?.map((el) => el);
@@ -1126,7 +1126,7 @@ socialMediaPic &&
                       variant="standard"
                     />
                   </Grid>
-               
+
                   {/* <Grid item xs={6}>
                     <TextField
                       fullWidth
@@ -2830,8 +2830,6 @@ socialMediaPic &&
         {ReduxStoredData?.fnTest1 ? (
           <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
-             
-
               <div
                 style={{
                   color: "#454545",
@@ -2891,13 +2889,9 @@ socialMediaPic &&
                     }}
                   >
                     <span style={{ width: "90%" }}>
-                     
-                      {ReduxStoredData?.fnTest1Desc?.length>60?
-                    ReduxStoredData?.fnTest1Desc?.slice(0,60):ReduxStoredData?.fnTest1Desc
-                  }
-
-                  
-                
+                      {ReduxStoredData?.fnTest1Desc?.length > 60
+                        ? ReduxStoredData?.fnTest1Desc?.slice(0, 60)
+                        : ReduxStoredData?.fnTest1Desc}
                     </span>
                   </div>
                   <div
@@ -2905,17 +2899,14 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
-                      lineHeight:1.5,
+                      lineHeight: 1.5,
                       width: "93%",
                     }}
                   >
                     <span style={{ width: "90%" }}>
-               
-
-                  
-                  {ReduxStoredData?.fnTest1Desc?.length>60?
-                    ReduxStoredData?.fnTest1Desc?.slice(60):null
-                  }
+                      {ReduxStoredData?.fnTest1Desc?.length > 60
+                        ? ReduxStoredData?.fnTest1Desc?.slice(60)
+                        : null}
                     </span>
                   </div>
                 </span>
@@ -2945,9 +2936,7 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                
-
-<div
+                  <div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
@@ -2957,13 +2946,9 @@ socialMediaPic &&
                     }}
                   >
                     <span style={{ width: "90%" }}>
-                     
-                      {ReduxStoredData?.fnTest2Desc?.length>60?
-                    ReduxStoredData?.fnTest2Desc?.slice(0,60):ReduxStoredData?.fnTest2Desc
-                  }
-
-                  
-               
+                      {ReduxStoredData?.fnTest2Desc?.length > 60
+                        ? ReduxStoredData?.fnTest2Desc?.slice(0, 60)
+                        : ReduxStoredData?.fnTest2Desc}
                     </span>
                   </div>
                   <div
@@ -2971,17 +2956,14 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
-                     lineHeight:1.5,
+                      lineHeight: 1.5,
                       width: "93%",
                     }}
                   >
                     <span style={{ width: "90%" }}>
-               
-
-                  
-                  {ReduxStoredData?.fnTest2Desc?.length>60?
-                    ReduxStoredData?.fnTest2Desc?.slice(60):null
-                  }
+                      {ReduxStoredData?.fnTest2Desc?.length > 60
+                        ? ReduxStoredData?.fnTest2Desc?.slice(60)
+                        : null}
                     </span>
                   </div>
                 </>
@@ -3010,9 +2992,7 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                 
-
-<div
+                  <div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
@@ -3022,13 +3002,9 @@ socialMediaPic &&
                     }}
                   >
                     <span style={{ width: "90%" }}>
-                     
-                      {ReduxStoredData?.fnTest3Desc?.length>60?
-                    ReduxStoredData?.fnTest3Desc?.slice(0,60):ReduxStoredData?.fnTest3Desc
-                  }
-
-                  
-                
+                      {ReduxStoredData?.fnTest3Desc?.length > 60
+                        ? ReduxStoredData?.fnTest3Desc?.slice(0, 60)
+                        : ReduxStoredData?.fnTest3Desc}
                     </span>
                   </div>
                   <div
@@ -3036,21 +3012,17 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
-                      lineHeight:1.5,
+                      lineHeight: 1.5,
 
                       width: "93%",
                     }}
                   >
                     <span style={{ width: "90%" }}>
-               
-
-                  
-                  {ReduxStoredData?.fnTest3Desc?.length>60?
-                    ReduxStoredData?.fnTest3Desc?.slice(60):null
-                  }
+                      {ReduxStoredData?.fnTest3Desc?.length > 60
+                        ? ReduxStoredData?.fnTest3Desc?.slice(60)
+                        : null}
                     </span>
                   </div>
-
                 </>
               ) : null}
 
@@ -3078,9 +3050,7 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                 
-
-<div
+                  <div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
@@ -3090,13 +3060,9 @@ socialMediaPic &&
                     }}
                   >
                     <span style={{ width: "90%" }}>
-                    
-                      {ReduxStoredData?.fnTest4Desc?.length>60?
-                    ReduxStoredData?.fnTest4Desc?.slice(0,60):ReduxStoredData?.fnTest4Desc
-                  }
-
-                  
-                
+                      {ReduxStoredData?.fnTest4Desc?.length > 60
+                        ? ReduxStoredData?.fnTest4Desc?.slice(0, 60)
+                        : ReduxStoredData?.fnTest4Desc}
                     </span>
                   </div>
                   <div
@@ -3104,21 +3070,17 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
-                      lineHeight:1.5,
+                      lineHeight: 1.5,
 
                       width: "93%",
                     }}
                   >
                     <span style={{ width: "90%" }}>
-               
-
-                  
-                  {ReduxStoredData?.fnTest4Desc?.length>60?
-                    ReduxStoredData?.fnTest4Desc?.slice(60):null
-                  }
+                      {ReduxStoredData?.fnTest4Desc?.length > 60
+                        ? ReduxStoredData?.fnTest4Desc?.slice(60)
+                        : null}
                     </span>
                   </div>
-
                 </>
               ) : null}
 
@@ -3129,7 +3091,7 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "25px",
-                      marginTop:"20px"
+                      marginTop: "20px",
                     }}
                   >
                     5-{ReduxStoredData?.fnTest5}
@@ -3146,9 +3108,7 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                 
-
-<div
+                  <div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
@@ -3158,12 +3118,9 @@ socialMediaPic &&
                     }}
                   >
                     <span style={{ width: "90%" }}>
-                     
-                      {ReduxStoredData?.fnTest5Desc?.length>60?
-                    ReduxStoredData?.fnTest5Desc?.slice(0,60):ReduxStoredData?.fnTest5Desc
-                  }
-
-               
+                      {ReduxStoredData?.fnTest5Desc?.length > 60
+                        ? ReduxStoredData?.fnTest5Desc?.slice(0, 60)
+                        : ReduxStoredData?.fnTest5Desc}
                     </span>
                   </div>
                   <div
@@ -3171,38 +3128,28 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
-                      lineHeight:1.5,
+                      lineHeight: 1.5,
 
                       width: "93%",
                     }}
                   >
                     <span style={{ width: "90%" }}>
-               
-
-                  
-                  {ReduxStoredData?.fnTest5Desc?.length>60?
-                    ReduxStoredData?.fnTest5Desc?.slice(60):null
-                  }
+                      {ReduxStoredData?.fnTest5Desc?.length > 60
+                        ? ReduxStoredData?.fnTest5Desc?.slice(60)
+                        : null}
                     </span>
                   </div>
-
                 </>
               ) : null}
-
-              
             </div>
           </div>
         ) : null}
 
+        {/* functional test 2 */}
 
-
-{/* functional test 2 */}
-
-{ReduxStoredData?.fnTest6 ? (
+        {ReduxStoredData?.fnTest6 ? (
           <div style={{ width: "650px", height: "100%" }}>
             <div id="page" className={styles.backgroundTwo}>
-             
-
               <div
                 style={{
                   color: "#454545",
@@ -3221,7 +3168,6 @@ socialMediaPic &&
                 </p>
               </div>
 
-          
               {ReduxStoredData?.fnTest6 ? (
                 <span style={{ width: "90%" }}>
                   <div
@@ -3255,13 +3201,9 @@ socialMediaPic &&
                     }}
                   >
                     <span style={{ width: "90%" }}>
-                     
-                      {ReduxStoredData?.fnTest6Desc?.length>60?
-                    ReduxStoredData?.fnTest6Desc?.slice(0,60):ReduxStoredData?.fnTest6Desc
-                  }
-
-                  
-                
+                      {ReduxStoredData?.fnTest6Desc?.length > 60
+                        ? ReduxStoredData?.fnTest6Desc?.slice(0, 60)
+                        : ReduxStoredData?.fnTest6Desc}
                     </span>
                   </div>
                   <div
@@ -3269,17 +3211,14 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
-                      lineHeight:1.5,
+                      lineHeight: 1.5,
                       width: "93%",
                     }}
                   >
                     <span style={{ width: "90%" }}>
-               
-
-                  
-                  {ReduxStoredData?.fnTest6Desc?.length>60?
-                    ReduxStoredData?.fnTest6Desc?.slice(60):null
-                  }
+                      {ReduxStoredData?.fnTest6Desc?.length > 60
+                        ? ReduxStoredData?.fnTest6Desc?.slice(60)
+                        : null}
                     </span>
                   </div>
                 </span>
@@ -3309,9 +3248,7 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                
-
-<div
+                  <div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
@@ -3321,13 +3258,9 @@ socialMediaPic &&
                     }}
                   >
                     <span style={{ width: "90%" }}>
-                     
-                      {ReduxStoredData?.fnTest7Desc?.length>60?
-                    ReduxStoredData?.fnTest7Desc?.slice(0,60):ReduxStoredData?.fnTest7Desc
-                  }
-
-                  
-               
+                      {ReduxStoredData?.fnTest7Desc?.length > 60
+                        ? ReduxStoredData?.fnTest7Desc?.slice(0, 60)
+                        : ReduxStoredData?.fnTest7Desc}
                     </span>
                   </div>
                   <div
@@ -3335,17 +3268,14 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
-                     lineHeight:1.5,
+                      lineHeight: 1.5,
                       width: "93%",
                     }}
                   >
                     <span style={{ width: "90%" }}>
-               
-
-                  
-                  {ReduxStoredData?.fnTest7Desc?.length>60?
-                    ReduxStoredData?.fnTest7Desc?.slice(60):null
-                  }
+                      {ReduxStoredData?.fnTest7Desc?.length > 60
+                        ? ReduxStoredData?.fnTest7Desc?.slice(60)
+                        : null}
                     </span>
                   </div>
                 </>
@@ -3374,9 +3304,7 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                 
-
-<div
+                  <div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
@@ -3386,13 +3314,9 @@ socialMediaPic &&
                     }}
                   >
                     <span style={{ width: "90%" }}>
-                     
-                      {ReduxStoredData?.fnTest8Desc?.length>60?
-                    ReduxStoredData?.fnTest8Desc?.slice(0,60):ReduxStoredData?.fnTest8Desc
-                  }
-
-                  
-                
+                      {ReduxStoredData?.fnTest8Desc?.length > 60
+                        ? ReduxStoredData?.fnTest8Desc?.slice(0, 60)
+                        : ReduxStoredData?.fnTest8Desc}
                     </span>
                   </div>
                   <div
@@ -3400,21 +3324,17 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
-                      lineHeight:1.5,
+                      lineHeight: 1.5,
 
                       width: "93%",
                     }}
                   >
                     <span style={{ width: "90%" }}>
-               
-
-                  
-                  {ReduxStoredData?.fnTest8Desc?.length>60?
-                    ReduxStoredData?.fnTest8Desc?.slice(60):null
-                  }
+                      {ReduxStoredData?.fnTest8Desc?.length > 60
+                        ? ReduxStoredData?.fnTest8Desc?.slice(60)
+                        : null}
                     </span>
                   </div>
-
                 </>
               ) : null}
 
@@ -3442,9 +3362,7 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                 
-
-<div
+                  <div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
@@ -3454,13 +3372,9 @@ socialMediaPic &&
                     }}
                   >
                     <span style={{ width: "90%" }}>
-                    
-                      {ReduxStoredData?.fnTest9Desc?.length>60?
-                    ReduxStoredData?.fnTest9Desc?.slice(0,60):ReduxStoredData?.fnTest9Desc
-                  }
-
-                  
-                
+                      {ReduxStoredData?.fnTest9Desc?.length > 60
+                        ? ReduxStoredData?.fnTest9Desc?.slice(0, 60)
+                        : ReduxStoredData?.fnTest9Desc}
                     </span>
                   </div>
                   <div
@@ -3468,21 +3382,17 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
-                      lineHeight:1.5,
+                      lineHeight: 1.5,
 
                       width: "93%",
                     }}
                   >
                     <span style={{ width: "90%" }}>
-               
-
-                  
-                  {ReduxStoredData?.fnTest9Desc?.length>60?
-                    ReduxStoredData?.fnTest9Desc?.slice(60):null
-                  }
+                      {ReduxStoredData?.fnTest9Desc?.length > 60
+                        ? ReduxStoredData?.fnTest9Desc?.slice(60)
+                        : null}
                     </span>
                   </div>
-
                 </>
               ) : null}
 
@@ -3493,7 +3403,7 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "25px",
-                      marginTop:"20px"
+                      marginTop: "20px",
                     }}
                   >
                     10-{ReduxStoredData?.fnTest10}
@@ -3510,9 +3420,7 @@ socialMediaPic &&
                     </span>
                   </div>
 
-                 
-
-<div
+                  <div
                     style={{
                       marginLeft: "20px",
                       fontWeight: "bold",
@@ -3522,12 +3430,9 @@ socialMediaPic &&
                     }}
                   >
                     <span style={{ width: "90%" }}>
-                     
-                      {ReduxStoredData?.fnTest10Desc?.length>60?
-                    ReduxStoredData?.fnTest10Desc?.slice(0,60):ReduxStoredData?.fnTest10Desc
-                  }
-
-               
+                      {ReduxStoredData?.fnTest10Desc?.length > 60
+                        ? ReduxStoredData?.fnTest10Desc?.slice(0, 60)
+                        : ReduxStoredData?.fnTest10Desc}
                     </span>
                   </div>
                   <div
@@ -3535,25 +3440,19 @@ socialMediaPic &&
                       marginLeft: "20px",
                       fontWeight: "bold",
                       fontSize: "18px",
-                      lineHeight:1.5,
+                      lineHeight: 1.5,
 
                       width: "93%",
                     }}
                   >
                     <span style={{ width: "90%" }}>
-               
-
-                  
-                  {ReduxStoredData?.fnTest10Desc?.length>60?
-                    ReduxStoredData?.fnTest10Desc?.slice(60):null
-                  }
+                      {ReduxStoredData?.fnTest10Desc?.length > 60
+                        ? ReduxStoredData?.fnTest10Desc?.slice(60)
+                        : null}
                     </span>
                   </div>
-
                 </>
               ) : null}
-
-          
             </div>
           </div>
         ) : null}
@@ -3821,16 +3720,18 @@ socialMediaPic &&
                     />
                   </p>
                 </div>
-
-                {criticalImageArray?.length > 2
+                {console.log(criticalImageArray?.length)}
+                {console.log(criticalImageArray)}
+                {ReduxStoredData2?.criticalImage1 &&
+                ReduxStoredData2?.criticalImage2
                   ? ReduxStoredData?.criticalRiskDetails
                       ?.split("@")
                       .slice(0, 4)
                       ?.map((el, i) => (
                         <div className={styles.criticalElement}>
                           {el}
-                          {/* {console.log(criticalImageArray[0])} */}
-                          {criticalImageArray[i] ? (
+
+                          {ReduxStoredData2?.criticalImage1 ? (
                             <img
                               style={{
                                 height: "100px",
@@ -3839,7 +3740,9 @@ socialMediaPic &&
                                 border: "3px dotted black",
                                 marginTop: "20px",
                               }}
-                              src={URL.createObjectURL(criticalImageArray[i])}
+                              src={URL.createObjectURL(
+                                ReduxStoredData2?.criticalImage1
+                              )}
                               alt="Uploaded Image"
                             />
                           ) : null}
@@ -3852,7 +3755,7 @@ socialMediaPic &&
                         <div className={styles.criticalElement}>
                           {el}
                           {/* {console.log(criticalImageArray[0])} */}
-                          {criticalImageArray[i] ? (
+                          {ReduxStoredData2?.criticalImage2 ? (
                             <img
                               style={{
                                 height: "100px",
@@ -3861,7 +3764,9 @@ socialMediaPic &&
                                 border: "3px dotted black",
                                 marginTop: "20px",
                               }}
-                              src={URL.createObjectURL(criticalImageArray[i])}
+                              src={URL.createObjectURL(
+                                ReduxStoredData2?.criticalImage2
+                              )}
                               alt="Uploaded Image"
                             />
                           ) : null}
@@ -3872,7 +3777,9 @@ socialMediaPic &&
 
             {/* critical risk 2 */}
 
-            {criticalArr?.length > 4 ? (
+            {(ReduxStoredData2?.criticalImage3 &&
+              ReduxStoredData2?.criticalImage4) ||
+            criticalArr?.length > 8 ? (
               <div style={{ width: "650px", height: "100%" }}>
                 <div id="page" className={styles.backgroundTwo}>
                   <div
@@ -3904,33 +3811,151 @@ socialMediaPic &&
                       />
                     </p>
                   </div>
+                  {ReduxStoredData2?.criticalImage3 &&
+                  ReduxStoredData2?.criticalImage4
+                    ? ReduxStoredData?.criticalRiskDetails
+                        ?.split("@")
+                        .slice(4, 8)
+                        ?.map((el, i) => (
+                          <div className={styles.criticalElement}>
+                            {el}
 
-                  {ReduxStoredData?.criticalRiskDetails
-                    ?.split("@")
-                    .slice(4, 8)
-                    ?.map((el, i) => (
-                      <div className={styles.criticalElement}>
-                        {el}
-
-                        {criticalImageArray[i] ? (
-                          <img
-                            style={{
-                              height: "300px",
-                              width: "300px",
-                              borderRadius: "50%",
-                            }}
-                            src={URL.createObjectURL(criticalImageArray[i])}
-                            alt="Uploaded Image"
-                          />
-                        ) : null}
-                      </div>
-                    ))}
+                            {ReduxStoredData2?.criticalImage3 ? (
+                              <img
+                                style={{
+                                  height: "100px",
+                                  width: "570px",
+                                  borderRadius: "20px",
+                                  border: "3px dotted black",
+                                  marginTop: "20px",
+                                }}
+                                src={URL.createObjectURL(
+                                  ReduxStoredData2?.criticalImage3
+                                )}
+                                alt="Uploaded Image"
+                              />
+                            ) : null}
+                          </div>
+                        ))
+                    : ReduxStoredData?.criticalRiskDetails
+                        ?.split("@")
+                        .slice(4, 12)
+                        ?.map((el, i) => (
+                          <div className={styles.criticalElement}>
+                            {el}
+                            {/* {console.log(criticalImageArray[0])} */}
+                            {ReduxStoredData2?.criticalImage4 ? (
+                              <img
+                                style={{
+                                  height: "100px",
+                                  width: "570px",
+                                  borderRadius: "20px",
+                                  border: "3px dotted black",
+                                  marginTop: "20px",
+                                }}
+                                src={URL.createObjectURL(
+                                  ReduxStoredData2?.criticalImage4
+                                )}
+                                alt="Uploaded Image"
+                              />
+                            ) : null}
+                          </div>
+                        ))}
                 </div>
               </div>
             ) : null}
             {/* critical risk 3 */}
 
-            {criticalArr?.length > 8 ? (
+            {(ReduxStoredData2?.criticalImage5 &&
+              ReduxStoredData2?.criticalImage6) ||
+            criticalArr?.length > 12 ? (
+              <div style={{ width: "650px", height: "100%" }}>
+                <div id="page" className={styles.backgroundTwo}>
+                  <div
+                    style={{
+                      color: "#454545",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        paddingTop: "140px",
+                        fontWeight: "bold",
+                        fontSize: "45px",
+                        color: "brown",
+                      }}
+                    >
+                      CRITICAL RISK FINDINGS
+                      <Divider
+                        variant="middle"
+                        sx={{
+                          width: "85%",
+                          margin: "auto",
+                          padding: "1px",
+                          border: "1px solid black",
+                          background: "black",
+                          marginTop: "30px",
+                          marginBottom: "20px",
+                        }}
+                      />
+                    </p>
+                  </div>
+                  {ReduxStoredData2?.criticalImage5 &&
+                  ReduxStoredData2?.criticalImage6
+                    ? ReduxStoredData?.criticalRiskDetails
+                        ?.split("@")
+                        .slice(8, 12)
+                        ?.map((el, i) => (
+                          <div className={styles.criticalElement}>
+                            {el}
+
+                            {ReduxStoredData2?.criticalImage5 ? (
+                              <img
+                                style={{
+                                  height: "100px",
+                                  width: "570px",
+                                  borderRadius: "20px",
+                                  border: "3px dotted black",
+                                  marginTop: "20px",
+                                }}
+                                src={URL.createObjectURL(
+                                  ReduxStoredData2?.criticalImage5
+                                )}
+                                alt="Uploaded Image"
+                              />
+                            ) : null}
+                          </div>
+                        ))
+                    : ReduxStoredData?.criticalRiskDetails
+                        ?.split("@")
+                        .slice(8, 16)
+                        ?.map((el, i) => (
+                          <div className={styles.criticalElement}>
+                            {el}
+                            {/* {console.log(criticalImageArray[0])} */}
+                            {ReduxStoredData2?.criticalImage6 ? (
+                              <img
+                                style={{
+                                  height: "100px",
+                                  width: "570px",
+                                  borderRadius: "20px",
+                                  border: "3px dotted black",
+                                  marginTop: "20px",
+                                }}
+                                src={URL.createObjectURL(
+                                  ReduxStoredData2?.criticalImage6
+                                )}
+                                alt="Uploaded Image"
+                              />
+                            ) : null}
+                          </div>
+                        ))}
+                </div>
+              </div>
+            ) : null}
+
+            {/* twest */}
+            {/* {criticalArr?.length > 8 ? (
               <div style={{ width: "650px", height: "100%" }}>
                 <div id="page" className={styles.backgroundTwo}>
                   <div
@@ -3985,7 +4010,7 @@ socialMediaPic &&
                     ))}
                 </div>
               </div>
-            ) : null}
+            ) : null} */}
           </>
         ) : null}
 
